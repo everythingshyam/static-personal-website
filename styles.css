@@ -1,0 +1,114 @@
+/* CSS file for Portfolio Practice started on 10th August, 2022 */
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: cursive;
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+header {
+    margin: 0px;
+    height: 40vh;
+    padding: 2%;
+    background-color: rgb(243, 125, 70);
+    display: flex;
+    justify-content: center;
+}
+
+#profile-pic {
+    border: 2px solid black;
+    border-left: 0;
+    float: left;
+    width: 35vw;
+    height: 35vh;
+    padding: 0.5%;
+}
+
+#profile-pic img {
+    height: 30vh;
+    border-radius: 50%;
+    padding: 3%;
+    float: right;
+}
+
+#key-abouts {
+    border: 2px solid black;
+    border-right: 0;
+    float: right;
+    width: 55vw;
+    height: 35vh;
+    padding: .5%;
+    padding-left: 3%;
+}
+
+/* --------------------------------------------------------------------------------------------- */
+#body {
+    margin: 0px;
+    height: 100vh;
+    padding: 2%;
+    background-color: whitesmoke;
+}
+
+#academics {
+    border: 2px solid black;
+    float: left;
+    width: 35vw;
+    height: 35vh;
+    padding: 0.5%;
+}
+
+#professional-achievements {
+    border: 2px solid black;
+    float: right;
+    width: 55vw;
+    height: 35vh;
+    padding: 0.5%;
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+footer {
+    background-color: green;
+    color: whitesmoke;
+    margin: 0px;
+    /* height: 20vh; */
+    padding: 2%;
+}
+
+#quick-links {
+    padding: 10px;
+    height: 20vh;
+    border: 2px solid black;
+}
+
+footer ul li {
+    list-style: none;
+    color: whitesmoke;
+    /* how to remove blue color and underline from links */
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+footer ul li a:hover {
+    color: black;
+}
+
+/* .reddot{
+    animation: ashutosh 10s linear;
+}
+@keyframes ashutosh {
+  0%{
+    color: yellow;
+    background-color: black;
+  }    
+  50%{
+    color: black;
+    background-color: yellow;
+  }    
+  100%{
+    color: blue;
+    background-color: aqua;
+  }
+} */
