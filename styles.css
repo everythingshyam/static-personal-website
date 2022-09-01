@@ -1,44 +1,119 @@
 /* CSS file for Portfolio Practice started on 10th August, 2022 */
+
 body {
     margin: 0px;
     padding: 0px;
     font-family: cursive;
+    /* box model fix */
+    box-sizing: border-box;
 }
+/* box model fix */
+/* *,*:before, *:after
+{
+    box-sizing: inherit;
+} */
 
 /* ----------------------------------------------------------------------------------------------- */
 header {
     margin: 0px;
-    height: 40vh;
+    /* height: 40vh; */
     padding: 2%;
     background-color: rgb(243, 125, 70);
-    display: flex;
+    /* display: flex; */
     justify-content: center;
+    /* font-size: 90%; */
+}
+
+#main-header{
+    display: flex;
 }
 
 #profile-pic {
     border: 2px solid black;
     border-left: 0;
-    float: left;
-    width: 35vw;
+    /* float: left; */
+    width: 40%;
     height: 35vh;
-    padding: 0.5%;
+    /* padding: auto; */
+    justify-content: center;
+    /* margin: auto; */
+    overflow: hidden;
 }
 
 #profile-pic img {
     height: 30vh;
     border-radius: 50%;
-    padding: 3%;
+    padding: 2vh;
+    /* padding-left: 5vw; */
+    /* margin-left: 13vw; */
+    /* margin-right: 5vw; */
     float: right;
+    /* margin: auto; */
 }
 
 #key-abouts {
     border: 2px solid black;
     border-right: 0;
-    float: right;
-    width: 55vw;
+    /* float: right; */
+    width: 60%;
     height: 35vh;
-    padding: .5%;
-    padding-left: 3%;
+    /* padding: .5%; */
+    /* padding-left: 3%; */
+    /* padding: 0 2vh; */
+    overflow:hidden;
+    /* display: flow-root; */
+    /* font-size: 90%; */
+}
+#inner-key-abouts {
+    /* vertical-align: auto; */
+    padding: 2vh;
+    float: left;
+}
+#inner-key-abouts h1{
+    /* padding-top: 0; */
+    margin-top: 1vh;
+}
+
+.black-bg{
+    background-color: black;
+}
+#menu-bar{
+    /* clear: both; */
+    /* overflow: auto; */
+    color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 110%;
+    /* align-items: center; */
+    /* align-items: center; */
+    /* position:sticky; */
+    /* top: 10 px; */
+    /* position:fixed; */
+    /* top: 40vh; */
+
+}
+#menu-bar ul :hover{
+    background-color: green;
+    color:white;
+    /* transition: background-color 1s ; */
+    /* transition:color .6s; */
+}
+#menu-bar ul li{
+    border-radius: 7px 7px 0 0;
+    border-bottom: 0;
+    display: inline;
+    padding: 1vh 4vw 1vh;
+    /* margin: 0 12px; */
+    margin-top: 100px;
+    font-size: larger;
+    cursor: pointer;
+}
+.stay-on-top{
+    /* position: sticky; */
+    top: 10 px;
 }
 
 /* --------------------------------------------------------------------------------------------- */
@@ -46,7 +121,9 @@ header {
     margin: 0px;
     height: 100vh;
     padding: 2%;
-    background-color: whitesmoke;
+    background:linear-gradient(green,white 50%,rgb(243, 125, 70) );
+    /* background:linear-gradient(red 40%, yellow 30%, blue 65%); */
+
 }
 
 #academics {
@@ -81,34 +158,24 @@ footer {
 }
 
 footer ul li {
-    list-style: none;
+    list-style:none;
     color: whitesmoke;
     /* how to remove blue color and underline from links */
+    display: inline;
+    padding: 10px;
+    /* border: 2px solid black; */
+    /* border-radius: 10%; */
 }
+
 
 footer ul li a {
     text-decoration: none;
     color: whitesmoke;
 }
 
+footer ul li:hover{
+    background-color: rgb(243, 125, 70);
+}
 footer ul li a:hover {
     color: black;
 }
-
-/* .reddot{
-    animation: ashutosh 10s linear;
-}
-@keyframes ashutosh {
-  0%{
-    color: yellow;
-    background-color: black;
-  }    
-  50%{
-    color: black;
-    background-color: yellow;
-  }    
-  100%{
-    color: blue;
-    background-color: aqua;
-  }
-} */
