@@ -20,6 +20,13 @@ body {
 } */
 
 /* ----------------------------------------------------------------------------------------------- */
+#alert-bar{
+  /* position: sticky; */
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  background-color: yellow;
+}
 header {
   margin: 0px;
   color: #fcfcfc;
@@ -37,7 +44,7 @@ header {
 .edgeCovers {
   width: 5vw;
   height: 50px;
-  background-color: #fcfcfc;
+  background-color: rgba(252, 252, 252,.5);
   /* display:flex; */
 }
 #leftCover{
@@ -47,7 +54,7 @@ header {
     border-bottom-right-radius: 90%;
 }
 #menu-bar {
-  background-color: #fcfcfc;
+  background-color: rgba(252, 252, 252,.5);
   /* clear: both; */
   /* overflow: auto; */
   color: black;
@@ -67,8 +74,8 @@ header {
   /* top: 40vh; */
 }
 #menu-bar ul :hover {
-  background-color: #06d6a0;
-  color: #fcfcfc;
+  background-color: rgba(239, 71, 111,.9);
+  color: rgb(252, 252, 252);
   /* transition: background-color 1s ; */
   /* transition:color .6s; */
 }
@@ -142,8 +149,7 @@ header {
   margin: 0px;
   height: 100vh;
   padding: 2%;
-  background: #ef476f;
-  /* background:linear-gradient(red 40%, yellow 30%, blue 65%); */
+  background: rgba(239, 71, 111,.9);
 }
 
 #academics {
