@@ -1,11 +1,17 @@
 /* CSS file for Portfolio Practice started on 10th August, 2022 */
+/* Colors used
 
+Primary rgb(76 209 255)
+Secodary #7e7e7e
+Dark Outlines #3c3c3c
+Footer #4e4e4e
+*/
 body {
-    margin: 0px;
-    padding: 0px;
-    font-family: cursive;
-    /* box model fix */
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: cursive;
+  /* box model fix */
+  box-sizing: border-box;
 }
 /* box model fix */
 /* *,*:before, *:after
@@ -15,167 +21,180 @@ body {
 
 /* ----------------------------------------------------------------------------------------------- */
 header {
-    margin: 0px;
-    /* height: 40vh; */
-    padding: 2%;
-    background-color: rgb(243, 125, 70);
-    /* display: flex; */
-    justify-content: center;
-    /* font-size: 90%; */
+  margin: 0px;
+  color: #fcfcfc;
+  /* height: 40vh; */
+  /* padding: 2%; */
+  background-color: #26547c;
+  /* display: flex; */
+  justify-content: center;
+  /* font-size: 90%; */
 }
 
-#main-header{
+#menu-bar-outer{
     display: flex;
+}
+.edgeCovers {
+  width: 5vw;
+  height: 50px;
+  background-color: #fcfcfc;
+  /* display:flex; */
+}
+#leftCover{
+    border-bottom-left-radius: 90%;
+}
+#rightCover{
+    border-bottom-right-radius: 90%;
+}
+#menu-bar {
+  background-color: #fcfcfc;
+  /* clear: both; */
+  /* overflow: auto; */
+  color: black;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  font-size: 110%;
+  /* border-radius: 50%; */
+  /* align-items: center; */
+  /* align-items: center; */
+  /* position:sticky; */
+  /* top: 10 px; */
+  /* position:fixed; */
+  /* top: 40vh; */
+}
+#menu-bar ul :hover {
+  background-color: #06d6a0;
+  color: #fcfcfc;
+  /* transition: background-color 1s ; */
+  /* transition:color .6s; */
+}
+#menu-bar ul li {
+  border-radius: 7px 7px 0 0;
+  border-bottom: 0;
+  display: inline;
+  padding: 1vh 4vw 1vh;
+  /* margin: 0 12px; */
+  margin-top: 100px;
+  font-size: larger;
+  cursor: pointer;
+}
+.stay-on-top {
+  /* position: sticky; */
+  top: 10 px;
+}
+
+#main-header {
+  display: flex;
 }
 
 #profile-pic {
-    border: 2px solid black;
-    border-left: 0;
-    /* float: left; */
-    width: 40%;
-    height: 35vh;
-    /* padding: auto; */
-    justify-content: center;
-    /* margin: auto; */
-    overflow: hidden;
+  border: 2px solid #3c3c3c;
+  border-left: 0;
+  /* float: left; */
+  width: 40%;
+  height: 35vh;
+  /* padding: auto; */
+  justify-content: center;
+  /* margin: auto; */
+  overflow: hidden;
 }
 
 #profile-pic img {
-    height: 30vh;
-    border-radius: 50%;
-    padding: 2vh;
-    /* padding-left: 5vw; */
-    /* margin-left: 13vw; */
-    /* margin-right: 5vw; */
-    float: right;
-    /* margin: auto; */
+  height: 30vh;
+  border-radius: 50%;
+  padding: 2vh;
+  /* padding-left: 5vw; */
+  /* margin-left: 13vw; */
+  /* margin-right: 5vw; */
+  float: right;
+  /* margin: auto; */
 }
 
 #key-abouts {
-    border: 2px solid black;
-    border-right: 0;
-    /* float: right; */
-    width: 60%;
-    height: 35vh;
-    /* padding: .5%; */
-    /* padding-left: 3%; */
-    /* padding: 0 2vh; */
-    overflow:hidden;
-    /* display: flow-root; */
-    /* font-size: 90%; */
+  border: 2px solid #3c3c3c;
+  border-right: 0;
+  /* float: right; */
+  width: 60%;
+  height: 35vh;
+  /* padding: .5%; */
+  /* padding-left: 3%; */
+  /* padding: 0 2vh; */
+  overflow: hidden;
+  /* display: flow-root; */
+  /* font-size: 90%; */
 }
 #inner-key-abouts {
-    /* vertical-align: auto; */
-    padding: 2vh;
-    float: left;
+  /* vertical-align: auto; */
+  padding: 2vh;
+  float: left;
 }
-#inner-key-abouts h1{
-    /* padding-top: 0; */
-    margin-top: 1vh;
-}
-
-.black-bg{
-    background-color: black;
-}
-#menu-bar{
-    /* clear: both; */
-    /* overflow: auto; */
-    color: whitesmoke;
-    margin: 0;
-    padding: 0;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    font-size: 110%;
-    /* align-items: center; */
-    /* align-items: center; */
-    /* position:sticky; */
-    /* top: 10 px; */
-    /* position:fixed; */
-    /* top: 40vh; */
-
-}
-#menu-bar ul :hover{
-    background-color: green;
-    color:white;
-    /* transition: background-color 1s ; */
-    /* transition:color .6s; */
-}
-#menu-bar ul li{
-    border-radius: 7px 7px 0 0;
-    border-bottom: 0;
-    display: inline;
-    padding: 1vh 4vw 1vh;
-    /* margin: 0 12px; */
-    margin-top: 100px;
-    font-size: larger;
-    cursor: pointer;
-}
-.stay-on-top{
-    /* position: sticky; */
-    top: 10 px;
+#inner-key-abouts h1 {
+  /* padding-top: 0; */
+  margin-top: 1vh;
 }
 
 /* --------------------------------------------------------------------------------------------- */
 #body {
-    margin: 0px;
-    height: 100vh;
-    padding: 2%;
-    background:linear-gradient(green,white 50%,rgb(243, 125, 70) );
-    /* background:linear-gradient(red 40%, yellow 30%, blue 65%); */
-
+  margin: 0px;
+  height: 100vh;
+  padding: 2%;
+  background: #ef476f;
+  /* background:linear-gradient(red 40%, yellow 30%, blue 65%); */
 }
 
 #academics {
-    border: 2px solid black;
-    float: left;
-    width: 35vw;
-    height: 35vh;
-    padding: 0.5%;
+  border: 2px solid black;
+  float: left;
+  width: 35vw;
+  height: 35vh;
+  padding: 0.5%;
 }
 
 #professional-achievements {
-    border: 2px solid black;
-    float: right;
-    width: 55vw;
-    height: 35vh;
-    padding: 0.5%;
+  border: 2px solid black;
+  float: right;
+  width: 55vw;
+  height: 35vh;
+  padding: 0.5%;
 }
 
 /* ----------------------------------------------------------------------------------------------- */
 footer {
-    background-color: green;
-    color: whitesmoke;
-    margin: 0px;
-    /* height: 20vh; */
-    padding: 2%;
+  background-color: #ffd166;
+  color: black;
+  margin: 0px;
+  /* height: 20vh; */
+  padding: 2%;
 }
 
 #quick-links {
-    padding: 10px;
-    height: 20vh;
-    border: 2px solid black;
+  padding: 10px;
+  height: 20vh;
+  border: 2px solid black;
 }
 
 footer ul li {
-    list-style:none;
-    color: whitesmoke;
-    /* how to remove blue color and underline from links */
-    display: inline;
-    padding: 10px;
-    /* border: 2px solid black; */
-    /* border-radius: 10%; */
+  list-style: none;
+  /* color: whitesmoke; */
+  /* how to remove blue color and underline from links */
+  display: inline;
+  padding: 10px;
+  /* border: 2px solid black; */
+  /* border-radius: 10%; */
 }
-
 
 footer ul li a {
-    text-decoration: none;
-    color: whitesmoke;
+  text-decoration: none;
+  color: black;
 }
 
-footer ul li:hover{
-    background-color: rgb(243, 125, 70);
+footer ul li:hover {
+  background-color: rgb(243, 125, 70);
 }
 footer ul li a:hover {
-    color: black;
+  color: black;
 }
