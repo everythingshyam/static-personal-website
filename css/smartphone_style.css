@@ -105,13 +105,10 @@ header {
   padding: 0 20px;
   /* border-radius: 50px; */
 }
-#menu-bar ul :hover {
-  background-color: rgba(239, 71, 111, 0.9);
-  color: rgb(252, 252, 252);
-  /* transition: background-color 1s ; */
-  /* transition:color .6s; */
+#menu-bar ul li{
+  border-bottom: 1px solid black;
 }
-#menu-bar ul li {
+#menu-bar ul li a {
   /* border-radius: 7px 7px 0 0; */
   /* border-bottom: 0; */
   /* display: inline; */
@@ -119,12 +116,21 @@ header {
   /* margin: 0 12px; */
   /* margin-top: 50px; */
   padding: 2px;
-  border-bottom: 1px solid black;
   list-style-type: none;
   font-size: larger;
   cursor: pointer;
+  width: 90vw;
   /* height: 40px; */
 }
+#menu-bar ul li a:hover {
+  color: rgb(252, 252, 252);
+  /* transition: background-color 1s ; */
+  /* transition:color .6s; */
+}
+#menu-bar ul li:hover{
+  background-color: rgba(239, 71, 111, 0.9);
+}
+
 /* -------------------------------------------------------------------------------------------- */
 #main-header {
   display: flex;

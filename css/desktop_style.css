@@ -97,22 +97,25 @@ header {
   /* position:fixed; */
   /* top: 40vh; */
 }
-#menu-bar ul :hover {
-  background-color: rgba(239, 71, 111,.9);
-  color: rgb(252, 252, 252);
-  /* transition: background-color 1s ; */
-  /* transition:color .6s; */
+
+#menu-bar ul li{
+  display: inline;
 }
-#menu-bar ul li {
+#menu-bar ul li a{
   border-radius: 7px 7px 0 0;
   border-bottom: 0;
-  display: inline;
   padding: 1vh 4vw 2.5px;
   /* margin: 0 12px; */
   margin-top: 50px;
   font-size: larger;
   cursor: pointer;
   /* height: 40px; */
+}
+#menu-bar ul li a:hover {
+  background-color: rgba(239, 71, 111,.9);
+  color: rgb(252, 252, 252);
+  /* transition: background-color 1s ; */
+  /* transition:color .6s; */
 }
 /* ---------------------------------------------------------------------------------------------- */
 #main-header {
