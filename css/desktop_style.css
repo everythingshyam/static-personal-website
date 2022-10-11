@@ -1,73 +1,9 @@
-/* CSS file for Portfolio Practice started on 10th August, 2022
-Colors used
+/*started on 10th August, 2022
+----------------------------------------------------------------------------------------------- */
 
-/* COLOR PALETTE
-#f7fff7
- - almost white
-#343434
- - dark gray
-#2f3061
- - dark blue
-#ffe66d
- - yellow
-#aic6d7
- - light blue
-
-Primary 
-rgb(76 209 255)
-Secodary 
-#7e7e7e
-Dark Outlines 
-#3c3c3c
-Footer 
-#4e4e4e
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;700&display=swap');
-
-body {
-  margin: 0px;
-  padding: 0px;
-  /* font-family: cursive; */
-  font-family: 'Source Code Pro', monospace;
-  /* box model fix */
-  box-sizing: border-box;
-}
-img{
-  max-width: 100%;
-}
-/* box model fix */
-/* *,*:before, *:after
-{
-    box-sizing: inherit;
-} */
-
-/* ----------------------------------------------------------------------------------------------- */
-#alert-bar{
-  /* position: sticky; */
-  height: 30px;
-  padding: 0;
-  margin: 0;
-  background-color: yellow;
-}
-header {
-  margin: 0px;
-  color: #fcfcfc;
-  /* height: 40vh; */
-  /* padding: 2%; */
-  background-color: #26547c;
-  /* display: flex; */
-  justify-content: center;
-  /* font-size: 90%; */
-}
-
-#menu-bar-outer{
-    display: flex;
-}
-.edgeCovers {
+.edge-covers {
   width: 5vw;
   height: 50px;
-  background-color: rgba(252, 252, 252,.5);
   /* display:flex; */
 }
 #leftCover{
@@ -77,25 +13,9 @@ header {
     border-bottom-right-radius: 90%;
 }
 #menu-bar {
-  background-color: rgba(252, 252, 252,.5);
-  /* clear: both; */
-  /* overflow: auto; */
-  color: #252525;
-  margin: 0;
-  padding: 0;
   height: 50px;
-  width: 90vw;
   display: flex;
   justify-content: center;
-  font-size: 110%;
-  font-weight: 600;
-  /* border-radius: 50%; */
-  /* align-items: center; */
-  /* align-items: center; */
-  /* position:sticky; */
-  /* top: 10 px; */
-  /* position:fixed; */
-  /* top: 40vh; */
 }
 
 #menu-bar ul li{
@@ -105,69 +25,41 @@ header {
   border-radius: 7px 7px 0 0;
   border-bottom: 0;
   padding: 1vh 4vw 2.5px;
-  /* margin: 0 12px; */
   margin-top: 50px;
-  font-size: larger;
-  cursor: pointer;
-  /* height: 40px; */
 }
-#menu-bar ul li a:hover {
-  background-color: rgba(239, 71, 111,.9);
-  color: rgb(252, 252, 252);
-  /* transition: background-color 1s ; */
-  /* transition:color .6s; */
-}
+
 /* ---------------------------------------------------------------------------------------------- */
-#main-header {
-  display: flex;
-}
 
 #profile-pic {
   border-right: 1px solid rgba(164, 164, 164, 0.1);
-  /* float: left; */
   width: 40%;
   height: 35vh;
   padding-top: 1vw;
   padding-right: 1%;
   justify-content: center;
-  /* margin: auto; */
-  overflow: hidden;
 }
 
 #profile-pic img {
   height: 30vh;
-  border-radius: 50%;
   padding: 2vh;
-  /* padding-left: 5vw; */
-  /* margin-left: 13vw; */
-  /* margin-right: 5vw; */
   float: right;
-  /* margin: auto; */
 }
 
 #key-abouts {
   border-left: 1px solid rgba(164, 164, 164, 0.1);
-  /* border-right: 0; */
-  /* float: right; */
   width: 60%;
   height: 35vh;
-  /* padding: .5%; */
   padding-top: 2%;
-  padding-left: 1%;
-  /* padding: 0 2vh; */
-  overflow: hidden;
-  /* display: flow-root; */
-  /* font-size: 90%; */
   display: flex;
   flex-direction: column;
 }
-#inner-key-abouts,#inner-key-abouts2 {
-  /* vertical-align: auto; */
-  padding: 0 2vh;
+#inner-key-abouts2 {
+  padding: 0 2vw;
+}
+#inner-key-abouts #inner-key-abouts2{
   float: left;
 }
 #inner-key-abouts h1 {
-  /* padding-top: 0; */
   margin-top: 1vh;
 }
 #inner-key-abouts h2 {
@@ -175,45 +67,6 @@ header {
 }
 
 /* --------------------------------------------------------------------------------------------- */
-#body {
-  margin: 0px;
-  padding: 2%;
-  background: rgba(239, 71, 111,.9);
-}
+
 
 /* ----------------------------------------------------------------------------------------------- */
-footer {
-  background-color: #ffd166;
-  color: black;
-  margin: 0px;
-  /* height: 20vh; */
-  padding: 2%;
-}
-
-#quick-links {
-  padding: 10px;
-  height: 20vh;
-  border: 2px solid black;
-}
-
-footer ul li {
-  list-style: none;
-  /* color: whitesmoke; */
-  /* how to remove blue color and underline from links */
-  display: inline;
-  padding: 10px;
-  /* border: 2px solid black; */
-  /* border-radius: 10%; */
-}
-
-footer ul li a {
-  text-decoration: none;
-  color: black;
-}
-
-footer ul li:hover {
-  background-color: rgb(243, 125, 70);
-}
-footer ul li a:hover {
-  color: black;
-}

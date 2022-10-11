@@ -1,139 +1,24 @@
-/* CSS file for Portfolio Practice started on 10th August, 2022
-Colors used
 
-/* COLOR PALETTE
-#f7fff7;
- - almost white
-#343434;
- - dark gray
-#2f3061;
- - dark blue
-#ffe66d;
- - yellow
-#aic6d7
- - light blue
-
-Primary 
-rgb(76 209 255);
-Secodary 
-#7e7e7e;
-Dark Outlines 
-#3c3c3c;
-Footer 
-#4e4e4e;
-*/
-
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;700&display=swap");
-
-body {
-  margin: 0px;
-  padding: 0px;
-  /* font-family: cursive; */
-  font-family: "Source Code Pro", monospace;
-  /* box model fix */
-  box-sizing: border-box;
-}
-img {
-  max-width: 100%;
-}
-/* box model fix */
-/* *,*:before, *:after
-{
-    box-sizing: inherit;
-} */
-
-/* ----------------------------------------------------------------------------------------------- */
-#alert-bar {
-  /* position: sticky; */
-  height: 32px;
-  padding: 0;
-  margin: 0;
-  background-color: white;
-}
-#alert-bar marquee {
-  padding: 5px 0;
-}
-header {
-  margin: 0px;
-  color: #fcfcfc;
-  /* height: 40vh; */
-  /* padding: 2%; */
-  background-color: #26547c;
-  /* display: flex; */
-  justify-content: center;
-  /* font-size: 90%; */
-}
-
-#menu-bar-outer {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  /* flex-direction: column; */
-}
+/* ---------------------------------------------------------------------------------------------- */
 .edgeCovers {
   display: none;
-  /* width: 5vw;
-  height: 50px;
-  background-color: rgba(252, 252, 252,.5); */
-  /* display:flex; */
 }
 #menu-bar {
-  background-color: #f7fff7;
-  /* clear: both; */
-  /* overflow: auto; */
-  color: #252525;
-  margin: 0;
-  padding: 0;
-  /* height: 50px; */
-  width: 90vw;
-  /* display: flex; */
-  /* flex-direction: column; */
-
   border-radius: 10px;
-  /* justify-content: center; */
-  font-size: 110%;
-  font-weight: 600;
-  /* border-radius: 50%; */
-  /* align-items: center; */
-  /* align-items: center; */
-  /* position:sticky; */
-  /* top: 10 px; */
-  /* position:fixed; */
-  /* top: 40vh; */
 }
 #menu-bar ul {
   padding: 0 20px;
-  /* border-radius: 50px; */
 }
 #menu-bar ul li{
   border-bottom: 1px solid black;
 }
 #menu-bar ul li a {
-  /* border-radius: 7px 7px 0 0; */
-  /* border-bottom: 0; */
-  /* display: inline; */
-  /* padding: 1vh 4vw 2.5px; */
-  /* margin: 0 12px; */
-  /* margin-top: 50px; */
   padding: 2px;
-  list-style-type: none;
-  font-size: larger;
-  cursor: pointer;
   width: 90vw;
-  /* height: 40px; */
-}
-#menu-bar ul li a:hover {
-  color: rgb(252, 252, 252);
-  /* transition: background-color 1s ; */
-  /* transition:color .6s; */
-}
-#menu-bar ul li:hover{
-  background-color: rgba(239, 71, 111, 0.9);
 }
 
 /* -------------------------------------------------------------------------------------------- */
 #main-header {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   width: 90vw;
@@ -141,64 +26,27 @@ header {
 }
 
 #profile-pic {
-  /* border-right: 1px solid rgba(164, 164, 164, 0.1); */
-  /* float: left; */
   width: 90vw;
-  /* height: 35vh; */
-  /* padding-right: 1%; */
   display: block;
   justify-content: space-around;
   align-items: center;
-  /* margin: auto; */
-  overflow: hidden;
 }
 
 #profile-pic img {
-  /* display: inline; */
   height: 40vw;
   padding: 0 25vw;
-  border-radius: 50%;
-  /* padding: 5vw; */
-  /* justify-content: space-around; */
-  /* align-items: center; */
-  /* padding-left: 5vw; */
-  /* margin-left: 13vw; */
-  /* margin-right: 5vw; */
-  /* float: right; */
-  /* margin: auto; */
 }
 
 #key-abouts {
-  /* border-left: 1px solid rgba(164, 164, 164, 0.1); */
-  /* border-right: 0; */
-  /* float: right; */
   width: 90vw;
-  /* height: 35vh; */
-  /* padding: .5%; */
-  padding-left: 1%;
-  /* padding: 0 2vh; */
-  overflow: hidden;
-  /* display: flow-root; */
-  /* font-size: 90%; */
 }
-#inner-key-abouts {
-  /* vertical-align: auto; */
-  padding: 0 2vw;
-  /* float: left; */
-  /* align-items: center; */
-  /* justify-content: center; */
-}
+
 #inner-key-abouts h1,
 #inner-key-abouts h2 {
-  /* padding-top: 0; */
-  /* margin-top: 1vh; */
-  /* justify-content: center; */
-  /* display: inline-block; */
   font-size: 150%;
   margin: 5px;
   border-bottom: 1px solid black;
   text-align: center;
-  /* color: black; */
 }
 #inner-key-abouts h2 {
   font-size: 120%;
@@ -213,38 +61,4 @@ header {
 
 
 /* ----------------------------------------------------------------------------------------------- */
-footer {
-  background-color: #ffd166;
-  color: black;
-  margin: 0px;
-  /* height: 20vh; */
-  padding: 2%;
-}
 
-#quick-links {
-  padding: 10px;
-  height: 20vh;
-  border: 2px solid black;
-}
-
-footer ul li {
-  list-style: none;
-  /* color: whitesmoke; */
-  /* how to remove blue color and underline from links */
-  display: inline;
-  padding: 10px;
-  /* border: 2px solid black; */
-  /* border-radius: 10%; */
-}
-
-footer ul li a {
-  text-decoration: none;
-  color: black;
-}
-
-footer ul li:hover {
-  background-color: rgb(243, 125, 70);
-}
-footer ul li a:hover {
-  color: black;
-}
