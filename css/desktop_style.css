@@ -28,6 +28,40 @@
   margin-top: 50px;
 }
 
+
+/* The container <div> - needed to position the dropdown content */
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #2f3061;
+  border: 1px solid white;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  border-radius: 5px;
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f7fff7;
+  color: #343434;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: inline-block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+
 /* ---------------------------------------------------------------------------------------------- */
 
 #profile-pic {
@@ -41,7 +75,8 @@
 
 #profile-pic img {
   height: 30vh;
-  padding: 2vh;
+  /* padding: 2vh; */
+  margin: 2vh;
   float: right;
 }
 

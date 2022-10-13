@@ -41,11 +41,10 @@ header {
 }
 .edge-covers,
 #menu-bar{
-  background-color: #ffe66d;
-
+  background-color: #2f3061;
 }
 #menu-bar {
-  color: #252525;
+  color: #f7fff7;
   margin: 0;
   padding: 0;
   width: 90vw;
@@ -56,12 +55,12 @@ header {
   cursor: pointer;
   font-size: larger;
   text-decoration: none;
-  color: #252525;
+  color: #f7fff7;
 }
 
 #menu-bar ul li a:hover {
-  background-color: rgba(239, 71, 111,.9);
-  color: rgb(252, 252, 252);
+  background-color: #f7fff7;
+  color: #343434;
 }
 
 #menu-bar ul{
@@ -79,6 +78,7 @@ header {
 }
 #profile-pic img {
   border-radius: 50%;
+  border: 2px solid white;
 }
 #key-abouts {
   padding-left: 1%;
@@ -94,9 +94,18 @@ header {
     background: #2f3061;
     color: whitesmoke;
   }
-  #body h1,
-  #body h2 {
+  #body h1 {
     text-align: center;
+  }
+  #body h2{
+    padding: 2px 1vw 2px 7vw;
+    display: inline-block;
+    margin: 0;
+    background-color: #a0c6d7;
+    color: black;
+    border-radius: 0 20px 20px 0;
+    border: 2px solid black;
+    border-left: 0px;
   }
   #body ul{
       padding: 0;

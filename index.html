@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Shyam | Web Developer</title>
-    <link rel="stylesheet" href="./css/generalStyle.css">
     <link rel="stylesheet" media="screen and (min-device-width: 950px" href="./css/desktop_style.css">
     <link rel="stylesheet" media="screen and (max-device-width: 950px" href="./css/smartphone_style.css">
+    <link rel="stylesheet" href="./css/generalStyle.css">
 </head>
 
 <body>
@@ -24,7 +24,14 @@
             <span id="menu-bar" class="stay-on-top">
                 <ul>
                     <li><a title="Home Page" href="index.html">Home</a></li>
-                     <li><a title="In the making" href="index.html">About</a></li>
+                     <li class="dropdown"><a title="In the making" href="#body">About</a>
+                        <div class="dropdown-content">
+                            <a href="#stationaries">Stationaries</a>
+                            <a href="#notebooks">Notebooks</a>
+                            <a href="#art-n-crafts">Art & Crafts</a>
+                            <a href="#desk-tools">Desk Tools</a>
+                        </div>
+                    </li>
                      <li><a title="Just a gap filler, for now😅" href="index.html">Shop</a></li>
                      <li><a title="Contact Links" href="./contact.html">Contact</a></li>
                      <li><a title="In the making" href="index.html">Else</a></li>
@@ -141,20 +148,20 @@
         <span id="skills">
             <h2>Technical Skills</h2>
             <ul>
-                <li>Java Programming</li>
-                <li>Front End Web Development</li>
-                <li>C, C++ Programming</li>
-                <li>Database Management (SQL)</li>
+                <li><h3>Java Programming</h3></li>
+                <li><h3>Front End Web Development</h3></li>
+                <li><h3>C, C++ Programming</h3></li>
+                <li><h3>Database Management (SQL)</h3></li>
             </ul>
         </span>
         <span id="hobbies">
             <h2>Hobbies</h2>
             <ul>
-                <li>Photography</li>
-                <li>Travelling</li>
-                <li>Creative Writing</li>
-                <li>Singing</li>
-                <li>3D Modelling</li>
+                <li><h3>Photography</h3></li>
+                <li><h3>Travelling</h3></li>
+                <li><h3>Creative Writing</h3></li>
+                <li><h3>Singing</h3></li>
+                <li><h3>3D Modelling</h3></li>
             </ul>
         </span>
     </div>

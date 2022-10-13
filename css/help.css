@@ -3,25 +3,16 @@ Colors used
 
 /* COLOR PALETTE
 #f7fff7;
- - almost white
+ - almost white;
 #343434;
- - dark gray
+ - dark gray;
 #2f3061;
- - dark blue
+ - dark blue;
 #ffe66d;
  - yellow
 #a0c6d7;
- - light blue
+ - light blue;
 
-Primary 
-rgb(76 209 255);
-Secodary 
-#7e7e7e;
-Dark Outlines 
-#3c3c3c;
-Footer 
-#4e4e4e;
-*/
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen
 and (min-device-width : 320px) 
