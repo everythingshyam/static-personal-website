@@ -8,58 +8,59 @@
 }
 #leftCover{
     border-bottom-left-radius: 90%;
+    border-bottom: 1px solid white;
 }
 #rightCover{
     border-bottom-right-radius: 90%;
+    border-bottom: 1px solid white;
 }
 #menu-bar {
   height: 50px;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid white;
 }
 
 #menu-bar ul li{
   display: inline;
 }
-#menu-bar ul li a{
-  border-radius: 7px 7px 0 0;
-  border-bottom: 0;
-  padding: 1vh 4vw 2.5px;
+#menu-bar ul li a.outer-nav-a{
+  border-radius: 10px 10px 0 0;
+  /* border-bottom: 0; */
+  padding: 1vh 4vw 6px;
   margin-top: 50px;
 }
-
 
 /* The container <div> - needed to position the dropdown content */
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: fixed;
-  background-color: #2f3061;
-  border: 1px solid white;
-}
+
 
 /* Links inside the dropdown */
-.dropdown-content a {
+#dropdown-content a {
+  text-align: center;
+  border-radius: 0px;
   color: white;
   border-radius: 5px;
-  padding: 12px;
+  padding: 8px;
+  border-bottom: 1px solid white;
   text-decoration: none;
   display: block;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {
+#dropdown-content a:hover {
   background-color: #f7fff7;
   color: #343434;
 }
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+#dropdown:hover #dropdown-content {
   display: inline-block;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
+
 
 
 /* ---------------------------------------------------------------------------------------------- */

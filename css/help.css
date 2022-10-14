@@ -13,6 +13,10 @@ Colors used
 #a0c6d7;
  - light blue;
 
+
+ border=top right bottom left
+
+ 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen
 and (min-device-width : 320px) 

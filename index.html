@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Shyam | Web Developer</title>
+    <link rel="stylesheet" href="./css/generalStyle.css">
     <link rel="stylesheet" media="screen and (min-device-width: 950px" href="./css/desktop_style.css">
     <link rel="stylesheet" media="screen and (max-device-width: 950px" href="./css/smartphone_style.css">
-    <link rel="stylesheet" href="./css/generalStyle.css">
 </head>
 
 <body>
@@ -23,18 +23,19 @@
             <span class="edge-covers" id="leftCover"> </span>
             <span id="menu-bar" class="stay-on-top">
                 <ul>
-                    <li><a title="Home Page" href="index.html">Home</a></li>
-                     <li class="dropdown"><a title="In the making" href="#body">About</a>
-                        <div class="dropdown-content">
-                            <a href="#stationaries">Stationaries</a>
-                            <a href="#notebooks">Notebooks</a>
-                            <a href="#art-n-crafts">Art & Crafts</a>
-                            <a href="#desk-tools">Desk Tools</a>
+                    <li class="outer-nav-li"><a class="outer-nav-a" id="home-tab" title="Home Page" href="index.html" style="background-color: #f7fff7; color: #343434;">Home</a></li>
+                     <li class="outer-nav-li" id="dropdown"><a class="outer-nav-a" id="about-tab" title="In the making" href="#body">About</a>
+                        <div id="dropdown-content">
+                            <a href="#academics">My Academics</a>
+                            <a href="#positions">Positions Worked Upon</a>
+                            <a href="#projects">Projects Worked Upon</a>
+                            <a href="#skills">Technical Skills</a>
+                            <a href="#hobbies">My Hobbies</a>
                         </div>
                     </li>
-                     <li><a title="Just a gap filler, for now😅" href="index.html">Shop</a></li>
-                     <li><a title="Contact Links" href="./contact.html">Contact</a></li>
-                     <li><a title="In the making" href="index.html">Else</a></li>
+                     <li class="outer-nav-li"><a class="outer-nav-a" id="shop-tab" title="Just a gap filler, for now😅" href="index.html">Shop</a></li>
+                     <li class="outer-nav-li"><a class="outer-nav-a" id="contact-tab" title="Contact Links" href="./contact.html">Contact</a></li>
+                     <li class="outer-nav-li"><a class="outer-nav-a" id="else-tab" title="In the making" href="index.html">Else</a></li>
                 </ul>
             </span>
             <span class="edge-covers" id="rightCover"> </span>
@@ -66,9 +67,9 @@
 
         <!-- -------------------- -->
         <h1>About</h1>
-        <span id="academics">
-            <h2>My academics</h2>
-            <ul id="academics-list">
+        <span class="body-sections" id="academics">
+            <h2>My Academics</h2>
+            <ul>
                 <li>
                     <h3>B. Tech (Computer Science)</h3>
                     <p>From Pimpri Chinchwad College Of Engineering, Pune. (2024)</p>
@@ -96,7 +97,7 @@
                 </li>
             </ul>
         </span>
-        <span id="positions">
+        <span class="body-sections" id="positions">
             <h2>Positions Worked Upon</h2>
             <ul>
                 <li>
@@ -118,7 +119,7 @@
                 </li>
             </ul>
         </span>
-        <span id="projects">
+        <span class="body-sections" id="projects">
             <h2>Projects Worked Upon</h2>
             <ul>
                 <li>
@@ -145,7 +146,7 @@
                 </li>
             </ul>
         </span>
-        <span id="skills">
+        <span class="body-sections" id="skills">
             <h2>Technical Skills</h2>
             <ul>
                 <li><h3>Java Programming</h3></li>
@@ -154,8 +155,8 @@
                 <li><h3>Database Management (SQL)</h3></li>
             </ul>
         </span>
-        <span id="hobbies">
-            <h2>Hobbies</h2>
+        <span class="body-sections" id="hobbies">
+            <h2>My Hobbies</h2>
             <ul>
                 <li><h3>Photography</h3></li>
                 <li><h3>Travelling</h3></li>

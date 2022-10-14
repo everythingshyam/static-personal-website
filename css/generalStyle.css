@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;700&display=swap');
 
 body {
+  background: #2f3061;
   margin: 0px;
   padding: 0px;
   /* font-family: cursive; */
@@ -67,6 +68,14 @@ header {
   list-style-type: none;
 }
 
+#dropdown-content {
+  border-radius: 10px;
+  display: none;
+  position: fixed;
+  background-color: #2f3061;
+  border: 2px solid white;
+}
+
 /* ----------------------------------------------------- */
 
 
@@ -90,17 +99,34 @@ header {
 /* ----------------------------------------------------- */
 #body {
     margin: 0px;
-    padding: 2%;
-    background: #2f3061;
+    /* padding: 2vw; */
     color: whitesmoke;
   }
+  span.body-sections{
+    margin:0;
+    padding: 0;
+  }
+  span.body-sections ul{
+    margin: 0;
+    padding: 0;
+  }
   #body h1 {
+    margin: 30px;
+    padding: 3px 0;
     text-align: center;
+    background-color: #a0c6d7;
+    border-radius: 25px;
+    color: black;
+    border: 2px solid black;
+  }
+  #body span.body-sections{
+    margin: 0px;
+    padding: 0px;
   }
   #body h2{
-    padding: 2px 1vw 2px 7vw;
+    padding: 5px 2vw 5px 7vw;
     display: inline-block;
-    margin: 0;
+    margin-top: 10px;
     background-color: #a0c6d7;
     color: black;
     border-radius: 0 20px 20px 0;
@@ -110,10 +136,11 @@ header {
   #body ul{
       padding: 0;
       margin: 5vw;
+      margin-top: 1vw;
   }
   #body li {
       padding: 3vw;
-      margin: 5vw 0;
+      margin: 2.5vw 0;
       border-radius: 10px;
       background-color: #343434;
       border: 1px solid white;
