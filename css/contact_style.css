@@ -2,34 +2,5 @@
 /* TODO apply grid to .body-ul-li, 3 columns */
 .body-ul-li{
     display: flex;
-}
-.body-ul-li a{
-    display: flex;
-    width: 180px;
-    height: 40px;
-    text-decoration: none;
-    color: black;
-    background-color: #a0c6d7;
-    padding: 2px;
-    margin: 10px;
-    border-radius: 30px;
-}
-.body-ul-li a:hover{
-    color: black;
-    background-color: white;
-}
-.body-ul-li a img{
-    height: 30px;
-    padding: 5px;
-}
-.body-ul-li a h3{
-    font-size: 22px;
-    border-left: 2px solid black;
-    /* text-align: center; */
-    width: 140px;
-    padding:0;
-    padding-bottom: 4px;
-    padding-left: 7px;
-    margin: 8px;
-    margin-left: 2px;
+    flex-wrap: wrap;
 }

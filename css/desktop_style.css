@@ -1,6 +1,10 @@
 /*started on 10th August, 2022
 ----------------------------------------------------------------------------------------------- */
 
+header{
+  background-image: url("../images/bg_img3_vitaly-sacred-AgZwKKtFi-k-unsplash.jpg");
+  background-size: 100vw;
+}
 .edge-covers {
   width: 5vw;
   height: 50px;
@@ -51,7 +55,7 @@
 
 /* Change color of dropdown links on hover */
 #dropdown-content a:hover {
-  background-color: #f7fff7;
+  background-color: rgba(247, 255, 247,.5);
   color: #343434;
 }
 
