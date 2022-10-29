@@ -11,10 +11,14 @@ body {
   box-sizing: border-box;
   background-image: url("../images/bg_img4.jpg");
 }
-img {
-  /* max-width: 100%; */
-}
+/* img {
+  /* max-width: 100%;
+} */
 /* ----------------------------------------------------- */
+header {
+  background-image: url("../images/bg_img3_vitaly-sacred-AgZwKKtFi-k-unsplash.jpg");
+}
+
 #alert-bar {
   background-color: rgba(160, 198, 215, 0.5);
   height: 30px;
@@ -31,18 +35,18 @@ header {
   color: #fcfcfc;
   /* height: 40vh; */
   /* padding: 2%; */
-  background-color: #343434;
+  background-color: rgba(52, 52, 52, 0.5);
   /* display: flex; */
   justify-content: center;
   /* font-size: 90%; */
 }
 
 #menu-bar-outer {
+  background-color: rgba(52, 52, 52, 0.5);
   display: flex;
   justify-content: space-around;
 }
-.edge-covers,
-#menu-bar {
+.edge-covers{
   background-color: rgba(47, 48, 97, 0.7);
 }
 #menu-bar {
@@ -53,6 +57,7 @@ header {
   font-size: 110%;
   font-weight: 600;
 }
+
 #menu-bar ul li a {
   cursor: pointer;
   font-size: larger;
@@ -81,6 +86,7 @@ header {
 
 #main-header {
   display: flex;
+  background-color: rgba(52, 52, 52, 0.5);
 }
 #profile-pic {
   overflow: hidden;
@@ -93,12 +99,12 @@ header {
   padding-left: 1%;
   overflow: hidden;
 }
-#inner-key-abouts {
+.inner-key-abouts {
   padding: 0 2vw;
 }
 /* ----------------------------------------------------- */
 #body {
-  background: rgba(47, 48, 97, .7);
+  background: rgba(47, 48, 97, 0.7);
   margin: 0px;
   padding-top: 30px;
   /* padding: 2vw; */
@@ -118,7 +124,7 @@ span.body-sections ul {
   padding: 3px 0;
   /* padding-top: 30px; */
   text-align: center;
-  background-color: rgba(160, 198, 215,.8);
+  background-color: rgba(160, 198, 215, 0.8);
   border-radius: 25px;
   color: black;
   border: 2px solid black;
@@ -147,7 +153,7 @@ span.body-sections ul {
   padding: 3vw;
   margin: 2.5vw 0;
   border-radius: 10px;
-  background-color: rgba(52, 52, 52,.9);
+  background-color: rgba(52, 52, 52, 0.9);
   border: 1px solid white;
   /* color: black; */
   list-style-type: none;
@@ -208,7 +214,7 @@ a.ext-link h3 {
 }
 /* ----------------------------------------------------------------------------------------------- */
 footer {
-  background-color: rgba(52, 52, 52,.9);
+  background-color: rgba(52, 52, 52, 0.9);
   color: black;
   margin: 0px;
   /* height: 20vh; */
