@@ -1,4 +1,6 @@
 <!-- @TODO add links to works at apt places
+    TODO add "Go to top" button
+    TODO reorder web-pages, make n new web pages for the sections of the 'about' part
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -8,10 +10,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Shyam | Web Developer</title>
+    <link rel="shortcut icon" href="./images/ProfilePic.jpg">
     <link rel="stylesheet" href="./css/generalStyle.css">
     <link rel="stylesheet" media="screen and (min-device-width: 950px" href="./css/desktop_style.css">
     <link rel="stylesheet" media="screen and (max-device-width: 950px" href="./css/smartphone_style.css">
-    <link rel="stylesheet" href="./css/contact_style.css">
 </head>
 
 <body>
@@ -24,19 +26,27 @@
             <span class="edge-covers" id="leftCover"> </span>
             <span id="menu-bar" class="stay-on-top">
                 <ul>
-                    <li class="outer-nav-li"><a class="outer-nav-a" id="home-tab" title="Home Page, in the making" href="index.html">Home</a></li>
-                     <li class="outer-nav-li" id="dropdown"><a class="outer-nav-a" id="about-tab" title="About Me" href="aboutEducation.html">About</a>
+                    <li class="outer-nav-li">
+                        <a class="outer-nav-a" id="home-tab" title="Home Page, in the making" href="index.html"
+                            >Home</a>
+                    </li>
+                    <li class="outer-nav-li" id="dropdown">
+                        <a class="outer-nav-a" id="about-tab" style="background-color: #f7fff7; color: black;" title="About Me" href="aboutEducation.html">About</a>
                         <div id="dropdown-content">
                             <a href="aboutEducation.html">My Academics</a>
-                            <a href="aboutPosition.html">Positions Worked Upon</a>
-                            <a href="aboutProject.html">Projects Worked Upon</a>
-                            <a href="aboutSkill.html">Technical Skills</a>
+                            <a href="aboutPositions.html">Positions Worked Upon</a>
+                            <a href="aboutProjects.html">Projects Worked Upon</a>
+                            <a href="aboutSkills.html">Technical Skills</a>
                             <a href="aboutHobbies.html">My Hobbies</a>
                         </div>
                     </li>
-                     <!-- <li class="outer-nav-li"><a class="outer-nav-a" id="shop-tab" title="Just a gap filler, for now😅" href="index.html">Shop</a></li> -->
-                     <li class="outer-nav-li"><a class="outer-nav-a" id="contact-tab" title="Contact Links" href="./contact.html" style="background-color: #f7fff7; color: #343434;" >Contact</a></li>
-                     <li class="outer-nav-li"><a class="outer-nav-a" id="else-tab" title="In the making" href="index.html">Else</a></li>
+                    <li class="outer-nav-li">
+                        <a class="outer-nav-a" id="contact-tab" title="Contact Links" href="./contact.html">Contact</a>
+                    </li>
+                    <li class="outer-nav-li">
+                        <a class="outer-nav-a" id="else-tab" title="In the making" href="index.html">Else</a>
+                    </li>
+
                 </ul>
             </span>
             <span class="edge-covers" id="rightCover"> </span>
@@ -82,28 +92,53 @@
         <!-- Floating Objects -->
 
         <!-- -------------------- -->
-        <h1>Contact Me</h1>
-        <span class="body-sections">
-            <h2>Social Media Links</h2>
+
+        <!-- Below part for navigation among about pages -->
+
+        <span class="nav-sub-pane">
+            <a class="nav-links" href="aboutProjects.html">
+                Projects Done
+            </a>
+            <a class="nav-links" href="aboutHobbies.html">Hobbies Enjoyed</a>
+        </span>
+
+        <!-- ------------------------------------------- -->
+
+        <h1>About</h1>
+        <span class="body-sections" id="skills">
+            <h2>Technical Skills</h2>
             <ul>
-                <li class="body-ul-li">
-                    <a class="ext-link" href="https://github.com/shyam-1024" target="_blank">
-                        <img src="./images/github.png" alt="GitHub Logo">
-                        <h3>GitHub</h3>
-                    </a>
-                    <a class="ext-link" href="https://www.linkedin.com/in/shyam-sundar-tiwari-780869208/" target="_blank">
-                        <img src="./images/linkedin.png" alt="LinkedIn Logo">
-                        <h3>LinkedIn</h3>
-                    </a>
-                    <a class="ext-link" href="https://www.instagram.com/everythingshyam/" target="_blank">
-                        <img src="./images/instagram.png" alt="Instagram Logo">
-                        <h3>Instagram</h3>
-                    </a>
-                    <a class="ext-link" href="https://twitter.com/verythingshyam" target="_blank">
-                        <img src="./images/twitter.png" alt="Twitter Logo">
-                        <h3>Instagram</h3>
-                    </a>
-                    
+                <li>
+                    <div class="li-img">
+                        <img src="./images/java2.jpg" alt="" title="Stock Image of Java Programming">
+                    </div>
+                    <div class="li-text">
+                        <h3>Java Programming</h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="li-img">
+                        <img src="./images/webDev1.jpg" alt="" title="Stock image of web development">
+                    </div>
+                    <div class="li-text">
+                        <h3>Front End Web Development</h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="li-img">
+                        <img src="./images/cpp1.jpg" alt="" title="Stock image of C++ Programming">
+                    </div>
+                    <div class="li-text">
+                        <h3>C, C++ Programming</h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="li-img">
+                        <img src="./images/dbms1.jpg" alt="" title="Stock image of mySQL">
+                    </div>
+                    <div class="li-text">
+                        <h3>Database Management (SQL)</h3>
+                    </div>
                 </li>
             </ul>
         </span>
@@ -122,3 +157,4 @@
 </body>
 
 </html>
+<!-- TODO add copyright free images to background -->

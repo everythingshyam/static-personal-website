@@ -165,7 +165,7 @@ span.body-sections ul {
   color: #8f908f;
 }
 .li-img img {
-  border-radius: 10px;
+  border-radius: 50%;
   height: 150px;
   width: 150px;
 }
@@ -176,6 +176,44 @@ span.body-sections ul {
   padding-top: 5px;
   margin-top: 4px;
 }
+
+
+
+span.nav-sub-pane{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+a.nav-links{
+  display: flex;
+  /* TODO width on the basis of no of letters in text */
+  width: 190px;
+  height: 20px;
+  overflow: hidden;
+  /* font-size: 100%; */
+
+  text-decoration: none;
+  font-weight: bolder;
+  color: black;
+  /* background-color: #a0c6d7; */
+  background-color: #ffe66d;
+  padding: 2px;
+  margin: 10px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+a.nav-links p{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+}
+a.nav-links:hover {
+  color: black;
+  background-color: white;
+}
+
 
 a.ext-link {
   display: flex;

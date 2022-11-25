@@ -1,8 +1,6 @@
 <!-- @TODO add links to works at apt places
     TODO add "Go to top" button
     TODO reorder web-pages, make n new web pages for the sections of the 'about' part
-    TODO add style to forward/backward navigation at top of about pages
-    TODO add 'go to top' button
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -30,10 +28,10 @@
                 <ul>
                     <li class="outer-nav-li">
                         <a class="outer-nav-a" id="home-tab" title="Home Page, in the making" href="index.html"
-                            style="background-color: #f7fff7; color: black;">Home</a>
+                            >Home</a>
                     </li>
                     <li class="outer-nav-li" id="dropdown">
-                        <a class="outer-nav-a" id="about-tab" title="About Me" href="aboutEducation.html">About</a>
+                        <a class="outer-nav-a" id="about-tab" style="background-color: #f7fff7; color: black;" title="About Me" href="aboutEducation.html">About</a>
                         <div id="dropdown-content">
                             <a href="aboutEducation.html">My Academics</a>
                             <a href="aboutPositions.html">Positions Worked Upon</a>
@@ -94,16 +92,79 @@
         <!-- Floating Objects -->
 
         <!-- -------------------- -->
-        <span class="body-sections">
+
+        <!-- Below part for navigation among about pages -->
+
+        <span class="nav-sub-pane">
+            <a class="nav-links" href="aboutSkills.html">
+                Skills Gained
+            </a>
+            <a class="nav-links" href="#">That's it!</a>
+        </span>
+
+        <!-- ------------------------------------------- -->
+
+        <h1>About</h1>
+        <span class="body-sections" id="hobbies">
+            <h2>My Hobbies</h2>
             <ul>
                 <li>
-                    <p>Go to about section, or contact page, for now😅</p>
+                    <div class="li-img">
+                        <img src="./images/photography1.jpg" alt="" title="One of my first best photos">
+                    </div>
+                    <div class="li-text">
+                        <h3>Photography</h3>
+                        <p>Have been fond of photography since we had a small cellphone with a camera.</p>
+                        <p>So far, have been practicing with smartphones only.</p>
+                        <p>At present, I have Redmi Note 10 Pro Max to practice with.</p>
+                        <p>Little experience with DSLRs as well.</p>
+                        <a class="ext-link" href="https://www.shutterstock.com/everythingshyam0" target="_blank"
+                            style="width: 220px;">
+                            <img src="./images/shutterstock.webp" alt="Shutterstock Logo">
+                            <h3>Shutterstock</h3>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="li-img">
+                        <img src="./images/travel1.jpg" alt=""
+                            title="my image in front of landscape with wide open hands">
+                    </div>
+                    <div class="li-text">
+                        <h3>Travelling</h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="li-img">
+                        <img src="./images/writing1.jpg" alt=""
+                            title="a snap of a hindi poem I wrote titled 'kagaj ki naav'">
+                    </div>
+                    <div class="li-text">
+                        <h3>Creative Writing</h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="li-img">
+                        <img src="./images/singing1.jpg" alt="" title="Stock image of close-up of a mic">
+                    </div>
+                    <div class="li-text">
+                        <h3>Singing</h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="li-img">
+                        <img src="./images/3dmodeling1.jpg" alt=""
+                            title="Cropped screenshot of a house 3D model I made">
+                    </div>
+                    <div class="li-text">
+                        <h3>3D Modelling</h3>
+                    </div>
                 </li>
             </ul>
         </span>
     </div>
     <!-- <div class="black-bg" id="seperator">
-    </div> -->
+     </div> -->
     <footer>
         <!-- Footer containing Contact Info, Privacy Policy -->
         <div id="quick-links">

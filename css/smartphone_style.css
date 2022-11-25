@@ -115,6 +115,25 @@ a.ext-link-header{
 
 /* --------------------------------------------------------------------------------------------- */
 
-
+span.nav-sub-pane{
+  flex-direction: column;
+  align-items: center;
+}
+.body-sections ul li{
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* .li-text{
+  display: block;
+  align-content: center;
+  align-items: center;
+} */
+.li-text p{
+  text-align: justify;
+  background-color: rgba(228, 226, 226,.2);
+  padding: 5px;
+  border-radius: 8px;
+}
 /* ----------------------------------------------------------------------------------------------- */
 
