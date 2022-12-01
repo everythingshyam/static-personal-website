@@ -29,7 +29,7 @@
             <span id="menu-bar" class="stay-on-top">
                 <ul>
                     <li class="outer-nav-li">
-                        <a class="outer-nav-a" id="home-tab" title="Home Page, in the making" href="index.html"
+                        <a class="outer-nav-a" id="home-tab" title="Home Page, in the making" href="#faceIntro"
                             style="background-color: #f7fff7; color: black;">Home</a>
                     </li>
                     <li class="outer-nav-li" id="dropdown">
@@ -87,7 +87,15 @@
 
     </header>
     <!-- Firstly create one section tag to create site sections -->
-
+    <!-- <div id="faceIntro">
+        <section class="faceIntro-inner">
+            <span class="posterTitle">
+                <h1>Hey...</h1>
+                <h1>I'm Shyam!</h1>
+            </span>
+            <img src="./images/PosterSelf1.png" alt="Big Poster of Shyam">
+        </section>
+    </div> -->
     <div id="body">
         <!-- this contains the main parts of web page, between header and footer -->
 
@@ -114,6 +122,11 @@
         </div>
     </footer>
 </body>
+
+<script src="./js/general.js">
+const PosterIntro=document.getElementById("posterIntro");
+PosterIntro.scrollIntoView();
+</script>
 
 </html>
 <!-- TODO add copyright free images to background -->

@@ -140,6 +140,35 @@ a.ext-link-header{
   justify-content:center;
 }
 
+#faceIntro{
+  height: 100vh;
+  /* background-color: #ffe66d; */
+}
+.faceIntro-inner{
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.faceIntro-inner .posterTitle{
+  color: #343434;
+  width: 60vw;
+  margin: auto;
+  /* justify-content: center; */
+  text-align: left;
+}
+.posterTitle{
+  font-size: 1cm;
+}
+.posterTitle h1{
+  padding: 0;
+  margin: 0;
+  padding-left: 12vw;
+
+}
+.faceIntro-inner img{
+  height: 100vh;
+}
+
 /* --------------------------------------------------------------------------------------------- */
 
 
