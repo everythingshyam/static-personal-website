@@ -5,16 +5,13 @@
 body {
   margin: 0px;
   padding: 0px;
-  /* font-family: cursive; */
   font-family: "Source Code Pro", monospace;
-  /* box model fix */
   box-sizing: border-box;
   background-image: url("../images/bg_img4.jpg");
 }
-/* img {
-  /* max-width: 100%;
-} */
+
 /* ----------------------------------------------------- */
+
 header {
   background-image: url("../images/bg_img3_vitaly-sacred-AgZwKKtFi-k-unsplash.jpg");
 }
@@ -33,12 +30,8 @@ header {
   border-bottom: 1px solid white;
   margin: 0px;
   color: #fcfcfc;
-  /* height: 40vh; */
-  /* padding: 2%; */
   background-color: rgba(52, 52, 52, 0.5);
-  /* display: flex; */
   justify-content: center;
-  /* font-size: 90%; */
 }
 
 #menu-bar-outer {
@@ -50,7 +43,6 @@ header {
   background-color: rgba(47, 48, 97, 0.7);
 }
 #menu-bar {
-  /* color: #f7fff7; */
   margin: 0;
   padding: 0;
   width: 90vw;
@@ -107,7 +99,6 @@ header {
   background: rgba(47, 48, 97, 0.7);
   margin: 0px;
   padding-top: 30px;
-  /* padding: 2vw; */
   color: whitesmoke;
 }
 span.body-sections {
@@ -122,7 +113,6 @@ span.body-sections ul {
   margin: 30px;
   margin-top: 0px;
   padding: 3px 0;
-  /* padding-top: 30px; */
   text-align: center;
   background-color: rgba(160, 198, 215, 0.8);
   border-radius: 25px;
@@ -155,7 +145,6 @@ span.body-sections ul {
   border-radius: 10px;
   background-color: rgba(52, 52, 52, 0.9);
   border: 1px solid white;
-  /* color: black; */
   list-style-type: none;
 }
 .li-img {
@@ -190,12 +179,10 @@ a.nav-links{
   width: 190px;
   height: 20px;
   overflow: hidden;
-  /* font-size: 100%; */
 
   text-decoration: none;
   font-weight: bolder;
   color: black;
-  /* background-color: #a0c6d7; */
   background-color: #ffe66d;
   padding: 2px;
   margin: 10px;
@@ -221,7 +208,6 @@ a.ext-link {
   width: 180px;
   height: 40px;
   overflow: hidden;
-  /* font-size: 100%; */
 
   text-decoration: none;
   color: black;
@@ -242,8 +228,6 @@ a.ext-link img {
 a.ext-link h3 {
   font-size: 22px;
   border-left: 2px solid black;
-  /* text-align: center; */
-  /* width: 140px; */
   padding: 0;
   padding-bottom: 4px;
   padding-left: 7px;
@@ -255,13 +239,11 @@ footer {
   background-color: rgba(52, 52, 52, 0.9);
   color: black;
   margin: 0px;
-  /* height: 20vh; */
   padding: 2%;
 }
 
 #quick-links {
   padding: 10px;
-  /* height: 20vh; */
   border: 2px solid black;
 }
 
@@ -273,8 +255,6 @@ footer ul li {
 @media (min-width: 550px) {
   footer ul li {
     display: inline;
-    /* margin:  10px 0; */
-    /* background-color: red; */
   }
 }
 

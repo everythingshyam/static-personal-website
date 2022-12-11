@@ -25,6 +25,7 @@
     </div>
     <header>
         <div id="menu-bar-outer">
+            <div class="menu-bar-inner"></div>
             <span class="edge-covers" id="leftCover"> </span>
             <span id="menu-bar" class="stay-on-top">
                 <ul>
@@ -123,9 +124,10 @@
     </footer>
 </body>
 
-<script src="./js/general.js">
-const PosterIntro=document.getElementById("posterIntro");
-PosterIntro.scrollIntoView();
+<script type="text/javascript">
+$(function() {
+    $(".menu-bar-inner").load("test1.html")
+});
 </script>
 
 </html>
