@@ -67,9 +67,12 @@ header {
 }
 
 #dropdown-content {
+  z-index: 100;
   border-radius: 10px;
   display: none;
   position: fixed;
+  left: 40vw;
+  top: 70px;
   background-color: rgba(47, 48, 97, 0.9);
   border: 2px solid white;
 }
@@ -205,8 +208,8 @@ a.nav-links:hover {
 a.ext-link {
   display: flex;
   /* TODO width on the basis of no of letters in text */
-  width: 180px;
-  height: 40px;
+  width: 160px;
+  height: 30px;
   overflow: hidden;
 
   text-decoration: none;
@@ -221,18 +224,46 @@ a.ext-link:hover {
   background-color: white;
 }
 a.ext-link img {
-  height: 30px;
+  height: 20px;
   padding: 5px;
   border-radius: 50%;
 }
 a.ext-link h3 {
-  font-size: 22px;
+  font-size: 18px;
   border-left: 2px solid black;
   padding: 0;
   padding-bottom: 4px;
   padding-left: 7px;
   margin: 8px;
   margin-left: 2px;
+}
+.go-to-top-outer{
+  display: block;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  right: 30vw;
+
+  /* margin-left: 20px; */
+  /* padding: 1px 4px; */
+  /* padding-top: 4px; */
+  padding:5px;
+  /* background-color: rgba(211, 218, 221, 0.6); */
+  width: fit-content;
+  align-items: center;
+  justify-content:center;
+}
+.go-to-top-outer a{
+  text-decoration: none;
+  color: black;
+  background-color: #a0c6d7;
+  padding: 6px 10px 3px 10px;
+  margin: 10px;
+  border-radius: 20px 20px 0px 0;
+}
+.go-to-top-outer a:hover{
+  color: black;
+  background-color: white;
 }
 /* ----------------------------------------------------------------------------------------------- */
 footer {
