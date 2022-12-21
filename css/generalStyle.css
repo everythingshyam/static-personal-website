@@ -39,8 +39,8 @@ header {
   display: flex;
   justify-content: space-around;
 }
-.edge-covers{
-  background-color: rgba(47, 48, 97, 0.7);
+.edge-covers, #menu-bar{
+  background-color: rgba(47, 48, 97, 0.3);
 }
 #menu-bar {
   margin: 0;
@@ -72,7 +72,7 @@ header {
   display: none;
   position: fixed;
   left: 40vw;
-  top: 70px;
+  top: 40px;
   background-color: rgba(47, 48, 97, 0.9);
   border: 2px solid white;
 }
@@ -164,7 +164,7 @@ span.body-sections ul {
 .li-text {
   width: 75vw;
 }
-.li-text h3 {
+.li-text.h3 {
   padding-top: 5px;
   margin-top: 4px;
 }
@@ -204,21 +204,6 @@ a.nav-links:hover {
   background-color: white;
 }
 
-
-a.ext-link {
-  display: flex;
-  /* TODO width on the basis of no of letters in text */
-  width: 160px;
-  height: 30px;
-  overflow: hidden;
-
-  text-decoration: none;
-  color: black;
-  background-color: #a0c6d7;
-  padding: 2px;
-  margin: 10px;
-  border-radius: 30px;
-}
 a.ext-link:hover {
   color: black;
   background-color: white;
@@ -231,11 +216,24 @@ a.ext-link img {
 a.ext-link h3 {
   font-size: 18px;
   border-left: 2px solid black;
-  padding: 0;
-  padding-bottom: 4px;
-  padding-left: 7px;
-  margin: 8px;
-  margin-left: 2px;
+  padding: 4px 5px;
+  padding-right: 10px;
+  margin: 0;
+}
+a.ext-link {
+  /* display: block; */
+  display: flex;
+  display: inline-flex;
+  height: 30px;
+  overflow: hidden;
+  
+  text-decoration: none;
+  color: black;
+  background-color: #a0c6d7;
+  margin: 10px;
+  padding: 2px;
+  border-radius: 30px;
+  /* width:fit-content; */
 }
 .go-to-top-outer{
   display: block;
@@ -244,11 +242,7 @@ a.ext-link h3 {
   bottom: 0;
   right: 30vw;
 
-  /* margin-left: 20px; */
-  /* padding: 1px 4px; */
-  /* padding-top: 4px; */
   padding:5px;
-  /* background-color: rgba(211, 218, 221, 0.6); */
   width: fit-content;
   align-items: center;
   justify-content:center;
