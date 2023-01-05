@@ -48,6 +48,7 @@ header {
   width: 90vw;
   font-size: 110%;
   font-weight: 600;
+  /* position: fixed; */
 }
 
 #menu-bar ul li a {
@@ -70,9 +71,10 @@ header {
   z-index: 100;
   border-radius: 10px;
   display: none;
-  position: fixed;
+  position:absolute;
+  /* position: relative; */
   left: 40vw;
-  top: 40px;
+  top: 75px;
   background-color: rgba(47, 48, 97, 0.9);
   border: 2px solid white;
 }
@@ -96,6 +98,9 @@ header {
 }
 .inner-key-abouts {
   padding: 0 2vw;
+}
+span.social-links{
+  background-color: rgba(36, 37, 37, 0.6);
 }
 /* ----------------------------------------------------- */
 #body {
@@ -171,30 +176,30 @@ span.body-sections ul {
 
 
 
-span.nav-sub-pane{
-  display: flex;
-  justify-content: space-between;
+.nav-sub-pane{
+  display: block;
+  align-content: center;
   padding-bottom: 10px;
 }
 a.nav-links{
-  display: flex;
-  /* TODO width on the basis of no of letters in text */
-  width: 190px;
-  height: 20px;
+  display: inline-block;
+  width: max-content;
+  /* height: 20px; */
   overflow: hidden;
 
   text-decoration: none;
   font-weight: bolder;
   color: black;
   background-color: #ffe66d;
-  padding: 2px;
+
+  padding: 2px 10px;
   margin: 10px;
   border-radius: 30px;
   display: flex;
-  justify-content: space-around;
+  text-align: center;
 }
 a.nav-links p{
-  text-align: center;
+  /* text-align: center; */
   margin: 0;
   padding: 0;
 
@@ -202,6 +207,14 @@ a.nav-links p{
 a.nav-links:hover {
   color: black;
   background-color: white;
+}
+span.social-links{
+  border: .2px solid rgba(211, 218, 221, 0.8);
+}
+a.ext-link-header{
+  border: .1px solid rgba(211, 218, 221, 0.4);
+  border-style: ridge;
+  
 }
 
 a.ext-link:hover {

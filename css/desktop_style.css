@@ -112,7 +112,6 @@ span.social-links{
   margin-left: 20px;
   padding: 1px 4px;
   padding-top: 4px;
-  background-color: rgba(36, 37, 37, 0.6);
   border-radius: 20px;
   width: fit-content;
   align-items: center;
@@ -168,6 +167,11 @@ a.ext-link-header{
 }
 .faceIntro-inner img{
   height: 100vh;
+}
+
+.nav-sub-pane{
+  display: flex;
+  justify-content: space-between;
 }
 
 /* --------------------------------------------------------------------------------------------- */
