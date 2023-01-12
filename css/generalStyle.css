@@ -248,6 +248,12 @@ a.ext-link {
   border-radius: 30px;
   /* width:fit-content; */
 }
+a.inactive-ext-link {
+  background-color: gray;
+}
+a.inactive-ext-link:hover{
+  background-color: gray;
+}
 .go-to-top-outer{
   display: block;
   position: fixed;
