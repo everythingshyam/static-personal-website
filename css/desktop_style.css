@@ -1,5 +1,7 @@
-/*started on 10th August, 2022
------------------------------------------------------------------------------------------------ */
+/* Stylesheet for desktop view */
+/*started on 10th August, 2022 */
+
+/* ----------------------------------------------------------------------------------------------- */
 
 header{
   background-size: 100vw;
@@ -35,12 +37,6 @@ header{
   margin-top: 50px;
 }
 
-/* TODO to set position of hover menu below  */
-/* The container <div> - needed to position the dropdown content */
-
-/* Dropdown Content (Hidden by Default) */
-
-
 /* Links inside the dropdown */
 #dropdown-content a {
   text-align: center;
@@ -64,10 +60,6 @@ header{
   display: inline-block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-
-
-
 /* ---------------------------------------------------------------------------------------------- */
 
 #profile-pic {
@@ -81,7 +73,6 @@ header{
 
 #profile-pic img {
   height: 30vh;
-  /* padding: 2vh; */
   margin: 2vh;
   float: right;
 }
@@ -120,13 +111,11 @@ span.social-links{
 a.ext-link-header{
   display: inline-block;
   height: 28px;
-  /* padding: 5px; */
   background-color: rgba(81, 81, 81, 0.3);
   border-radius: 20px;
   text-decoration: none;
   align-items: center;
   justify-content:center;
-  /* margin-bottom: 5px; */
 }
 .ext-link-header:hover{
   background-color: #f7fff7;
@@ -134,7 +123,7 @@ a.ext-link-header{
 .ext-link-header img{
   height: 20px;
   border-radius: 50%;
-  border: .5px solid rgba(228, 226, 226,.2);
+  border: .5px solid rgba(247, 242, 242, 0.001);
   padding: 4px;
   align-items: center;
   justify-content:center;
@@ -142,18 +131,15 @@ a.ext-link-header{
 
 #faceIntro{
   height: 100vh;
-  /* background-color: #ffe66d; */
 }
 .faceIntro-inner{
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
 }
 .faceIntro-inner .posterTitle{
   color: #343434;
   width: 60vw;
   margin: auto;
-  /* justify-content: center; */
   text-align: left;
 }
 .posterTitle{
@@ -175,6 +161,3 @@ a.ext-link-header{
 }
 
 /* --------------------------------------------------------------------------------------------- */
-
-
-/* ----------------------------------------------------------------------------------------------- */

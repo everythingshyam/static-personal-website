@@ -1,7 +1,7 @@
+/* General stylesheet */
+
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;700&display=swap");
 
-/* TODO Resolve aspect ratio issues of li-img images */
-/* TODO links like "View on GitHub to be overlaid on li-img images, when hover, the text of the link shows */
 body {
   margin: 0px;
   padding: 0px;
@@ -48,7 +48,6 @@ header {
   width: 90vw;
   font-size: 110%;
   font-weight: 600;
-  /* position: fixed; */
 }
 
 #menu-bar ul li a {
@@ -72,7 +71,6 @@ header {
   border-radius: 10px;
   display: none;
   position:absolute;
-  /* position: relative; */
   left: 40vw;
   top: 75px;
   background-color: rgba(47, 48, 97, 0.9);
@@ -174,8 +172,6 @@ span.body-sections ul {
   margin-top: 4px;
 }
 
-
-
 .nav-sub-pane{
   display: block;
   align-content: center;
@@ -184,7 +180,6 @@ span.body-sections ul {
 a.nav-links{
   display: inline-block;
   width: max-content;
-  /* height: 20px; */
   overflow: hidden;
 
   text-decoration: none;
@@ -198,19 +193,22 @@ a.nav-links{
   display: flex;
   text-align: center;
 }
+
 a.nav-links p{
-  /* text-align: center; */
   margin: 0;
   padding: 0;
 
 }
+
 a.nav-links:hover {
   color: black;
   background-color: white;
 }
+
 span.social-links{
   border: .2px solid rgba(211, 218, 221, 0.8);
 }
+
 a.ext-link-header{
   border: .1px solid rgba(211, 218, 221, 0.4);
   border-style: ridge;
@@ -221,11 +219,13 @@ a.ext-link:hover {
   color: black;
   background-color: white;
 }
+
 a.ext-link img {
   height: 20px;
   padding: 5px;
   border-radius: 50%;
 }
+
 a.ext-link h3 {
   font-size: 18px;
   border-left: 2px solid black;
@@ -233,8 +233,8 @@ a.ext-link h3 {
   padding-right: 10px;
   margin: 0;
 }
+
 a.ext-link {
-  /* display: block; */
   display: flex;
   display: inline-flex;
   height: 30px;
@@ -246,14 +246,16 @@ a.ext-link {
   margin: 10px;
   padding: 2px;
   border-radius: 30px;
-  /* width:fit-content; */
 }
+
 a.inactive-ext-link {
   background-color: gray;
 }
+
 a.inactive-ext-link:hover{
   background-color: gray;
 }
+
 .go-to-top-outer{
   display: block;
   position: fixed;
@@ -266,19 +268,25 @@ a.inactive-ext-link:hover{
   align-items: center;
   justify-content:center;
 }
+
 .go-to-top-outer a{
   text-decoration: none;
   color: black;
-  background-color: #a0c6d7;
+  background-color: rgba(124, 152, 246, 0.5);
+  border: 1.5px solid black;
+  border-bottom: none;
   padding: 6px 10px 3px 10px;
   margin: 10px;
   border-radius: 20px 20px 0px 0;
 }
+
 .go-to-top-outer a:hover{
   color: black;
   background-color: white;
 }
+
 /* ----------------------------------------------------------------------------------------------- */
+
 footer {
   background-color: rgba(52, 52, 52, 0.9);
   color: black;
