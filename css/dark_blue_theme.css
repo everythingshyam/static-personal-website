@@ -1,0 +1,139 @@
+#alert-bar {
+  background-color: rgba(160, 198, 215, 0.5);
+}
+
+#alert-bar marquee {
+  color: black;
+}
+
+header {
+  border-bottom: 1px solid white;
+  background-color: rgba(52, 52, 52, 0.5);
+}
+
+#menu-bar-outer {
+  background-color: rgba(52, 52, 52, 0.5);
+}
+
+.edge-covers,
+#menu-bar {
+  background-color: rgba(47, 48, 97, 0.3);
+}
+
+#menu-bar ul li a {
+  color: #f7fff7;
+}
+
+#menu-bar ul li a:hover {
+  background-color: rgba(247, 255, 247, 0.7);
+  color: black;
+}
+
+#dropdown-content {
+  background-color: rgba(47, 48, 97, 0.9);
+  border: 2px solid white;
+}
+
+#main-header {
+  background-color: rgba(52, 52, 52, 0.5);
+}
+#profile-pic img {
+  border: 2px solid white;
+}
+
+span.social-links {
+  background-color: rgba(36, 37, 37, 0.6);
+}
+
+#body {
+  background: rgba(47, 48, 97, 0.7);
+  color: whitesmoke;
+}
+
+#body h1 {
+  background-color: rgba(160, 198, 215, 0.8);
+}
+
+#body h2 {
+  background-color: #a0c6d7;
+  color: black;
+  border: 2px solid black;
+}
+
+#body li {
+  background-color: rgba(52, 52, 52, 0.9);
+  border: 1px solid white;
+}
+
+.li-img {
+  color: #8f908f;
+}
+
+a.nav-links {
+  color: black;
+  background-color: #ffe66d;
+}
+
+a.nav-links:hover {
+  color: black;
+  background-color: white;
+}
+
+span.social-links {
+  border: 0.2px solid rgba(211, 218, 221, 0.8);
+}
+
+a.ext-link-header {
+  border: 0.1px solid rgba(211, 218, 221, 0.4);
+}
+
+a.ext-link:hover {
+  color: black;
+  background-color: white;
+}
+
+a.ext-link h3 {
+  border-left: 2px solid black;
+}
+
+a.ext-link {
+  color: black;
+  background-color: #a0c6d7;
+}
+
+a.inactive-ext-link {
+  background-color: gray;
+}
+
+a.inactive-ext-link:hover {
+  background-color: gray;
+}
+
+.go-to-top-outer a {
+  color: black;
+  background-color: rgba(124, 152, 246, 0.5);
+  border: 1.5px solid black;
+}
+
+.go-to-top-outer a:hover {
+  color: black;
+  background-color: white;
+}
+
+footer {
+  background-color: rgba(52, 52, 52, 0.9);
+  color: black;
+}
+
+#quick-links {
+  border: 2px solid black;
+}
+
+footer ul li a {
+  color: #f7fff7;
+}
+
+footer ul li a:hover {
+  color: black;
+  background-color: #a0c6d7;
+}
