@@ -2,7 +2,10 @@
 /*started on 10th August, 2022 */
 
 /* ----------------------------------------------------------------------------------------------- */
-
+body{
+  /* min-width: 950px; */
+  /* min-width:max-content; */
+}
 header{
   background-size: 100vw;
 }

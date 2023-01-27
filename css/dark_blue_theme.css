@@ -1,3 +1,7 @@
+body {
+  background-image: url("../images/bg_img4.jpg");
+}
+
 #alert-bar {
   background-color: rgba(160, 198, 215, 0.5);
 }
@@ -9,6 +13,7 @@
 header {
   border-bottom: 1px solid white;
   background-color: rgba(52, 52, 52, 0.5);
+  background-image: url("../images/bg_img3_vitaly-sacred-AgZwKKtFi-k-unsplash.jpg");
 }
 
 #menu-bar-outer {

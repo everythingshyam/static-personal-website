@@ -1,5 +1,8 @@
 /* General stylesheet */
 
+/* Background colors and images, themes */
+@import url(./dark_bright_black_theme.css);
+/* External fonts */
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;700&display=swap");
 
 body {
@@ -7,14 +10,9 @@ body {
   padding: 0px;
   font-family: "Source Code Pro", monospace;
   box-sizing: border-box;
-  background-image: url("../images/bg_img4.jpg");
 }
 
 /* ----------------------------------------------------- */
-
-header {
-  background-image: url("../images/bg_img3_vitaly-sacred-AgZwKKtFi-k-unsplash.jpg");
-}
 
 #alert-bar {
   height: 30px;
@@ -88,6 +86,7 @@ header {
 #body {
   margin: 0px;
   padding-top: 30px;
+  padding-bottom: 30px;
 }
 span.body-sections {
   margin: 0;
@@ -250,3 +249,4 @@ footer ul li a {
   border-radius: 5px;
   text-decoration: none;
 }
+
