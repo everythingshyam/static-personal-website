@@ -16,7 +16,11 @@ body {
   header {
     border-bottom: 1px solid white;
     background-image: url("../images/Background/payal-asher-JqRVxCHEoaw-unsplash.jpg");
-    background-size: auto;
+    background-size: 150%;
+    @media (min-width: 950px) {
+      background-size: cover;
+    }
+    background-position: top right;
     /* TODO below blur not working */
     backdrop-filter: blur(10px);
     background-color: rgba(52, 52, 52, 1);
