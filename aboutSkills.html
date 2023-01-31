@@ -20,17 +20,20 @@
         <marquee behavior="scroll" direction="left">This website is still work in progress😅. By
             it's current look, you can guess how awesome it's gonna be😁</marquee>
     </div>
-    <header  id="header">
-        <div id="menu-bar-outer">
+    <header id="header">
+        <div class="menu-bar-outer">
+            <div class="menu-btn">
+                <img onclick="menu_click()" src="./images/icons/icons8-menu-rounded-50.png" alt="Hamburger menu icon">
+            </div>
             <span class="edge-covers" id="leftCover"> </span>
             <span id="menu-bar" class="stay-on-top">
                 <ul>
                     <li class="outer-nav-li">
-                        <a class="outer-nav-a" id="home-tab" title="Home Page, in the making" href="index.html"
-                            >Home</a>
+                        <a class="outer-nav-a" id="home-tab" title="Home Page, in the making" href="index.html">Home</a>
                     </li>
                     <li class="outer-nav-li" id="dropdown">
-                        <a class="outer-nav-a" id="about-tab" style="background-color: #f7fff7; color: black;" title="About Me" href="aboutEducation.html">About</a>
+                        <a class="outer-nav-a" id="about-tab" style="background-color: #f7fff7; color: black;"
+                            title="About Me" href="aboutEducation.html">About</a>
                         <div id="dropdown-content">
                             <a href="aboutEducation.html">My Academics</a>
                             <a href="aboutPositions.html">Positions Worked Upon</a>
@@ -158,6 +161,7 @@
         </div>
     </footer>
 </body>
+<script src="./js/general.js"></script>
 
 </html>
 <!-- TODO add copyright free images to background -->

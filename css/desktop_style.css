@@ -2,40 +2,39 @@
 /*started on 10th August, 2022 */
 
 /* ----------------------------------------------------------------------------------------------- */
-body{
-  /* min-width: 950px; */
-  /* min-width:max-content; */
-}
-header{
+header {
   background-size: 100vw;
+}
+.menu-bar-outer {
+  display: flex;
+}
+.menu-btn {
+  display: none;
 }
 .edge-covers {
   width: 5vw;
   height: 50px;
-  /* display:flex; */
 }
-#leftCover{
-    border-bottom-left-radius: 90%;
-    border-bottom: 1px solid white;
+#leftCover {
+  border-bottom-left-radius: 90%;
+  border-bottom: 1px solid white;
 }
-#rightCover{
-    border-bottom-right-radius: 90%;
-    border-bottom: 1px solid white;
+#rightCover {
+  border-bottom-right-radius: 90%;
+  border-bottom: 1px solid white;
 }
 #menu-bar {
   height: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   border-bottom: 1px solid white;
 }
 
-
-#menu-bar ul li{
+#menu-bar ul li {
   display: inline;
 }
-#menu-bar ul li a.outer-nav-a{
+#menu-bar ul li a.outer-nav-a {
   border-radius: 10px 10px 0 0;
-  /* border-bottom: 0; */
   padding: 1vh 4vw 6px;
   margin-top: 50px;
 }
@@ -43,24 +42,31 @@ header{
 /* Links inside the dropdown */
 #dropdown-content a {
   text-align: center;
-  border-radius: 0px;
+  /* border-radius: 0px; */
   color: white;
-  border-radius: 5px;
+  /* border-radius: 5px 0px 5px; */
   padding: 8px;
   border-bottom: 1px solid white;
   text-decoration: none;
   display: block;
 }
-
+#dropdown-content a:last-child {
+  border-bottom: 0px;
+  border-radius: 0 0 8px 8px;
+}
 /* Change color of dropdown links on hover */
 #dropdown-content a:hover {
-  background-color: rgba(247, 255, 247,.5);
+  background-color: rgba(247, 255, 247, 0.5);
   color: #343434;
 }
 
 /* Show the dropdown menu on hover */
 #dropdown:hover #dropdown-content {
   display: inline-block;
+  position: absolute;
+  top: 50px;
+  border-radius: 0 0 10px 10px;
+  border-top: 0px;
 }
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -91,7 +97,7 @@ header{
 .inner-key-abouts2 {
   padding: 0 2vw;
 }
-.inner-key-abouts .inner-key-abouts2{
+.inner-key-abouts .inner-key-abouts2 {
   float: left;
 }
 .inner-key-abouts h1 {
@@ -101,64 +107,62 @@ header{
   margin-bottom: 0;
 }
 
-
-span.social-links{
+span.social-links {
   margin-left: 20px;
   padding: 1px 4px;
   padding-top: 4px;
   border-radius: 20px;
   width: fit-content;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
 }
-a.ext-link-header{
+a.ext-link-header {
   display: inline-block;
   height: 28px;
   background-color: rgba(81, 81, 81, 0.3);
   border-radius: 20px;
   text-decoration: none;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
 }
-.ext-link-header:hover{
+.ext-link-header:hover {
   background-color: #f7fff7;
 }
-.ext-link-header img{
+.ext-link-header img {
   height: 20px;
   border-radius: 50%;
-  border: .5px solid rgba(247, 242, 242, 0.001);
+  border: 0.5px solid rgba(247, 242, 242, 0.001);
   padding: 4px;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
 }
 
-#faceIntro{
+#faceIntro {
   height: 100vh;
 }
-.faceIntro-inner{
+.faceIntro-inner {
   display: flex;
   justify-content: space-between;
 }
-.faceIntro-inner .posterTitle{
+.faceIntro-inner .posterTitle {
   color: #343434;
   width: 60vw;
   margin: auto;
   text-align: left;
 }
-.posterTitle{
+.posterTitle {
   font-size: 1cm;
 }
-.posterTitle h1{
+.posterTitle h1 {
   padding: 0;
   margin: 0;
   padding-left: 12vw;
-
 }
-.faceIntro-inner img{
+.faceIntro-inner img {
   height: 100vh;
 }
 
-.nav-sub-pane{
+.nav-sub-pane {
   display: flex;
   justify-content: space-between;
 }

@@ -2,6 +2,7 @@
  -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,8 +23,10 @@
             it's current look, you can guess how awesome it's gonna be😁</marquee>
     </div>
     <header id="header">
-        <div id="menu-bar-outer">
-            <div class="menu-bar-inner"></div>
+        <div class="menu-bar-outer">
+            <div class="menu-btn">
+                <img onclick="menu_click()" src="./images/icons/icons8-menu-rounded-50.png" alt="Hamburger menu icon">
+            </div>
             <span class="edge-covers" id="leftCover"> </span>
             <span id="menu-bar" class="stay-on-top">
                 <ul>
@@ -99,7 +102,7 @@
                 </li>
             </ul>
         </span>
-        
+
     </div>
     <div class="go-to-top-outer">
         <a href="#header">Go To Top</a>
@@ -114,12 +117,7 @@
         </div>
     </footer>
 </body>
-
-<script type="text/javascript">
-$(function() {
-    $(".menu-bar-inner").load("test1.html")
-});
-</script>
+<script src="./js/general.js"></script>
 
 </html>
 <!-- TODO add copyright free images to background -->

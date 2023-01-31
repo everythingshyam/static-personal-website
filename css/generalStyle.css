@@ -1,4 +1,7 @@
 /* General stylesheet */
+/*
+  @todo go to top btn not showing wrt viewport
+*/
 
 /* Background colors and images, themes */
 @import url(./dark_bright_black_theme.css);
@@ -249,4 +252,3 @@ footer ul li a {
   border-radius: 5px;
   text-decoration: none;
 }
-

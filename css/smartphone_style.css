@@ -1,31 +1,58 @@
 /* Stylesheet for smartphone view */
 /* ---------------------------------------------------------------------------------------------- */
 
+.menu-bar-outer {
+  /* display: none; */
+  background-color: rgba(52, 52, 52, 0.5);
+  /* border-bottom: 0.5px dashed whitesmoke; */
+}
+.menu-btn {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.menu-btn img {
+  margin: 15px;
+  background-color: rgba(190, 190, 190, 0.4);
+  border-radius: 5px;
+  border: 1px solid whitesmoke;
+  width: 35px;
+  padding: 2px 4px;
+}
+.menu-btn img:hover {
+  background-color: rgba(190, 190, 190, 0.7);
+  cursor: pointer;
+}
+/* .menu-btn:hover #menu-bar {
+  display: block;
+} */
 .edgeCovers {
   display: none;
 }
 #menu-bar {
+  /* justify-content: space-around; */
+  /* background-color: rgba(190, 190, 190, 0.2); */
+  display: none;
   border-radius: 10px;
+  /* width: 100vw; */
 }
-
 #menu-bar ul {
   padding: 15px;
   padding-top: 5px;
   margin: 0;
   border-radius: 10px;
-  border-top-left-radius:0 ;
+  border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-top: none;
 }
 
-#menu-bar ul li{
+#menu-bar ul li {
   cursor: pointer;
   margin: 7px;
   border-radius: 5px;
   border-bottom: 1px solid whitesmoke;
 }
 
-#menu-bar ul li a{
+#menu-bar ul li a {
   border-radius: 5px;
   display: block;
   width: inherit;
@@ -72,56 +99,55 @@
   display: none;
 }
 
-
-span.social-links{
+span.social-links {
   display: block;
 
   position: fixed;
   z-index: 100;
   bottom: 40px;
-  left:0px;
+  left: 0px;
   padding: 7px 6px 7px 2px;
   border-radius: 0px 20px 20px 0;
- 
+
   border-left: none;
   width: fit-content;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
 }
 
-a.ext-link-header{
+a.ext-link-header {
   display: block;
   height: 28px;
   border-radius: 20px;
   text-decoration: none;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
 }
 
-.ext-link-header img{
+.ext-link-header img {
   height: 20px;
   border-radius: 50%;
   padding: 4px;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
 }
 
 /* --------------------------------------------------------------------------------------------- */
 
-.nav-sub-pane{
+.nav-sub-pane {
   flex-direction: column;
   align-items: center;
 }
-a.nav-links{
+a.nav-links {
   margin: 10px auto;
 }
-.body-sections ul li{
+.body-sections ul li {
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.li-text p{
+.li-text p {
   text-align: justify;
   padding: 5px;
   border-radius: 8px;
