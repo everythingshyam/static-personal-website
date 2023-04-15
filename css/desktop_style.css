@@ -58,6 +58,7 @@ header {
 #dropdown-content a:hover {
   background-color: rgba(247, 255, 247, 0.5);
   color: #343434;
+  /* transition: .2s; */
 }
 
 /* Show the dropdown menu on hover */

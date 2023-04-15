@@ -15,6 +15,10 @@ body {
   box-sizing: border-box;
 }
 
+a:hover{
+  transition: .2s;
+}
+
 /* ----------------------------------------------------- */
 
 #alert-bar {
@@ -26,7 +30,65 @@ body {
 #alert-bar marquee {
   padding: 5px;
 }
+/* -------------------------------------- */
+.theme-bar{
+  display: grid;
+  width: 15vw;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(252, 252, 252,.6);
+  border-radius: 30px;
 
+  grid-template-columns: 1fr 2.5fr;
+
+  position: fixed;
+  bottom: 30vh;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.theme-bar>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-btn{
+  /* display: none; */
+
+  opacity: .7;
+
+}
+.theme-btn img{
+  border-radius: 50%;
+  border: 5px solid black;
+  width: 3vw;
+}
+.theme-btn:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.theme-menu{
+  display: block;
+
+  display: none;
+
+  grid-column: 1/3;
+}
+.theme-menu>li{
+  list-style-type: none;
+}
+
+.theme-menu>li>ul>a{
+  text-decoration: none;
+  color: black;
+}
+.theme-menu>li>ul:nth-child(2n+1){
+  background-color: green;
+}
+
+/* ----------------------------------------- */
 header {
   margin: 0px;
   color: #fcfcfc;
@@ -148,6 +210,9 @@ span.body-sections ul {
   padding-top: 5px;
   margin-top: 4px;
 }
+.li-text>h3>sup{
+  color: yellow;
+}
 
 .nav-sub-pane {
   display: block;
@@ -201,6 +266,19 @@ a.ext-link {
   margin: 10px;
   padding: 2px;
   border-radius: 30px;
+}
+
+a.ext-link-inline{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background-color: rgba(252, 252, 252,.4);
+  padding: 5px;
+  border-radius: 7px;
+}
+
+a.ext-link-inline:hover{
+  background-color: whitesmoke;
 }
 
 .go-to-top-outer {

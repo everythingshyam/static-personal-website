@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./css/contact_style.css">
 </head>
 
+<!-- TODO add contact form to send message directly to my mail -->
 <body>
     <div id="alert-bar">
         <marquee behavior="scroll" direction="left">This website is still work in progress😅. By
@@ -116,6 +117,23 @@
                 </li>
             </ul>
         </span>
+        <span class="body-sections">
+            <h2>Send message</h2>
+            <ul>
+                <li class="body-ul-li message-form-outer">
+                    <!-- <form onsubmit="sendMessage(); reset(); return false" class="message-form"> -->
+                    <form action="https://formsubmit.co/s1024creative@gmail.com" method="POST" class="message-form">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name">
+                        <label for="email">Email ID</label>
+                        <input type="email" name="email" id="email">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message here"></textarea>
+                        <input type="submit" value="Submit" class="submit-btn">
+                    </form>
+                </li>
+            </ul>
+        </span>
     </div>
     <div class="go-to-top-outer">
         <a href="#header">Go To Top</a>
@@ -132,6 +150,37 @@
         </div>
     </footer>
 </body>
+<style>
+    .message-form-outer{
+        display: flex;
+        justify-content: space-around;
+    }
+    .message-form{
+        display: flex;
+        justify-content: center;
+        align-items: left;
+        flex-direction: column;
+        width: 60vw;
+        font-weight: bold;
+    }
+    .message-form>*{
+        padding: 5px;
+        border-radius: 10px;
+    }
+    .message-form>input, textarea{
+        border: 3px solid black;
+
+    }
+    .submit-btn{
+        margin: 10px 0px;
+    }
+    .submit-btn:hover{
+        background-color: #343434;
+        color: whitesmoke;
+        cursor: pointer;
+    }
+</style>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="./js/general.js"></script>
 
 </html>
