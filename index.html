@@ -1,5 +1,6 @@
 <!-- @TODO add links to works at apt places
  @TODO finish Theme Menu Bar
+ @TODO height systems to be changed, especially for situations when total height of content is less than that of screen
 
 
 -->
@@ -18,26 +19,16 @@
     <link rel="stylesheet" media="screen and (min-device-width: 950px" href="./css/desktop_style.css">
     <!-- Smartphone CSS -->
     <link rel="stylesheet" media="screen and (max-device-width: 950px" href="./css/smartphone_style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-    <div id="alert-bar">
-        <marquee behavior="scroll" direction="left">This website is still work in progress😅. By
-            it's current look, you can guess how awesome it's gonna be😁</marquee>
-    </div>
-    <!-- <div class="theme-bar">
-        <div class="theme-menu">
-            <li>
-                <ul><a href="#">Gray Scale</a></ul>
-                <ul><a href="#">Dark Blue-Pink</a></ul>
-                <ul><a href="#">Gray Scale</a></ul>
-            </li>
-        </div>
-        <div class="theme-btn"><img src="./images/themeIcon.png" alt="Change Theme Icon"></div>
-        <div class="theme-headline"><em>Choose Theme</em></div>
-    </div> -->
-    <!-- This is a comment -->
     <header id="header">
+        <div class="header-sub">
+        <div id="alert-bar">
+            <marquee behavior="scroll" direction="left">This website is still work in progress😅. By
+                it's current look, you can guess how awesome it's gonna be😁</marquee>
+        </div>
         <div class="menu-bar-outer">
             <div class="menu-btn">
                 <img onclick="menu_click()" src="./images/icons/icons8-menu-rounded-50.png" alt="Hamburger menu icon">
@@ -46,12 +37,11 @@
             <span id="menu-bar" class="stay-on-top">
                 <ul>
                     <li class="outer-nav-li">
-                        <a class="outer-nav-a" id="home-tab" title="Home Page, in the making" href="#faceIntro"
-                            style="background-color: #f7fff7; color: black;">Home</a>
+                        <a class="outer-nav-a active-tab" id="home-tab" title="Home Page, in the making" href="index.html">Home</a>
                     </li>
                     <li class="outer-nav-li" id="dropdown">
                         <a class="outer-nav-a" id="about-tab" title="About Me" href="aboutEducation.html">About</a>
-                        <div id="dropdown-content">
+                        <div id="dropdown-content" class="blur-1">
                             <a href="aboutEducation.html">My Academics</a>
                             <a href="aboutPositions.html">Positions Worked Upon</a>
                             <a href="aboutProjects.html">Projects Worked Upon</a>
@@ -65,47 +55,12 @@
                     <li class="outer-nav-li">
                         <a class="outer-nav-a" id="else-tab" title="In the making" href="index.html">Else</a>
                     </li>
-
                 </ul>
             </span>
             <span class="edge-covers" id="rightCover"> </span>
         </div>
-        <!-- Header, having profile pic, Overall Info -->
-        <div id="main-header">
-            <div id="profile-pic">
-                <img src="./images/ProfilePic/ProfilePic.jpg"
-                    alt="Image of Shyam with confident expression, in college uniform, posterized">
-            </div>
-            <div id="key-abouts">
-                <span class="inner-key-abouts">
-                    <h1>Shyam Sundar Tiwari</h1>
-                    <h2>Web Developer, Tech Enthusiast</h2>
-                </span>
-                <span class="inner-key-abouts2">
-                    <h3>Photography & Content Cell Co-head, CESA-ACM, PCCOE</h3>
-                    <h3>Co-content Head, GDSC'22, PCCOE</h3>
-                    <!-- <h3>TY B. Tech. (Comp) at PCCOE, Pune.</h3> -->
-                </span>
-                <span class="inner-key-abouts2 social-links">
-                    <a class="ext-link-header" href="https://linktr.ee/everythingshyam" target="_blank">
-                        <img src="./images/icons/linktree.jpeg" alt="linktree Logo" title="Visit my linktree page">
-                    </a>
-                    <a class="ext-link-header" href="https://github.com/shyam-1024" target="_blank">
-                        <img src="./images/github.png" alt="GitHub Logo" title="Visit my github page">
-                    </a>
-                    <a class="ext-link-header" href="https://www.linkedin.com/in/shyam-sundar-tiwari-780869208/"
-                        target="_blank">
-                        <img src="./images/linkedin.png" alt="LinkedIn Logo" title="Visit my linkedin page">
-                    </a>
-                    <a class="ext-link-header" href="https://www.instagram.com/everythingshyam/" target="_blank">
-                        <img src="./images/instagram.png" alt="Instagram Logo" title="Visit my instagram page">
-                    </a>
-                    <a class="ext-link-header" href="https://twitter.com/verythingshyam" target="_blank">
-                        <img src="./images/twitter.png" alt="Twitter Logo" title="Visit my twitter page">
-                    </a>
-                </span>
-            </div>
-
+        <div class="header-import" id="home-tab-header">Failed to load header</div>
+    </div>
     </header>
     <div id="body">
         <!-- this contains the main parts of web page, between header and footer -->
@@ -116,26 +71,40 @@
         <span class="body-sections">
             <ul>
                 <li>
-                    <p>Go to about section, or contact page, for now😅</p>
+                    <p>This section in currently in making.</p>
+                </li>
+                <li>
+                    <p>Go to about section for now.</p>
                 </li>
             </ul>
         </span>
 
     </div>
+    <!-- TODO put this below div in a seperate file "overlays.html", for all files -->
     <div class="go-to-top-outer">
         <a href="#header">Go To Top</a>
     </div>
-    <footer>
-        <!-- Footer containing Contact Info, Privacy Policy -->
-        <div id="quick-links">
-            <ul>
-                <li><a href="mailto:s1024creative@gmail.com">Contact Us</a></li>
-                <li><a href="#" title="Use 'contact us' for now">Feedback/Report</a></li>
-            </ul>
-        </div>
-    </footer>
+    <footer class="footer-import" id="footer"></footer>
 </body>
-<script src="./js/general.js"></script>
+<script src="./js/general.js">
+    // activateTab();
+</script>
+<script class="page-specific-js">
+    // console.log("Setting height of mid body");
 
+    // var screen_h=window.innerHeight;
+    // var header_h=document.getElementById("header").offsetHeight;
+    // var footer_h=document.getElementById("footer").offsetHeight;
+    // console.log("Height of screen = "+screen_h);
+    // console.log("Height of header = "+header_h);
+    // console.log("Height of footer = "+footer_h);
+
+    // var midbody_h=screen_h-(header_h+footer_h);
+    // console.log("Height of midbody calculated = "+midbody_h);
+    
+    // const midbody=document.getElementById("body");
+    // midbody.style.height=midbody_h;
+    // console.log("Height of mid body set successfully");
+</script>
 </html>
 <!-- TODO add copyright free images to background -->

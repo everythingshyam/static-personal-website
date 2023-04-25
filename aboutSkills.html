@@ -13,14 +13,15 @@
     <link rel="stylesheet" media="screen and (min-device-width: 950px" href="./css/desktop_style.css">
     <!-- Smartphone CSS -->
     <link rel="stylesheet" media="screen and (max-device-width: 950px" href="./css/smartphone_style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-    <div id="alert-bar">
-        <marquee behavior="scroll" direction="left">This website is still work in progress😅. By
-            it's current look, you can guess how awesome it's gonna be😁</marquee>
-    </div>
     <header id="header">
+        <div id="alert-bar">
+            <marquee behavior="scroll" direction="left">This website is still work in progress😅. By
+                it's current look, you can guess how awesome it's gonna be😁</marquee>
+        </div>
         <div class="menu-bar-outer">
             <div class="menu-btn">
                 <img onclick="menu_click()" src="./images/icons/icons8-menu-rounded-50.png" alt="Hamburger menu icon">
@@ -31,10 +32,9 @@
                     <li class="outer-nav-li">
                         <a class="outer-nav-a" id="home-tab" title="Home Page, in the making" href="index.html">Home</a>
                     </li>
-                    <li class="outer-nav-li" id="dropdown">
-                        <a class="outer-nav-a" id="about-tab" style="background-color: #f7fff7; color: black;"
-                            title="About Me" href="aboutEducation.html">About</a>
-                        <div id="dropdown-content">
+                    <li class="outer-nav-li active-tab" id="dropdown">
+                        <a class="outer-nav-a" id="about-tab" title="About Me" href="aboutEducation.html">About</a>
+                        <div id="dropdown-content" class="blur-1">
                             <a href="aboutEducation.html">My Academics</a>
                             <a href="aboutPositions.html">Positions Worked Upon</a>
                             <a href="aboutProjects.html">Projects Worked Upon</a>
@@ -48,47 +48,11 @@
                     <li class="outer-nav-li">
                         <a class="outer-nav-a" id="else-tab" title="In the making" href="index.html">Else</a>
                     </li>
-
                 </ul>
             </span>
             <span class="edge-covers" id="rightCover"> </span>
         </div>
-        <!-- Header, having profile pic, Overall Info -->
-        <div id="main-header">
-            <div id="profile-pic">
-                <img src="./images/ProfilePic/ProfilePic.jpg"
-                    alt="Image of Shyam with confident expression, in college uniform, posterized">
-            </div>
-            <div id="key-abouts">
-                <span class="inner-key-abouts">
-                    <h1>Shyam Sundar Tiwari</h1>
-                    <h2>Web Developer, Tech Enthusiast</h2>
-                </span>
-                <span class="inner-key-abouts2">
-                    <h3>Photography & Content Cell Co-head, CESA-ACM, PCCOE</h3>
-                    <h3>Co-content Head, GDSC'22, PCCOE</h3>
-                    <!-- <h3>TY B. Tech. (Comp) at PCCOE, Pune.</h3> -->
-                </span>
-                <span class="inner-key-abouts2 social-links">
-                    <a class="ext-link-header" href="https://linktr.ee/everythingshyam" target="_blank">
-                        <img src="./images/icons/linktree.jpeg" alt="linktree Logo" title="Visit my linktree page">
-                    </a>
-                    <a class="ext-link-header" href="https://github.com/shyam-1024" target="_blank">
-                        <img src="./images/github.png" alt="GitHub Logo" title="Visit my github page">
-                    </a>
-                    <a class="ext-link-header" href="https://www.linkedin.com/in/shyam-sundar-tiwari-780869208/"
-                        target="_blank">
-                        <img src="./images/linkedin.png" alt="LinkedIn Logo" title="Visit my linkedin page">
-                    </a>
-                    <a class="ext-link-header" href="https://www.instagram.com/everythingshyam/" target="_blank">
-                        <img src="./images/instagram.png" alt="Instagram Logo" title="Visit my instagram page">
-                    </a>
-                    <a class="ext-link-header" href="https://twitter.com/verythingshyam" target="_blank">
-                        <img src="./images/twitter.png" alt="Twitter Logo" title="Visit my twitter page">
-                    </a>
-                </span>
-            </div>
-
+    <div class="header-import" id="home-tab-header">Failed to load header</div>
     </header>
     <!-- Firstly create one section tag to create site sections -->
 
@@ -154,15 +118,7 @@
     </div>
     <!-- <div class="black-bg" id="seperator">
      </div> -->
-    <footer>
-        <!-- Footer containing Contact Info, Privacy Policy -->
-        <div id="quick-links">
-            <ul>
-                <li><a href="mailto:s1024creative@gmail.com">Contact Us</a></li>
-                <li><a href="#" title="Use 'contact us' for now">Feedback/Report</a></li>
-            </ul>
-        </div>
-    </footer>
+     <footer class="footer-import"></footer>
 </body>
 <script src="./js/general.js"></script>
 

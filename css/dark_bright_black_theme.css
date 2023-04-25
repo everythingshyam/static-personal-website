@@ -6,6 +6,13 @@ body {
   /* background-color: rgb(0, 0, 0); */
 }
 
+.blur-1{
+  backdrop-filter: blur(1px);
+}
+.blur-2{
+  backdrop-filter: blur(2px);
+}
+
 #alert-bar {
   background-color: rgba(234, 245, 250, 0.5);
 }
@@ -23,12 +30,12 @@ header {
   }
   background-position: top right;
   /* TODO below blur not working */
-  backdrop-filter: blur(10px);
   background-color: rgba(52, 52, 52, 1);
 }
 
 #menu-bar-outer {
   background-color: rgba(52, 52, 52, 0.4);
+  /* backdrop-filter: blur(2px); */
 }
 
 .edge-covers,
@@ -48,10 +55,16 @@ header {
 #dropdown-content {
   background-color: rgba(35, 35, 35, 0.9);
   border: 2px solid white;
+  /* backdrop-filter: blur(1px); */
+}
+.active-tab{
+  color: black !important;
+  background-color: #f7fff7 !important;
 }
 
 #main-header {
   background-color: rgba(52, 52, 52, 0.5);
+  /* backdrop-filter: blur(2px); */
 }
 #profile-pic img {
   border: 2px solid white;

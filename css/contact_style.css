@@ -4,3 +4,43 @@
     display: flex;
     flex-wrap: wrap;
 }
+.message-form-outer{
+    display: flex;
+    justify-content: space-around;
+}
+.message-form{
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    width: 60vw;
+    font-weight: bold;
+}
+.message-form>*{
+    padding: 5px;
+    border-radius: 10px;
+}
+.message-form>label{
+    color: #ddd;
+}
+.message-form>label:hover{
+    cursor: pointer;
+    color: #fff;
+}
+.message-form>input, textarea{
+    border: 3px solid black;
+}
+.message-form>:hover, .message-form>textarea:hover{
+    opacity: 90%;
+}
+.message-form>input, .message-form>textarea{
+    opacity: 80%;
+}
+.submit-btn{
+    margin: 10px 0px;
+}
+.submit-btn:hover{
+    background-color: #343434;
+    color: whitesmoke;
+    cursor: pointer;
+}
