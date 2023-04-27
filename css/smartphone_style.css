@@ -1,4 +1,7 @@
 /* Stylesheet for smartphone view */
+/* 
+TODO span.social links sticky position not working
+*/
 /* ---------------------------------------------------------------------------------------------- */
 
 .menu-bar-outer {
@@ -103,8 +106,10 @@ span.social-links {
   display: block;
 
   position: fixed;
+  /* position: sticky; */
   z-index: 100;
-  bottom: 40px;
+  /* top: 0; */
+  top: 75vh;
   left: 0px;
   padding: 7px 6px 7px 2px;
   border-radius: 0px 20px 20px 0;
