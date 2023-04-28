@@ -3,8 +3,10 @@
 // import sendToEmail from "./credentials.js";
 // ----------------------------------------------------------------------------------------
 // RUN AT STARTUP SEGMENT
-importHeader();
-importFooter();
+loadHTML("header-import", "../header.html");
+// importHeader();
+loadHTML("footer-import", "../footer.html");
+// importFooter();
 // ----------------------------------------------------------------------------------------
 // TESTING SECTION
 // console.log(sendToEmail)
@@ -23,31 +25,50 @@ function menu_click() {
     menu_click_count = 0;
   }
   //   menu_click_count += 1;
-  
 }
 // ----------------------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------------------
-function importHeader()
-{
+function importHeader() {
   console.log("Importing header part...");
   // document.getElementsByClassName("header-import").load("../header.html");
-  $(
-    function (){
-      $(".header-import").load("../header.html");
-    }
-  )
+  $(function () {
+    $(".header-import").load("../header.html");
+  });
   console.log("Imported header part...");
 }
-function importFooter()
-{
+function importFooter() {
   console.log("Importing footer part...");
   // document.getElementsByClassName("header-import").load("../header.html");
-  $(
-    function (){
-      $(".footer-import").load("../footer.html");
-    }
-  )
+  $(function () {
+    $(".footer-import").load("../footer.html");
+  });
   console.log("Imported footer part...");
+}
+// ----------------------------------------------------------------------------------------
+function loadHTML(className, fileName) {
+  console.log('Div id: '+className+', filename: '+fileName);
+
+  let xhttp;
+  let elem = document.getElementsByClassName(className)[0];
+  let file = fileName;
+
+  if (file) {
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4) {
+        if ((this.status = 200)) {
+          console.log(this.responseText);
+          elem.innerHTML = this.responseText;
+        } else if ((this.status = 404)) {
+          console.log("Requested file not found");
+          elem.innerHTML="<h1>Requested file not found</h1>";
+        }
+      }
+    };
+    xhttp.open("GET", file, true);
+    xhttp.send();
+    return;
+  }
 }
 // ----------------------------------------------------------------------------------------
