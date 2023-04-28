@@ -3,9 +3,9 @@
 // import sendToEmail from "./credentials.js";
 // ----------------------------------------------------------------------------------------
 // RUN AT STARTUP SEGMENT
-loadHTML("header-import", "../header.html");
+loadHTML("header-import", "header.html");
 // importHeader();
-loadHTML("footer-import", "../footer.html");
+loadHTML("footer-import", "footer.html");
 // importFooter();
 // ----------------------------------------------------------------------------------------
 // TESTING SECTION
@@ -66,7 +66,7 @@ function loadHTML(className, fileName) {
         }
       }
     };
-    xhttp.open("GET", file, true);
+    xhttp.open("GET", "https://shyam-1024.github.io/Portfolio/"+file, true);
     xhttp.send();
     return;
   }
