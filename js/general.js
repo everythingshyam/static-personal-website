@@ -10,7 +10,7 @@
 // ----------------------------------------------------------------------------------------
 //Below block is to change css files on window size change
 //Below Block isn't working properly
-// var screenState = -1;
+var screenState = -1;
 // const head = this.document.head;
 // const appLink1 = this.document.createElement("link");
 // appLink1.type = "text/css";
@@ -30,48 +30,57 @@
 //   head.appendChild(appLink2);
 // }
 
-// window.addEventListener("resize", function (event) {
-//   var temp = -1; //0 means mobile screen size, 1 means desktop screen size
-//   if (window.innerWidth <= 950) {
-//     console.log("Screen Width less than 950");
-//     temp = 0;
-//   } else {
-//     console.log("Screen Width more than 950");
-//     temp = 1;
-//   }
-//   if (screenState != temp) {
-//     console.log("Screen Size Changed");
-//     screenState = temp;
-//     if (screenState == 0) {
-//       var remLink = this.document.querySelector(
-//         'link[href="./css/desktop_styles.css"]'
-//       );
-//       if (remLink != null) remLink.remove();
-//       // ---
-//       head.appendChild(appLink1);
-//     } else if (screenState == 1) {
-//       var remLink = this.document.querySelector(
-//         'link[href="./css/smartphone_styles.css"]'
-//       );
-//       if (remLink != null) remLink.remove();
-//       // ---
-//       head.appendChild(appLink2);
-//     }
-//   }
-// });
-// ----------------------------------------------------------------------------------------
-function logInternalJS_Status() {
-  try {
-    throw Error("");
-  } catch (err) {
-    //didnt understand below line very well, it extracts file name from error stack
-    let fileName = err.stack
-      .match(/(at\s[\w\W]*?\(|@)\S+:/gm)[1]
-      .replace(/(at\s[\w\W]*?\(|@|:)/gm, "");
-    let words = fileName.split("/");
-    fileName = words[words.length - 1];
-    console.log(fileName + "-internal js working properly");
+window.addEventListener("resize", function (event) {
+  var temp = -1; //0 means mobile screen size, 1 means desktop screen size
+  if (window.innerWidth <= 950) {
+    console.log("Screen Width less than 950");
+    temp = 0;
+  } else {
+    console.log("Screen Width more than 950");
+    temp = 1;
   }
+  if (screenState != temp) {
+    console.log("Screen Size Changed");
+    screenState = temp;
+    if (screenState == 0) {
+      console.log("In Mobile View Mode");
+
+      // var remLink = this.document.querySelector(
+      //   'link[href="./css/desktop_styles.css"]'
+      // );
+      // if (remLink != null) remLink.remove();
+      // ---
+      // head.appendChild(appLink1);
+
+    } else if (screenState == 1) {
+      console.log("In Desktop View Mode");
+
+      // var remLink = this.document.querySelector(
+      //   'link[href="./css/smartphone_styles.css"]'
+      // );
+      // if (remLink != null) remLink.remove();
+      // ---
+      // head.appendChild(appLink2);
+    }
+  }
+});
+// ----------------------------------------------------------------------------------------
+//DECLARATIONS
+var menu_click_count = 0;
+// ----------------------------------------------------------------------------------------
+//In below code, match method is returning null initially, causing problem in Google Chrome
+function logInternalJS_Status() {
+  // try {
+  //   throw Error("");
+  // } catch (err) {
+  //   var fileName = err.stack
+  //     .match(/(at\s[\w\W]*?\(|@)\S+:/gm)[1]
+  //     .replace(/(at\s[\w\W]*?\(|@|:)/gm, "");
+  //   let words = fileName.split("/");
+  //   fileName = words[words.length - 1];
+  //   console.log(fileName + "-internal js working properly");
+  // }
+    console.log("FileNameNotFound - internal js working properly");
 }
 // ----------------------------------------------------------------------------------------
 function activateTab(tabNo) {
@@ -147,6 +156,8 @@ function activateTab(tabNo) {
   else {
     console.log("Button clicked is inactive or doesn't link to something valid.");
   }
+  if(menu_click_count==1)
+    menu_click();
 }
 // ----------------------------------------------------------------------------------------
 function goToTop() {
@@ -158,7 +169,6 @@ function hideAlertBar() {
   document.getElementById("dropdown-content").style.top = "50px";
 }
 // ----------------------------------------------------------------------------------------
-var menu_click_count = 0;
 function menu_click() {
   console.log("menu btn clicked");
   var v = document.getElementById("menu-bar");
