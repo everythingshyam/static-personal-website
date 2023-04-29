@@ -7,16 +7,15 @@ loadHTML("header-import", "header.html");
 // importHeader();
 loadHTML("footer-import", "footer.html");
 // importFooter();
-loadHTML("social-links-abs", "socialLinks.html");
+loadHTML("social-links", "socialLinks.html");
 hideAlertBar();
 // ----------------------------------------------------------------------------------------
 // TESTING SECTION
 // console.log(sendToEmail)
 // ----------------------------------------------------------------------------------------
-function hideAlertBar(){
-  document.getElementById("alert-bar").style.display="none";
-  document.getElementById("dropdown-content").style.top="50px";
-
+function hideAlertBar() {
+  document.getElementById("alert-bar").style.display = "none";
+  document.getElementById("dropdown-content").style.top = "50px";
 }
 // ----------------------------------------------------------------------------------------
 var menu_click_count = 0;
@@ -56,28 +55,30 @@ function menu_click() {
 // }
 // ----------------------------------------------------------------------------------------
 function loadHTML(className, fileName) {
-  console.log('Div id: '+className+', filename: '+fileName);
+  console.log("Div id: " + className + ", filename: " + fileName);
 
   let xhttp;
-  let elem = document.getElementsByClassName(className)[0];
+  const element = document.querySelectorAll("."+className);
   let file = fileName;
 
   if (file) {
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4) {
-        if ((this.status = 200)) {
-          elem.innerHTML = this.responseText;
-          console.log("Successfully imported "+file);
-        } else if ((this.status = 404)) {
-          console.log("Requested file not found");
-          elem.innerHTML="<h1>Requested file not found</h1>";
+    element.forEach((elem) => {
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          if ((this.status = 200)) {
+            elem.innerHTML = this.responseText;
+            console.log("Successfully imported " + file);
+          } else if ((this.status = 404)) {
+            console.log("Requested file not found");
+            elem.innerHTML = "<h1>Requested file not found</h1>";
+          }
         }
-      }
-    };
-    xhttp.open("GET", "https://shyam-1024.github.io/Portfolio/"+file, true);
-    xhttp.send();
-    return;
+      };
+      xhttp.open("GET", "https://shyam-1024.github.io/Portfolio/" + file, true);
+      xhttp.send();
+      return;
+    });
   }
 }
 // ----------------------------------------------------------------------------------------

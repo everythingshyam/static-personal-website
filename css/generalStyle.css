@@ -169,8 +169,11 @@ a.ext-link-header{
   background-color: #f7fff7;
   opacity: 1;
 }
-.social-links-abs{
-  display: none;
+#social-links-abs{
+  background-color: red;
+}
+#social-links-rel{
+  background-color: green;
 }
 
 

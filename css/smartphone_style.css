@@ -152,6 +152,12 @@ a.ext-link-header {
   align-items: center;
   justify-content: center;
 }
+#social-links-rel{
+  display: none;
+}
+#social-links-abs{
+  display: none;
+}
 
 /* --------------------------------------------------------------------------------------------- */
 
