@@ -1,17 +1,74 @@
 // ----------------------------------------------------------------------------------------
+//TODO loadHTML not working in sub-pages
 
 // import sendToEmail from "./credentials.js";
 // ----------------------------------------------------------------------------------------
 // RUN AT STARTUP SEGMENT
-loadHTML("header-import", "header.html");
-// importHeader();
-loadHTML("footer-import", "footer.html");
-// importFooter();
-loadHTML("social-links", "socialLinks.html");
-hideAlertBar();
+// loadHTML("header-import", "header.html");
+// // importHeader();
+// loadHTML("footer-import", "footer.html");
+// // importFooter();
+// loadHTML("social-links", "socialLinks.html");
+// hideAlertBar();
 // ----------------------------------------------------------------------------------------
 // TESTING SECTION
 // console.log(sendToEmail)
+// if(window.innerWidth<500)
+// {
+//   console.log("Screen Width less than 500");
+// }
+// ----------------------------------------------------------------------------------------
+//Below block is to change css files on window size change
+//Below Block isn't working properly
+// var screenState = -1;
+// const head = this.document.head;
+// const appLink1 = this.document.createElement("link");
+// appLink1.type = "text/css";
+// appLink1.rel = "stylesheet";
+// appLink1.href = "./css/smartphone_style.css";
+// const appLink2 = this.document.createElement("link");
+// appLink2.type = "text/css";
+// appLink2.rel = "stylesheet";
+// appLink2.href = "./css/desktop_style.css";
+
+// if(window.innerWidth<=950)
+// {
+//   head.appendChild(appLink1);
+// }
+// else
+// {
+//   head.appendChild(appLink2);
+// }
+
+// window.addEventListener("resize", function (event) {
+//   var temp = -1; //0 means mobile screen size, 1 means desktop screen size
+//   if (window.innerWidth <= 950) {
+//     console.log("Screen Width less than 950");
+//     temp = 0;
+//   } else {
+//     console.log("Screen Width more than 950");
+//     temp = 1;
+//   }
+//   if (screenState != temp) {
+//     console.log("Screen Size Changed");
+//     screenState = temp;
+//     if (screenState == 0) {
+//       var remLink = this.document.querySelector(
+//         'link[href="./css/desktop_styles.css"]'
+//       );
+//       if (remLink != null) remLink.remove();
+//       // ---
+//       head.appendChild(appLink1);
+//     } else if (screenState == 1) {
+//       var remLink = this.document.querySelector(
+//         'link[href="./css/smartphone_styles.css"]'
+//       );
+//       if (remLink != null) remLink.remove();
+//       // ---
+//       head.appendChild(appLink2);
+//     }
+//   }
+// });
 // ----------------------------------------------------------------------------------------
 function hideAlertBar() {
   document.getElementById("alert-bar").style.display = "none";
@@ -58,7 +115,8 @@ function loadHTML(className, fileName) {
   console.log("Div id: " + className + ", filename: " + fileName);
 
   let xhttp;
-  const element = document.querySelectorAll("."+className);
+  const element = document.querySelectorAll("." + className);
+  console.log(element.length);
   let file = fileName;
 
   if (file) {
@@ -68,7 +126,7 @@ function loadHTML(className, fileName) {
         if (this.readyState == 4) {
           if ((this.status = 200)) {
             elem.innerHTML = this.responseText;
-            console.log("Successfully imported " + file +" "+elem.id);
+            console.log("Successfully imported " + file + " " + elem.id);
           } else if ((this.status = 404)) {
             console.log("Requested file not found");
             elem.innerHTML = "<h1>Requested file not found</h1>";

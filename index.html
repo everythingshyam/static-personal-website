@@ -1,7 +1,7 @@
 <!-- @TODO add links to works at apt places
  @TODO finish Theme Menu Bar
  @TODO height systems to be changed, especially for situations when total height of content is less than that of screen
-
+@TODO hide the contents which overflow...that is "display:none;" them
 
 -->
 <!DOCTYPE html>
@@ -96,26 +96,18 @@
     <span class="inner-key-abouts2 social-links social-links-abs mobile-view" id="social-links-abs">
         Failed to load Social Links
     </span>
+    <script src="./js/general.js">
+    </script>
+    <script class="page-specific-js">
+        console.log("Internal Javascript working properly.");
+        // activateTab();
+        loadHTML("header-import", "header.html");
+        // importHeader();
+        loadHTML("footer-import", "footer.html");
+        // importFooter();
+        loadHTML("social-links", "socialLinks.html");
+        hideAlertBar();
+    </script>
 </body>
-<script src="./js/general.js">
-    // activateTab();
-</script>
-<script class="page-specific-js">
-    // console.log("Setting height of mid body");
-
-    // var screen_h=window.innerHeight;
-    // var header_h=document.getElementById("header").offsetHeight;
-    // var footer_h=document.getElementById("footer").offsetHeight;
-    // console.log("Height of screen = "+screen_h);
-    // console.log("Height of header = "+header_h);
-    // console.log("Height of footer = "+footer_h);
-
-    // var midbody_h=screen_h-(header_h+footer_h);
-    // console.log("Height of midbody calculated = "+midbody_h);
-    
-    // const midbody=document.getElementById("body");
-    // midbody.style.height=midbody_h;
-    // console.log("Height of mid body set successfully");
-</script>
 </html>
 <!-- TODO add copyright free images to background -->
