@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Contact Me</title>
-    <link rel="icon" type="image/x-icon" href="./images/MyIcon1.ico">
     <!-- General CSS -->
     <link rel="stylesheet" href="./css/generalStyle.css">
     <!-- Desktop CSS -->
@@ -14,109 +12,66 @@
     <!-- Smartphone CSS -->
     <link rel="stylesheet" media="screen and (max-device-width: 950px" href="./css/smartphone_style.css">
     <link rel="stylesheet" href="./css/contact_style.css">
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 
 <!-- TODO add contact form to send message directly to my mail -->
+
 <body>
-    <header id="header">
-        <div id="alert-bar">
-            <marquee behavior="scroll" direction="left">This website is still work in progress😅. By
-                it's current look, you can guess how awesome it's gonna be😁</marquee>
-        </div>
-        <div class="menu-bar-outer">
-            <div class="menu-btn">
-                <img onclick="menu_click()" src="./images/icons/icons8-menu-rounded-50.png" alt="Hamburger menu icon">
-            </div>
-            <span class="edge-covers" id="leftCover"> </span>
-            <span id="menu-bar" class="stay-on-top">
-                <ul>
-                    <li class="outer-nav-li">
-                        <a class="outer-nav-a" id="home-tab" title="Home Page, in the making" href="index.html">Home</a>
-                    </li>
-                    <li class="outer-nav-li" id="dropdown">
-                        <a class="outer-nav-a" id="about-tab" title="About Me" href="aboutEducation.html">About</a>
-                        <div id="dropdown-content" class="blur-1">
-                            <a href="aboutEducation.html">My Academics</a>
-                            <a href="aboutPositions.html">Positions Worked Upon</a>
-                            <a href="aboutProjects.html">Projects Worked Upon</a>
-                            <a href="aboutSkills.html">Technical Skills</a>
-                            <a href="aboutHobbies.html">My Hobbies</a>
-                        </div>
-                    </li>
-                    <li class="outer-nav-li">
-                        <a class="outer-nav-a active-tab" id="contact-tab" title="Contact Links" href="./contact.html">Contact</a>
-                    </li>
-                    <li class="outer-nav-li">
-                        <a class="outer-nav-a" id="else-tab" title="In the making" href="index.html">Else</a>
-                    </li>
-                </ul>
-            </span>
-            <span class="edge-covers" id="rightCover"> </span>
-        </div>
-    <div class="header-import" id="home-tab-header">Failed to load header</div>
-    </header>
-    <!-- Firstly create one section tag to create site sections -->
+    <!-- this contains the main parts of web page, between header and footer -->
 
-    <div id="body">
-        <!-- this contains the main parts of web page, between header and footer -->
+    <!-- Floating Objects -->
 
-        <!-- Floating Objects -->
+    <!-- -------------------- -->
+    <h1>Contact Me</h1>
+    <span class="body-sections">
+        <h2>Social Media Links</h2>
+        <ul>
+            <li class="body-ul-li">
+                <a class="ext-link" href="https://github.com/shyam-1024" target="_blank">
+                    <img src="./images/github.png" alt="GitHub Logo">
+                    <h3>GitHub</h3>
+                </a>
+                <a class="ext-link" href="https://www.linkedin.com/in/shyam-sundar-tiwari-780869208/" target="_blank">
+                    <img src="./images/linkedin.png" alt="LinkedIn Logo">
+                    <h3>LinkedIn</h3>
+                </a>
+                <a class="ext-link" href="https://www.instagram.com/everythingshyam/" target="_blank">
+                    <img src="./images/instagram.png" alt="Instagram Logo">
+                    <h3>Instagram</h3>
+                </a>
+                <a class="ext-link" href="https://twitter.com/verythingshyam" target="_blank">
+                    <img src="./images/twitter.png" alt="Twitter Logo">
+                    <h3>Instagram</h3>
+                </a>
 
-        <!-- -------------------- -->
-        <h1>Contact Me</h1>
-        <span class="body-sections">
-            <h2>Social Media Links</h2>
-            <ul>
-                <li class="body-ul-li">
-                    <a class="ext-link" href="https://github.com/shyam-1024" target="_blank">
-                        <img src="./images/github.png" alt="GitHub Logo">
-                        <h3>GitHub</h3>
-                    </a>
-                    <a class="ext-link" href="https://www.linkedin.com/in/shyam-sundar-tiwari-780869208/"
-                        target="_blank">
-                        <img src="./images/linkedin.png" alt="LinkedIn Logo">
-                        <h3>LinkedIn</h3>
-                    </a>
-                    <a class="ext-link" href="https://www.instagram.com/everythingshyam/" target="_blank">
-                        <img src="./images/instagram.png" alt="Instagram Logo">
-                        <h3>Instagram</h3>
-                    </a>
-                    <a class="ext-link" href="https://twitter.com/verythingshyam" target="_blank">
-                        <img src="./images/twitter.png" alt="Twitter Logo">
-                        <h3>Instagram</h3>
-                    </a>
-
-                </li>
-            </ul>
-        </span>
-        <span class="body-sections">
-            <h2>Send message</h2>
-            <ul>
-                <li class="body-ul-li message-form-outer">
-                    <!-- <form onsubmit="sendMessage(); reset(); return false" class="message-form"> -->
-                    <form action="https://formsubmit.co/s1024creative@gmail.com" onsubmit="reset()" target="_blank" method="POST" class="message-form">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name">
-                        <label for="email">Email ID</label>
-                        <input type="email" name="email" id="email">
-                        <label for="message">Message</label>
-                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message here"></textarea>
-                        <input type="submit" value="Submit" class="submit-btn">
-                    </form>
-                </li>
-            </ul>
-        </span>
-    </div>
-    <div class="go-to-top-outer">
-        <a href="#header">Go To Top</a>
-    </div>
-    <!-- <div class="black-bg" id="seperator">
-     </div> -->
-     <footer class="footer-import"></footer>
+            </li>
+        </ul>
+    </span>
+    <span class="body-sections">
+        <h2>Send message</h2>
+        <ul>
+            <li class="body-ul-li message-form-outer">
+                <!-- <form onsubmit="sendMessage(); reset(); return false" class="message-form"> -->
+                <form action="https://formsubmit.co/s1024creative@gmail.com" onsubmit="reset()" target="_blank"
+                    method="POST" class="message-form">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name">
+                    <label for="email">Email ID</label>
+                    <input type="email" name="email" id="email">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="10"
+                        placeholder="Enter your message here"></textarea>
+                    <input type="submit" value="Submit" class="submit-btn">
+                </form>
+            </li>
+        </ul>
+    </span>
 </body>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="./js/general.js"></script>
 <script type="module" src="./js/module.js"></script>
+<script>
+    logInternalJS_Status();
+</script>
 
 </html>

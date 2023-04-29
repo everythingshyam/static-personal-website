@@ -5,141 +5,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Shyam | Web Developer</title>
-    <link rel="icon" type="image/x-icon" href="./images/MyIcon1.ico">
     <!-- General CSS -->
     <link rel="stylesheet" href="./css/generalStyle.css">
     <!-- Desktop CSS -->
     <link rel="stylesheet" media="screen and (min-device-width: 950px" href="./css/desktop_style.css">
     <!-- Smartphone CSS -->
     <link rel="stylesheet" media="screen and (max-device-width: 950px" href="./css/smartphone_style.css">
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
-    <header id="header">
-        <div id="alert-bar">
-            <marquee behavior="scroll" direction="left">This website is still work in progress😅. By
-                it's current look, you can guess how awesome it's gonna be😁</marquee>
-        </div>
-        <div class="menu-bar-outer">
-            <div class="menu-btn">
-                <img onclick="menu_click()" src="./images/icons/icons8-menu-rounded-50.png" alt="Hamburger menu icon">
-            </div>
-            <span class="edge-covers" id="leftCover"> </span>
-            <span id="menu-bar" class="stay-on-top">
-                <ul>
-                    <li class="outer-nav-li">
-                        <a class="outer-nav-a" id="home-tab" title="Home Page, in the making" href="index.html">Home</a>
-                    </li>
-                    <li class="outer-nav-li" id="dropdown">
-                        <a class="outer-nav-a active-tab" id="about-tab" title="About Me" href="aboutEducation.html">About</a>
-                        <div id="dropdown-content" class="blur-1">
-                            <a href="aboutEducation.html">My Academics</a>
-                            <a href="aboutPositions.html">Positions Worked Upon</a>
-                            <a href="aboutProjects.html">Projects Worked Upon</a>
-                            <a href="aboutSkills.html">Technical Skills</a>
-                            <a href="aboutHobbies.html">My Hobbies</a>
-                        </div>
-                    </li>
-                    <li class="outer-nav-li">
-                        <a class="outer-nav-a" id="contact-tab" title="Contact Links" href="./contact.html">Contact</a>
-                    </li>
-                    <li class="outer-nav-li">
-                        <a class="outer-nav-a" id="else-tab" title="In the making" href="index.html">Else</a>
-                    </li>
-                </ul>
-            </span>
-            <span class="edge-covers" id="rightCover"> </span>
-        </div>
-    <div class="header-import" id="home-tab-header">Failed to load header</div>
-    </header>
-    <!-- Firstly create one section tag to create site sections -->
+    <span class="nav-sub-pane">
+        <a class="nav-links" onclick="activateTab(13)">
+            &lt; Skills Gained
+        </a>
+        <a class="nav-links" onclick="activateTab(-1)">That's it! &gt;</a>
+    </span>
 
-    <div id="body">
-        <!-- this contains the main parts of web page, between header and footer -->
+    <!-- ------------------------------------------- -->
 
-        <!-- Floating Objects -->
-
-        <!-- -------------------- -->
-
-        <!-- Below part for navigation among about pages -->
-
-        <span class="nav-sub-pane">
-            <a class="nav-links" href="aboutSkills.html">
-                &lt; Skills Gained
-            </a>
-            <a class="nav-links" href="#">That's it! &gt;</a>
-        </span>
-
-        <!-- ------------------------------------------- -->
-
-        <h1>About</h1>
-        <span class="body-sections" id="hobbies">
-            <h2>My Hobbies</h2>
-            <ul>
-                <li>
-                    <div class="li-img">
-                        <img src="./images/photography1.jpg" alt="" title="One of my first best photos">
-                    </div>
-                    <div class="li-text">
-                        <h3>Photography</h3>
-                        <p>Have been fond of photography since we had a small cellphone with a camera.</p>
-                        <p>So far, have been practicing with smartphones only.</p>
-                        <p>At present, I have Redmi Note 10 Pro Max to practice with.</p>
-                        <p>Little experience with DSLRs as well.</p>
-                        <a class="ext-link" href="https://www.shutterstock.com/everythingshyam0" target="_blank">
-                            <img src="./images/shutterstock.webp" alt="Shutterstock Logo">
-                            <h3>Shutterstock</h3>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="li-img">
-                        <img src="./images/travel1.jpg" alt=""
-                            title="my image in front of landscape with wide open hands">
-                    </div>
-                    <div class="li-text">
-                        <h3>Travelling</h3>
-                    </div>
-                </li>
-                <li>
-                    <div class="li-img">
-                        <img src="./images/writing1.jpg" alt=""
-                            title="a snap of a hindi poem I wrote titled 'kagaj ki naav'">
-                    </div>
-                    <div class="li-text">
-                        <h3>Creative Writing</h3>
-                    </div>
-                </li>
-                <li>
-                    <div class="li-img">
-                        <img src="./images/singing1.jpg" alt="" title="Stock image of close-up of a mic">
-                    </div>
-                    <div class="li-text">
-                        <h3>Singing</h3>
-                    </div>
-                </li>
-                <li>
-                    <div class="li-img">
-                        <img src="./images/3dmodeling1.jpg" alt=""
-                            title="Cropped screenshot of a house 3D model I made">
-                    </div>
-                    <div class="li-text">
-                        <h3>3D Modelling</h3>
-                    </div>
-                </li>
-            </ul>
-        </span>
-    </div>
-    <div class="go-to-top-outer">
-        <a href="#header">Go To Top</a>
-    </div>
-    <!-- <div class="black-bg" id="seperator">
-     </div> -->
-     <footer class="footer-import"></footer>
+    <h1>About</h1>
+    <span class="body-sections" id="hobbies">
+        <h2>My Hobbies</h2>
+        <ul>
+            <li>
+                <div class="li-img">
+                    <img src="./images/photography1.jpg" alt="" title="One of my first best photos">
+                </div>
+                <div class="li-text">
+                    <h3>Photography</h3>
+                    <p>Have been fond of photography since we had a small cellphone with a camera.</p>
+                    <p>So far, have been practicing with smartphones only.</p>
+                    <p>At present, I have Redmi Note 10 Pro Max to practice with.</p>
+                    <p>Little experience with DSLRs as well.</p>
+                    <a class="ext-link" href="https://www.shutterstock.com/everythingshyam0" target="_blank">
+                        <img src="./images/shutterstock.webp" alt="Shutterstock Logo">
+                        <h3>Shutterstock</h3>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="li-img">
+                    <img src="./images/travel1.jpg" alt="" title="my image in front of landscape with wide open hands">
+                </div>
+                <div class="li-text">
+                    <h3>Travelling</h3>
+                </div>
+            </li>
+            <li>
+                <div class="li-img">
+                    <img src="./images/writing1.jpg" alt=""
+                        title="a snap of a hindi poem I wrote titled 'kagaj ki naav'">
+                </div>
+                <div class="li-text">
+                    <h3>Creative Writing</h3>
+                </div>
+            </li>
+            <li>
+                <div class="li-img">
+                    <img src="./images/singing1.jpg" alt="" title="Stock image of close-up of a mic">
+                </div>
+                <div class="li-text">
+                    <h3>Singing</h3>
+                </div>
+            </li>
+            <li>
+                <div class="li-img">
+                    <img src="./images/3dmodeling1.jpg" alt="" title="Cropped screenshot of a house 3D model I made">
+                </div>
+                <div class="li-text">
+                    <h3>3D Modelling</h3>
+                </div>
+            </li>
+        </ul>
+    </span>
 </body>
 <script src="./js/general.js"></script>
+<script>
+    logInternalJS_Status();
+</script>
 
 </html>
 <!-- TODO add copyright free images to background -->

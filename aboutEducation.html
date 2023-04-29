@@ -5,145 +5,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>About | Acandemics</title>
-    <link rel="icon" type="image/x-icon" href="./images/MyIcon1.ico">
     <!-- General CSS -->
     <link rel="stylesheet" href="./css/generalStyle.css">
     <!-- Desktop CSS -->
     <link rel="stylesheet" media="screen and (min-device-width: 950px" href="./css/desktop_style.css">
     <!-- Smartphone CSS -->
     <link rel="stylesheet" media="screen and (max-device-width: 950px" href="./css/smartphone_style.css">
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
-    <header id="header">
-        <div id="alert-bar">
-            <marquee behavior="scroll" direction="left">This website is still work in progress😅. By
-                it's current look, you can guess how awesome it's gonna be😁</marquee>
-        </div>
-        <div class="menu-bar-outer">
-            <div class="menu-btn">
-                <img onclick="menu_click()" src="./images/icons/icons8-menu-rounded-50.png" alt="Hamburger menu icon">
-            </div>
-            <span class="edge-covers" id="leftCover"> </span>
-            <span id="menu-bar" class="stay-on-top">
-                <ul>
-                    <li class="outer-nav-li">
-                        <a class="outer-nav-a" id="home-tab" title="Home Page, in the making" href="index.html">Home</a>
-                    </li>
-                    <li class="outer-nav-li" id="dropdown">
-                        <a class="outer-nav-a active-tab" id="about-tab" title="About Me" href="aboutEducation.html">About</a>
-                        <div id="dropdown-content" class="blur-1">
-                            <a href="aboutEducation.html">My Academics</a>
-                            <a href="aboutPositions.html">Positions Worked Upon</a>
-                            <a href="aboutProjects.html">Projects Worked Upon</a>
-                            <a href="aboutSkills.html">Technical Skills</a>
-                            <a href="aboutHobbies.html">My Hobbies</a>
-                        </div>
-                    </li>
-                    <li class="outer-nav-li">
-                        <a class="outer-nav-a" id="contact-tab" title="Contact Links" href="./contact.html">Contact</a>
-                    </li>
-                    <li class="outer-nav-li">
-                        <a class="outer-nav-a" id="else-tab" title="In the making" href="index.html">Else</a>
-                    </li>
-                </ul>
-            </span>
-            <span class="edge-covers" id="rightCover"> </span>
-        </div>
-    <div class="header-import" id="home-tab-header">Failed to load header</div>
-    </header>
-    <!-- Firstly create one section tag to create site sections -->
-
-    <div id="body">
-        <!-- this contains the main parts of web page, between header and footer -->
-
-        <!-- Floating Objects -->
-
-        <!-- -------------------- -->
-        <!-- Below part for navigation among about pages -->
-
-        <div class="nav-sub-pane">
-            <a class="nav-links" href="#">
-                &lt; It just started!
-            </a>
-            <a class="nav-links" href="aboutPositions.html">
-                Positions Worked &gt;
-            </a>
-        </div>
-
-        <!-- ------------------------------------------- -->
-
-        <h1>About</h1>
-        <span class="body-sections" id="academics">
-            <h2>My Academics</h2>
-            <ul>
-                <li>
-                    <div class="li-img">
-                        <img src="./images/college1.jpg" alt="" title="PCCOE Computer Dept Building">
-
-                    </div>
-                    <div class="li-text">
-                        <h3>B. Tech (Computer Science)</h3>
-                        <p>From Pimpri Chinchwad College Of Engineering, Pune. (2024)</p>
-                        <p>Currently in 3rd year</p>
-                        <p>Aggregate CGPA : 7.78</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="li-img">
-                        <img src="./images/LinkedInHtml1.jpg" alt="" title="LinkedIn Learning HTML Essenstials Course">
-                    </div>
-                    <div class="li-text">
-                        <h3>Certifications & Internships</h3>
-                        <p>HTML Certification from LinkedIn Learning (2022)</p>
-                        <p>Doing Android App Development Internship at Intrainz</p>
-                        <p>Pursuing other certifications/e-learnings</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="li-img">
-                        <img src="./images/school1.jpg" alt="" title="St. Francis School, Ramnagar, Varanasi">
-                    </div>
-                    <div class="li-text">
-                        <h3>Higher Secondary</h3>
-                        <p>From St. Francis School, Ramnagar, Varanasi (2018)</p>
-                        <p>Aggregate Percentage : 86%</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="li-img">
-                        <img src="./images/school1.jpg" alt="" title="St. Francis School, Ramnagar, Varanasi">
-                    </div>
-                    <div class="li-text">
-                        <h3>Senior Secondary</h3>
-                        <p>From St. Francis School, Ramnagar, Varanasi (2016)</p>
-                        <p>Aggregate Percentage : 88%</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="li-img">
-                        <img src="./images/shyamInSchoolDress1.jpg" alt="" title="My photo in school dress">
-                    </div>
-                    <div class="li-text">
-                        <h3>Other than that...</h3>
-                        <p>Won intra-school debate competion in class 11th.</p>
-                        <p>Will add as I recall😅</p>
-                    </div>
-                </li>
-            </ul>
-        </span>
-
+    <div class="nav-sub-pane">
+        <a class="nav-links" onclick="activateTab(-1)">
+            &lt; It just started!
+        </a>
+        <a class="nav-links" onclick="activateTab(11)">
+            Positions Worked &gt;
+        </a>
     </div>
-    <div class="go-to-top-outer">
-        <a href="#header">Go To Top</a>
-    </div>
-    <!-- <div class="black-bg" id="seperator">
-     </div> -->
-     <footer class="footer-import"></footer>
+
+    <!-- ------------------------------------------- -->
+
+    <h1>About</h1>
+    <span class="body-sections" id="academics">
+        <h2>My Academics</h2>
+        <ul>
+            <li>
+                <div class="li-img">
+                    <img src="./images/college1.jpg" alt="" title="PCCOE Computer Dept Building">
+
+                </div>
+                <div class="li-text">
+                    <h3>B. Tech (Computer Science)</h3>
+                    <p>From Pimpri Chinchwad College Of Engineering, Pune. (2024)</p>
+                    <p>Currently in 3rd year</p>
+                    <p>Aggregate CGPA : 7.78</p>
+                </div>
+            </li>
+            <li>
+                <div class="li-img">
+                    <img src="./images/LinkedInHtml1.jpg" alt="" title="LinkedIn Learning HTML Essenstials Course">
+                </div>
+                <div class="li-text">
+                    <h3>Certifications & Internships</h3>
+                    <p>HTML Certification from LinkedIn Learning (2022)</p>
+                    <p>Doing Android App Development Internship at Intrainz</p>
+                    <p>Pursuing other certifications/e-learnings</p>
+                </div>
+            </li>
+            <li>
+                <div class="li-img">
+                    <img src="./images/school1.jpg" alt="" title="St. Francis School, Ramnagar, Varanasi">
+                </div>
+                <div class="li-text">
+                    <h3>Higher Secondary</h3>
+                    <p>From St. Francis School, Ramnagar, Varanasi (2018)</p>
+                    <p>Aggregate Percentage : 86%</p>
+                </div>
+            </li>
+            <li>
+                <div class="li-img">
+                    <img src="./images/school1.jpg" alt="" title="St. Francis School, Ramnagar, Varanasi">
+                </div>
+                <div class="li-text">
+                    <h3>Senior Secondary</h3>
+                    <p>From St. Francis School, Ramnagar, Varanasi (2016)</p>
+                    <p>Aggregate Percentage : 88%</p>
+                </div>
+            </li>
+            <li>
+                <div class="li-img">
+                    <img src="./images/shyamInSchoolDress1.jpg" alt="" title="My photo in school dress">
+                </div>
+                <div class="li-text">
+                    <h3>Other than that...</h3>
+                    <p>Won intra-school debate competion in class 11th.</p>
+                    <p>Will add as I recall😅</p>
+                </div>
+            </li>
+        </ul>
+    </span>
 </body>
 <script src="./js/general.js"></script>
+<script>
+    logInternalJS_Status();
+</script>
 
 </html>
-<!-- TODO add copyright free images to background -->

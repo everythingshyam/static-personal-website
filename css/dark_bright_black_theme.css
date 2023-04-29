@@ -41,6 +41,7 @@ header {
 .edge-covers,
 #menu-bar {
   background-color: rgba(1, 1, 2, 0.3);
+  /* backdrop-filter: blur(5px); */
 }
 
 #menu-bar ul li a {
