@@ -68,7 +68,7 @@ function loadHTML(className, fileName) {
         if (this.readyState == 4) {
           if ((this.status = 200)) {
             elem.innerHTML = this.responseText;
-            console.log("Successfully imported " + file);
+            console.log("Successfully imported " + file +" "+elem.id);
           } else if ((this.status = 404)) {
             console.log("Requested file not found");
             elem.innerHTML = "<h1>Requested file not found</h1>";
