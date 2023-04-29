@@ -103,8 +103,8 @@ TODO span.social links sticky position not working
 }
 
 span.social-links {
+  /* backdrop-filter: blur(1px); */
   display: block;
-
   position: fixed;
   /* position: sticky; */
   z-index: 100;
@@ -118,6 +118,22 @@ span.social-links {
   width: fit-content;
   align-items: center;
   justify-content: center;
+
+  /* display: none; */
+  /* position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 16px;
+  line-height: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer; */
+  /* opacity: 0.7; */
+  /* transition: opacity 0.3s ease-in-out; */
 }
 
 a.ext-link-header {

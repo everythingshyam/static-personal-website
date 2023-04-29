@@ -126,9 +126,6 @@ a.ext-link-header {
   align-items: center;
   justify-content: center;
 }
-.ext-link-header:hover {
-  background-color: #f7fff7;
-}
 .ext-link-header img {
   height: 20px;
   border-radius: 50%;

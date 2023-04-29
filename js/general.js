@@ -7,9 +7,17 @@ loadHTML("header-import", "header.html");
 // importHeader();
 loadHTML("footer-import", "footer.html");
 // importFooter();
+loadHTML("social-links-abs", "socialLinks.html");
+hideAlertBar();
 // ----------------------------------------------------------------------------------------
 // TESTING SECTION
 // console.log(sendToEmail)
+// ----------------------------------------------------------------------------------------
+function hideAlertBar(){
+  document.getElementById("alert-bar").style.display="none";
+  document.getElementById("dropdown-content").style.top="50px";
+
+}
 // ----------------------------------------------------------------------------------------
 var menu_click_count = 0;
 function menu_click() {
