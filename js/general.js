@@ -3,23 +3,35 @@
 //TODO when menu is switched on is mobile view mode, nav bar of desktop mode is affected, resolve this issue
 
 //DONE loadHTML not working in sub-pages
-
-// ----------------------------------------------------------------------------------------
-// RUN AT STARTUP SEGMENT
-
-// ----------------------------------------------------------------------------------------
-// TESTING SECTION
-
 // ----------------------------------------------------------------------------------------
 //DECLARATIONS
 // var menu_click_count = 0;
 var menuShow = true;
+var tabNo=0;
+//----------------------------------------------------------------------------------------
+
+// ----------------------------------------------------------------------------------------
+// RUN AT STARTUP SEGMENT
+
+//code to retrieve previous page on reload
+if(localStorage.hasOwnProperty('tabNo')){
+  const cachedValue=localStorage.getItem('tabNo');
+  tabNo=cachedValue.toString();
+  console.log("Tab No in cache is: ",tabNo);
+}
+activateTab(tabNo);
+
+// ----------------------------------------------------------------------------------------
+// TESTING SECTION
+
+
 // ----------------------------------------------------------------------------------------
 function logInternalJS_Status() {
   console.log("Internal js working properly");
 }
 // ----------------------------------------------------------------------------------------
-function activateTab(tabNo) {
+function activateTab(tabNoIn) {
+  tabNo=tabNoIn;
   //removing active status of tabs, if any
   var activeTabs = document.getElementsByClassName("active-tab");
   Array.from(activeTabs).forEach((activeTabsPtr) => {
@@ -34,7 +46,7 @@ function activateTab(tabNo) {
     document.getElementById("home-tab").classList.add("active-tab");
   }
   //
-  else if (tabNo == "10") {
+  else if (tabNoIn == "10") {
     console.log("User clicked on About-0 Button");
     // loadHTML_Local("body", "aboutEducation.html");
     loadHTML("body", "aboutEducation.html");
@@ -50,7 +62,7 @@ function activateTab(tabNo) {
     document.getElementById("about-tab").classList.add("active-tab");
   }
   //
-  else if (tabNo == "12") {
+  else if (tabNoIn == "12") {
     console.log("User clicked on About-2 Button");
     // loadHTML_Local("body", "aboutProjects.html");
     loadHTML("body", "aboutProjects.html");
@@ -66,7 +78,7 @@ function activateTab(tabNo) {
     document.getElementById("about-tab").classList.add("active-tab");
   }
   //
-  else if (tabNo == "14") {
+  else if (tabNoIn == "14") {
     console.log("User clicked on About-4 Button");
     // loadHTML_Local("body", "aboutHobbies.html");
     loadHTML("body", "aboutHobbies.html");
@@ -82,7 +94,7 @@ function activateTab(tabNo) {
     document.getElementById("contact-tab").classList.add("active-tab");
   }
   //
-  else if (tabNo == "3") {
+  else if (tabNoIn == "3") {
     console.log("User clicked on Else Button");
     // loadHTML_Local("body", "home.html");
     loadHTML("body", "home.html");
@@ -94,6 +106,7 @@ function activateTab(tabNo) {
     console.log(
       "Button clicked is inactive or doesn't link to something valid."
     );
+    tabNo='0';
   }
   //if menu is shown and user clicks on an option, now the menu should be hidden back
   if (menuShow==true & window.innerWidth<=950)
@@ -227,6 +240,15 @@ window.addEventListener("resize", function (event) {
       menu_click();
       menuShow=true;
     }
+  }
+});
+// ----------------------------------------------------------------------------------------
+//Reload event trigger
+window.addEventListener('beforeunload',function(event){
+  //to save tab No as cache value for next time
+  if(event.type==='beforeunload')
+  {
+    this.localStorage.setItem('tabNo',tabNo);
   }
 });
 // ----------------------------------------------------------------------------------------
