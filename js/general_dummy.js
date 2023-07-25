@@ -3,34 +3,23 @@
 //TODO when menu is switched on is mobile view mode, nav bar of desktop mode is affected, resolve this issue
 
 //DONE loadHTML not working in sub-pages
-// ----------------------------------------------------------------------------------------
-//DECLARATIONS
-// var menu_click_count = 0;
-var menuShow = true
-var tabNo = 0
-//----------------------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------------------
 // RUN AT STARTUP SEGMENT
-
-//code to retrieve previous page on reload
-if (localStorage.hasOwnProperty('tabNo')) {
-  const cachedValue = localStorage.getItem('tabNo')
-  tabNo = cachedValue.toString()
-  console.log('Tab No in cache is: ', tabNo)
-}
-activateTab(tabNo)
 
 // ----------------------------------------------------------------------------------------
 // TESTING SECTION
 
 // ----------------------------------------------------------------------------------------
+//DECLARATIONS
+// var menu_click_count = 0;
+var menuShow = true
+// ----------------------------------------------------------------------------------------
 function logInternalJS_Status() {
   console.log('Internal js working properly')
 }
 // ----------------------------------------------------------------------------------------
-function activateTab(tabNoIn) {
-  tabNo = tabNoIn
+function activateTab(tabNo) {
   //removing active status of tabs, if any
   var activeTabs = document.getElementsByClassName('active-tab')
   Array.from(activeTabs).forEach((activeTabsPtr) => {
@@ -39,64 +28,64 @@ function activateTab(tabNoIn) {
   // TODO remove below if else if structure using arrays
   if (tabNo == '0') {
     console.log('User clicked on Home Button')
-    // loadHTML_Local("body", "home.html");
-    loadHTML('body', 'home.html')
+    loadHTML_Local('body', 'home.html')
+    // loadHTML("body", "home.html");
     //now changing color of active tab
     document.getElementById('home-tab').classList.add('active-tab')
   }
   //
-  else if (tabNoIn == '10') {
+  else if (tabNo == '10') {
     console.log('User clicked on About-0 Button')
-    // loadHTML_Local("body", "aboutEducation.html");
-    loadHTML('body', 'aboutEducation.html')
+    loadHTML_Local('body', 'aboutEducation.html')
+    // loadHTML("body", "aboutEducation.html");
     //now changing color of active tab
     document.getElementById('about-tab').classList.add('active-tab')
   }
   //
   else if (tabNo == '11') {
     console.log('User clicked on About-1 Button')
-    // loadHTML_Local("body", "aboutPositions.html");
-    loadHTML('body', 'aboutPositions.html')
+    loadHTML_Local('body', 'aboutPositions.html')
+    // loadHTML("body", "aboutPositions.html");
     //now changing color of active tab
     document.getElementById('about-tab').classList.add('active-tab')
   }
   //
-  else if (tabNoIn == '12') {
+  else if (tabNo == '12') {
     console.log('User clicked on About-2 Button')
-    // loadHTML_Local("body", "aboutProjects.html");
-    loadHTML('body', 'aboutProjects.html')
+    loadHTML_Local('body', 'aboutProjects.html')
+    // loadHTML("body", "aboutProjects.html");
     //now changing color of active tab
     document.getElementById('about-tab').classList.add('active-tab')
   }
   //
   else if (tabNo == '13') {
     console.log('User clicked on About-3 Button')
-    // loadHTML_Local("body", "aboutSkills.html");
-    loadHTML('body', 'aboutSkills.html')
+    loadHTML_Local('body', 'aboutSkills.html')
+    // loadHTML("body", "aboutSkills.html");
     //now changing color of active tab
     document.getElementById('about-tab').classList.add('active-tab')
   }
   //
-  else if (tabNoIn == '14') {
+  else if (tabNo == '14') {
     console.log('User clicked on About-4 Button')
-    // loadHTML_Local("body", "aboutHobbies.html");
-    loadHTML('body', 'aboutHobbies.html')
+    loadHTML_Local('body', 'aboutHobbies.html')
+    // loadHTML("body", "aboutHobbies.html");
     //now changing color of active tab
     document.getElementById('about-tab').classList.add('active-tab')
   }
   //
   else if (tabNo == '2') {
     console.log('User clicked on Contact Button')
-    // loadHTML_Local("body", "contact.html");
-    loadHTML('body', 'contact.html')
+    loadHTML_Local('body', 'contact.html')
+    // loadHTML("body", "contact.html");
     //now changing color of active tab
     document.getElementById('contact-tab').classList.add('active-tab')
   }
   //
-  else if (tabNoIn == '3') {
+  else if (tabNo == '3') {
     console.log('User clicked on Else Button')
-    // loadHTML_Local("body", "home.html");
-    loadHTML('body', 'home.html')
+    loadHTML_Local('body', 'home.html')
+    // loadHTML("body", "home.html");
     //now changing color of active tab
     document.getElementById('home-tab').classList.add('active-tab')
   }
@@ -105,7 +94,6 @@ function activateTab(tabNoIn) {
     console.log(
       "Button clicked is inactive or doesn't link to something valid."
     )
-    tabNo = '0'
   }
   //if menu is shown and user clicks on an option, now the menu should be hidden back
   if ((menuShow == true) & (window.innerWidth <= 950)) {
@@ -240,14 +228,6 @@ window.addEventListener('resize', function (event) {
       menu_click()
       menuShow = true
     }
-  }
-})
-// ----------------------------------------------------------------------------------------
-//Reload event trigger
-window.addEventListener('beforeunload', function (event) {
-  //to save tab No as cache value for next time
-  if (event.type === 'beforeunload') {
-    this.localStorage.setItem('tabNo', tabNo)
   }
 })
 // ----------------------------------------------------------------------------------------

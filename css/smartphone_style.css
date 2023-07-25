@@ -3,155 +3,156 @@
 TODO span.social links sticky position not working
 */
 /* ---------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 950px) {
+  .menu-bar-outer {
+    background-color: rgba(52, 52, 52, 0.5);
+  }
+  .menu-btn {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .menu-btn img {
+    margin: 15px;
+    background-color: rgba(190, 190, 190, 0.4);
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+    width: 35px;
+    padding: 2px 4px;
+  }
+  .menu-btn img:hover {
+    background-color: rgba(190, 190, 190, 0.7);
+    cursor: pointer;
+  }
 
-.menu-bar-outer {
-  background-color: rgba(52, 52, 52, 0.5);
-}
-.menu-btn {
-  display: flex;
-  flex-direction: row-reverse;
-}
-.menu-btn img {
-  margin: 15px;
-  background-color: rgba(190, 190, 190, 0.4);
-  border-radius: 5px;
-  border: 1px solid whitesmoke;
-  width: 35px;
-  padding: 2px 4px;
-}
-.menu-btn img:hover {
-  background-color: rgba(190, 190, 190, 0.7);
-  cursor: pointer;
-}
+  .edgeCovers {
+    display: none;
+  }
+  #menu-bar {
+    display: none;
+    border-radius: 10px;
+  }
+  #menu-bar ul {
+    padding: 15px;
+    padding-top: 5px;
+    margin: 0;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: none;
+  }
 
-.edgeCovers {
-  display: none;
-}
-#menu-bar {
-  display: none;
-  border-radius: 10px;
-}
-#menu-bar ul {
-  padding: 15px;
-  padding-top: 5px;
-  margin: 0;
-  border-radius: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-top: none;
-}
+  #menu-bar ul li {
+    cursor: pointer;
+    margin: 7px;
+    border-radius: 5px;
+    border-bottom: 1px solid whitesmoke;
+  }
 
-#menu-bar ul li {
-  cursor: pointer;
-  margin: 7px;
-  border-radius: 5px;
-  border-bottom: 1px solid whitesmoke;
-}
+  #menu-bar ul li a {
+    border-radius: 5px;
+    display: block;
+    width: inherit;
+    text-align: center;
+  }
 
-#menu-bar ul li a {
-  border-radius: 5px;
-  display: block;
-  width: inherit;
-  text-align: center;
-}
+  /* -------------------------------------------------------------------------------------------- */
 
-/* -------------------------------------------------------------------------------------------- */
+  #main-header {
+    flex-direction: column;
+    justify-content: center;
+    width: 90vw;
+    padding: 5vw;
+  }
 
-#main-header {
-  flex-direction: column;
-  justify-content: center;
-  width: 90vw;
-  padding: 5vw;
-}
+  #profile-pic {
+    width: 90vw;
+    display: block;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-#profile-pic {
-  width: 90vw;
-  display: block;
-  justify-content: space-around;
-  align-items: center;
-}
+  #profile-pic img {
+    height: 40vw;
+    margin: 0 25vw;
+  }
 
-#profile-pic img {
-  height: 40vw;
-  margin: 0 25vw;
-}
+  #key-abouts {
+    width: 90vw;
+  }
 
-#key-abouts {
-  width: 90vw;
-}
+  .inner-key-abouts h1,
+  .inner-key-abouts h2 {
+    font-size: 150%;
+    margin: 5px;
+    text-align: center;
+  }
+  .inner-key-abouts h2 {
+    font-size: 120%;
+    font-weight: 550;
+  }
 
-.inner-key-abouts h1,
-.inner-key-abouts h2 {
-  font-size: 150%;
-  margin: 5px;
-  text-align: center;
-}
-.inner-key-abouts h2 {
-  font-size: 120%;
-  font-weight: 550;
-}
+  .inner-key-abouts2 {
+    display: none;
+  }
 
-.inner-key-abouts2 {
-  display: none;
-}
+  span.social-links {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    top: 75vh;
+    left: 0px;
+    padding: 7px 6px 7px 2px;
+    border-radius: 0px 20px 20px 0;
 
-span.social-links {
-  display: block;
-  position: fixed;
-  z-index: 100;
-  top: 75vh;
-  left: 0px;
-  padding: 7px 6px 7px 2px;
-  border-radius: 0px 20px 20px 0;
+    border-left: none;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+  }
 
-  border-left: none;
-  width: fit-content;
-  align-items: center;
-  justify-content: center;
-}
+  a.ext-link-header {
+    display: block;
+    height: 28px;
+    border-radius: 20px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 2px;
+    margin-right: 1px;
+  }
 
-a.ext-link-header {
-  display: block;
-  height: 28px;
-  border-radius: 20px;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  margin: 5px 2px;
-  margin-right: 1px;
-}
+  .ext-link-header img {
+    height: 20px;
+    border-radius: 50%;
+    padding: 4px;
+    align-items: center;
+    justify-content: center;
+    /* margin: 4px; */
+  }
+  #social-links-rel {
+    display: none;
+  }
 
-.ext-link-header img {
-  height: 20px;
-  border-radius: 50%;
-  padding: 4px;
-  align-items: center;
-  justify-content: center;
-  /* margin: 4px; */
-}
-#social-links-rel{
-  display: none;
-}
+  /* --------------------------------------------------------------------------------------------- */
 
-/* --------------------------------------------------------------------------------------------- */
+  .nav-sub-pane {
+    flex-direction: column;
+    align-items: center;
+  }
+  a.nav-links {
+    margin: 10px auto;
+  }
+  .body-sections ul li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-.nav-sub-pane {
-  flex-direction: column;
-  align-items: center;
-}
-a.nav-links {
-  margin: 10px auto;
-}
-.body-sections ul li {
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+  .li-text p {
+    text-align: justify;
+    padding: 5px;
+    border-radius: 8px;
+  }
 
-.li-text p {
-  text-align: justify;
-  padding: 5px;
-  border-radius: 8px;
+  /* ----------------------------------------------------------------------------------------------- */
 }
-
-/* ----------------------------------------------------------------------------------------------- */
