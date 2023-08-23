@@ -1,46 +1,80 @@
-/*  */
 /* TODO apply grid to .body-ul-li, 3 columns */
-.body-ul-li{
-    display: flex;
-    flex-wrap: wrap;
+.body-ul-li {
+  display: flex;
+  /* grid-template-columns: repeat(3, 1fr); */
+  flex-wrap: wrap;
 }
-.message-form-outer{
-    display: flex;
-    justify-content: space-around;
+.message-form {
+  display: flex;
+  flex-direction: column;
 }
-.message-form{
-    display: flex;
-    justify-content: center;
-    align-items: left;
-    flex-direction: column;
-    width: 60vw;
-    font-weight: bold;
+.message-form-outer {
+  display: flex;
+  justify-content: space-around;
 }
-.message-form>*{
-    padding: 5px;
-    border-radius: 10px;
+.message-form {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  /* width: 60vw; */
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 2fr 5fr;
 }
-.message-form>label{
-    color: #ddd;
+.message-form > * {
+  margin: 5px;
+  border-radius: 10px;
+  /* background-color: green; */
 }
-.message-form>label:hover{
-    cursor: pointer;
-    color: #fff;
+.form-sub {
+  display: flex;
+  flex-direction: column;
 }
-.message-form>input, textarea{
-    border: 3px solid black;
+.form-labels {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
-.message-form>:hover, .message-form>textarea:hover{
-    opacity: 90%;
+.message-form > label {
+  color: #ddd;
 }
-.message-form>input, .message-form>textarea{
-    opacity: 80%;
+.form-element {
+  margin: 10px 0;
 }
-.submit-btn{
-    margin: 10px 0px;
+.message-form > label:hover {
+  cursor: pointer;
+  color: #fff;
 }
-.submit-btn:hover{
-    background-color: #343434;
-    color: whitesmoke;
-    cursor: pointer;
+.form-inputs > input {
+  border-radius: 10px;
+  height: 15px;
+  /* margin: 20px; */
+}
+.message-form > input,
+textarea {
+  border: 1px solid black;
+}
+.form-inputs > textarea {
+  font-size: 16px;
+  /* background-color: blue; */
+  border-radius: 8px;
+}
+.form-submit {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  align-items: center;
+}
+.submit-btn {
+  width: 10vw;
+  height: 30px;
+  border-radius: 15px;
+  /* margin: 10px 0px; */
+  font: 30px;
+}
+.submit-btn:hover {
+  background-color: #343434;
+  color: whitesmoke;
+  cursor: pointer;
 }

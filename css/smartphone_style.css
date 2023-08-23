@@ -1,6 +1,9 @@
 /* Stylesheet for smartphone view */
 /* 
 TODO span.social links sticky position not working
+TODO CSS not working properly when 'FORCE TO DESKTOP' enabled on smartphones
+TODO convert all css to rel css
+TODO clean up whole project
 */
 /* ---------------------------------------------------------------------------------------------- */
 @media screen and (max-width: 950px) {

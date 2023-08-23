@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="./css/contact_style.css">
 </head>
 
 <!-- TODO add contact form to send message directly to my mail -->
@@ -47,14 +48,20 @@
                 <!-- <form onsubmit="sendMessage(); reset(); return false" class="message-form"> -->
                 <form action="https://formsubmit.co/s1024creative@gmail.com" onsubmit="reset()" target="_blank"
                     method="POST" class="message-form">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name">
-                    <label for="email">Email ID</label>
-                    <input type="email" name="email" id="email">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" cols="30" rows="10"
-                        placeholder="Enter your message here"></textarea>
-                    <input type="submit" value="Submit" class="submit-btn">
+                    <div class="form-labels form-sub">
+                        <label for="name" class="form-element">Name</label>
+                        <label for="email" class="form-element">Email ID</label>
+                        <label for="message" class="form-element">Message</label>
+                    </div>
+                    <div class="form-inputs form-sub">
+                        <input type="text" name="name" id="name" class="form-element">
+                        <input type="email" name="email" id="email" class="form-element">
+                        <textarea name="message" id="message" cols="30" rows="3" placeholder="Enter your message here"
+                            class="form-element"></textarea>
+                    </div>
+                    <div class="form-submit form-sub">
+                        <input type="submit" value="Submit" class="submit-btn">
+                    </div>
                 </form>
             </li>
         </ul>
