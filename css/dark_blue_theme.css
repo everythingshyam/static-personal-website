@@ -1,5 +1,5 @@
 body {
-  background-image: url("../images/bg_img4.jpg");
+  background-image: url("../images/Background/bg_img4.jpg");
 }
 
 #alert-bar {
@@ -13,7 +13,7 @@ body {
 header {
   border-bottom: 1px solid white;
   background-color: rgba(52, 52, 52, 0.5);
-  background-image: url("../images/bg_img3_vitaly-sacred-AgZwKKtFi-k-unsplash.jpg");
+  background-image: url("../images/Background/bg_img3_vitaly-sacred-AgZwKKtFi-k-unsplash.jpg");
 }
 
 #menu-bar-outer {
@@ -32,7 +32,6 @@ header {
 #menu-bar ul li a:hover {
   background-color: rgba(247, 255, 247, 0.7);
   color: black;
-  /* transition: .2s; */
 }
 
 #dropdown-content {
@@ -83,7 +82,6 @@ a.nav-links {
 a.nav-links:hover {
   color: black;
   background-color: white;
-  /* transition: .2s; */
 }
 
 span.social-links {

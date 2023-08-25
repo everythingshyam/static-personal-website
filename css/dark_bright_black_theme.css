@@ -3,7 +3,6 @@ body {
   background-size: contain;
   background-position: top right;
   backdrop-filter: blur(2px);
-  /* background-color: rgb(0, 0, 0); */
 }
 
 .blur-1{
@@ -29,19 +28,16 @@ header {
     background-size: cover;
   }
   background-position: top right;
-  /* TODO below blur not working */
   background-color: rgba(52, 52, 52, 1);
 }
 
 #menu-bar-outer {
   background-color: rgba(52, 52, 52, 0.4);
-  /* backdrop-filter: blur(2px); */
 }
 
 .edge-covers,
 #menu-bar {
   background-color: rgba(1, 1, 2, 0.3);
-  /* backdrop-filter: blur(5px); */
 }
 
 #menu-bar ul li a {
@@ -56,7 +52,7 @@ header {
 #dropdown-content {
   background-color: rgba(35, 35, 35, 0.9);
   border: 2px solid white;
-  /* backdrop-filter: blur(1px); */
+
 }
 .active-tab{
   color: black !important;
@@ -65,8 +61,8 @@ header {
 
 #main-header {
   background-color: rgba(52, 52, 52, 0.5);
-  /* backdrop-filter: blur(2px); */
 }
+
 #profile-pic img {
   border: 2px solid white;
 }
@@ -95,8 +91,6 @@ span.social-links {
   border: 1px solid white;
 }
 
-/*  */
-
 .li-img {
   color: #8f908f;
 }
@@ -116,7 +110,7 @@ span.social-links {
 }
 
 a.ext-link-header {
-  border: 0.1px solid rgba(211, 218, 221, 0.4);
+  border: 0.1px solid rgba(211, 218, 221, 0.595);
 }
 
 a.ext-link:hover {

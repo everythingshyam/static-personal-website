@@ -1,6 +1,6 @@
 /* General stylesheet */
 /*
-  @todo go to top btn not showing wrt viewport
+  TODO go to top btn not showing wrt viewport
   TODO resolve star selector related issues
 */
 
@@ -15,7 +15,6 @@
   box-sizing: border-box; */
 }
 body {
-  /* overflow: scroll; */
   margin: 0px;
   padding: 0px;
   font-family: 'Source Code Pro', monospace;
@@ -53,6 +52,7 @@ a:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+
 #progress-value {
   display: block;
   height: calc(100% - 15px);
@@ -67,22 +67,11 @@ a:hover {
 
 /* ----------------------------------------------------- */
 
-/* .go-to-top-outer {
-  
-
-} */
 #go-to-top {
   position: fixed;
   top: 0;
-  /* z-index: 100; */
-  /*
-  bottom: 0;
-  right: 30vw; 
-  */
 
   padding: 0px;
-  /* padding-bottom: 0; */
-  /* width: fit-content; */
   align-items: center;
   justify-content: center;
   display: grid;
@@ -93,12 +82,12 @@ a:hover {
   font-weight: bold;
   text-decoration: none;
   border-radius: 2px solid black;
-  /* padding: 9px 15px 4px 15px; */
   padding: 10px;
   margin: 0;
   border-radius: 20px;
   opacity: 0.4;
 }
+
 .go-to-top-outer button:hover {
   cursor: pointer;
   background-color: black;
@@ -115,9 +104,7 @@ a:hover {
   margin: 10px;
   background-color: rgba(252, 252, 252, 0.6);
   border-radius: 30px;
-
   grid-template-columns: 1fr 2.5fr;
-
   position: fixed;
   bottom: 30vh;
   margin-left: 0px;
@@ -133,11 +120,13 @@ a:hover {
 .theme-btn {
   opacity: 0.7;
 }
+
 .theme-btn img {
   border-radius: 50%;
   border: 5px solid black;
   width: 3vw;
 }
+
 .theme-btn:hover {
   opacity: 1;
   cursor: pointer;
@@ -148,6 +137,7 @@ a:hover {
   display: none;
   grid-column: 1/3;
 }
+
 .theme-menu > li {
   list-style-type: none;
 }
@@ -156,20 +146,22 @@ a:hover {
   text-decoration: none;
   color: black;
 }
+
 .theme-menu > li > ul:nth-child(2n + 1) {
   background-color: green;
 }
 
 /* ----------------------------------------- */
+
 .menu-bar-outer,
 .header-import {
   /* backdrop-filter: blur(1px); */
 }
+
 header {
   margin: 0px;
   color: #fcfcfc;
   justify-content: center;
-  /* backdrop-filter: blur(2px); */
 }
 
 #menu-bar-outer {
@@ -204,6 +196,7 @@ header {
   left: 40vw;
   top: 75px;
 }
+
 .active-tab {
   background-color: #f7fff7;
   color: black;
@@ -214,36 +207,48 @@ header {
 #main-header {
   display: flex;
 }
+
 #profile-pic {
   overflow: hidden;
 }
+
 #profile-pic img {
   border-radius: 50%;
 }
+
 #key-abouts {
   padding-left: 1%;
   overflow: hidden;
 }
+
 .inner-key-abouts {
   padding: 0 2vw;
 }
+
 span.social-links {
   backdrop-filter: blur(1px);
   opacity: 0.7;
 }
+
 span.social-links:hover {
   opacity: 1;
 }
+
 a.ext-link-header {
   backdrop-filter: blur(2px);
 }
+
 .ext-link-header:hover {
   background-color: #f7fff7;
   opacity: 1;
 }
+
+/* For testing purposes */
+
 #social-links-abs {
   /* background-color: red; */
 }
+
 #social-links-rel {
   /* background-color: green; */
 }
@@ -256,14 +261,17 @@ a.ext-link-header {
   padding-bottom: 30px;
   min-height: 30vh;
 }
+
 span.body-sections {
   margin: 0;
   padding: 0;
 }
+
 span.body-sections ul {
   margin: 0;
   padding: 0;
 }
+
 #body h1 {
   margin: 30px;
   margin-top: 0px;
@@ -273,10 +281,12 @@ span.body-sections ul {
   color: black;
   border: 2px solid black;
 }
+
 #body span.body-sections {
   margin: 0px;
   padding: 0px;
 }
+
 #body h2 {
   padding: 5px 2vw 5px 7vw;
   display: inline-block;
@@ -284,11 +294,13 @@ span.body-sections ul {
   border-radius: 0 20px 20px 0;
   border-left: 0px;
 }
+
 #body ul {
   padding: 0;
   margin: 5vw;
   margin-top: 1vw;
 }
+
 #body li {
   display: flex;
   padding: 3vw;
@@ -296,23 +308,28 @@ span.body-sections ul {
   border-radius: 10px;
   list-style-type: none;
 }
+
 .li-img {
   padding-right: 20px;
   padding-top: 5px;
   width: 160px;
 }
+
 .li-img img {
   border-radius: 50%;
   height: 150px;
   width: 150px;
 }
+
 .li-text {
   width: 75vw;
 }
+
 .li-text.h3 {
   padding-top: 5px;
   margin-top: 4px;
 }
+
 .li-text > h3 > sup {
   color: yellow;
 }
@@ -322,14 +339,13 @@ span.body-sections ul {
   align-content: center;
   padding-bottom: 10px;
 }
+
 a.nav-links {
   display: inline-block;
   width: max-content;
   overflow: hidden;
-
   text-decoration: none;
   font-weight: bolder;
-
   padding: 2px 10px;
   margin: 10px;
   border-radius: 30px;
@@ -400,11 +416,13 @@ footer ul {
   justify-content: space-evenly;
   padding-left: 0px;
 }
+
 @media (min-width: 600px) {
   footer ul {
     flex-direction: row;
   }
 }
+
 footer ul li {
   list-style: none;
   padding: 10px 0;

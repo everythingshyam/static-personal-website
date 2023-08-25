@@ -1,13 +1,10 @@
-*{
-    /* overflow-wrap: break-word; */
-}
 .home-window{
     margin: .5vw 5vw;
-    /* background-color: red; */
     min-height: 25vh;
     display: flex;
     flex-direction: column;
-    padding: 2vw;
+    padding: 0 2vw;
+    margin-top: 0;
 }
 
 .home-section{
@@ -23,30 +20,60 @@
     justify-content: center;
     align-items: center;
 }
+
+.home-section:first-child{
+    margin-top: 0;
+}
+
+.home-section:nth-child(even){
+    grid-template-columns: 2fr 1fr;
+}
+
+.home-section:nth-child(even) > .section-img, .home-section:nth-child(even) > .section-text{
+    grid-row-start: 1;
+    grid-row-end: 2;    
+}
+
+.home-section:nth-child(even) > .section-text{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.home-section:nth-child(even) > .section-img{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
 .section-img, .section-text{
     background-color: rgba(147, 147, 147,.5);
-    /* margin: 2vw; */
     min-height: 20vw;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 3vw;
-    border: 1px solid black;
-    /* overflow: scroll; */
-    /* width: 35vw; */
+}
+
+.section-img{
+    border: 2px solid red;
+}
+
+.section-text{
+    border: 2px solid blue;
 }
 
 /* Smartphone CSS */
+
 @media screen and (max-width: 950px) {
 .home-window{
     margin: 2vw 8vw;
 }
+
 .home-section{
-    /* background-color: green; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .section-img{
     max-width: 40vw;
     min-width: 30vw;

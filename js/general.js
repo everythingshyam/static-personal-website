@@ -6,8 +6,12 @@
 // ----------------------------------------------------------------------------------------
 //DECLARATIONS
 // var menu_click_count = 0;
-var menuShow = true
-var tabNo = 0
+
+//below variable to be made true while isTesting and working on website locally
+var isTesting = false;
+
+var menuShow = true;
+var tabNo = 0;
 //----------------------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------------------
@@ -16,10 +20,10 @@ var tabNo = 0
 //code to retrieve previous page on reload
 if (localStorage.hasOwnProperty('tabNo')) {
   const cachedValue = localStorage.getItem('tabNo')
-  tabNo = cachedValue.toString()
+  tabNo = cachedValue.toString();
   console.log('Tab No in cache is: ', tabNo)
 }
-activateTab(tabNo)
+activateTab(tabNo);
 
 // ----------------------------------------------------------------------------------------
 // TESTING SECTION
@@ -39,7 +43,9 @@ function activateTab(tabNoIn) {
   // TODO remove below if else if structure using arrays
   if (tabNo == '0') {
     console.log('User clicked on Home Button')
-    // loadHTML_Local("body", "home.html");
+    if(isTesting)
+      loadHTML_Local("body", "home.html");
+    else
     loadHTML('body', 'home.html')
     //now changing color of active tab
     document.getElementById('home-tab').classList.add('active-tab')
@@ -47,56 +53,70 @@ function activateTab(tabNoIn) {
   //
   else if (tabNoIn == '10') {
     console.log('User clicked on About-0 Button')
-    // loadHTML_Local("body", "aboutEducation.html");
-    loadHTML('body', 'aboutEducation.html')
+    if (isTesting) 
+      loadHTML_Local('body', 'aboutEducation.html')
+    else
+      loadHTML('body', 'aboutEducation.html')
     //now changing color of active tab
     document.getElementById('about-tab').classList.add('active-tab')
   }
   //
   else if (tabNo == '11') {
     console.log('User clicked on About-1 Button')
-    // loadHTML_Local("body", "aboutPositions.html");
-    loadHTML('body', 'aboutPositions.html')
+    if (isTesting) 
+      loadHTML_Local('body', 'aboutPositions.html')
+    else
+      loadHTML('body', 'aboutPositions.html')
     //now changing color of active tab
     document.getElementById('about-tab').classList.add('active-tab')
   }
   //
   else if (tabNoIn == '12') {
     console.log('User clicked on About-2 Button')
-    // loadHTML_Local("body", "aboutProjects.html");
-    loadHTML('body', 'aboutProjects.html')
+    if (isTesting) 
+      loadHTML_Local('body', 'aboutProjects.html')
+    else
+      loadHTML('body', 'aboutProjects.html')
     //now changing color of active tab
     document.getElementById('about-tab').classList.add('active-tab')
   }
   //
   else if (tabNo == '13') {
     console.log('User clicked on About-3 Button')
-    // loadHTML_Local("body", "aboutSkills.html");
-    loadHTML('body', 'aboutSkills.html')
+    if (isTesting) 
+      loadHTML_Local('body', 'aboutSkills.html')
+    else
+      loadHTML('body', 'aboutSkills.html')
     //now changing color of active tab
     document.getElementById('about-tab').classList.add('active-tab')
   }
   //
   else if (tabNoIn == '14') {
     console.log('User clicked on About-4 Button')
-    // loadHTML_Local("body", "aboutHobbies.html");
-    loadHTML('body', 'aboutHobbies.html')
+    if (isTesting) 
+      loadHTML_Local('body', 'aboutHobbies.html')
+    else
+      loadHTML('body', 'aboutHobbies.html')
     //now changing color of active tab
     document.getElementById('about-tab').classList.add('active-tab')
   }
   //
   else if (tabNo == '2') {
     console.log('User clicked on Contact Button')
-    // loadHTML_Local("body", "contact.html");
-    loadHTML('body', 'contact.html')
+    if (isTesting) 
+      loadHTML_Local('body', 'contact.html')
+    else
+      loadHTML('body', 'contact.html')
     //now changing color of active tab
     document.getElementById('contact-tab').classList.add('active-tab')
   }
   //
   else if (tabNoIn == '3') {
     console.log('User clicked on Else Button')
-    // loadHTML_Local("body", "home.html");
-    loadHTML('body', 'home.html')
+    if (isTesting) 
+      loadHTML_Local('body', 'home.html')
+    else
+      loadHTML('body', 'home.html')
     //now changing color of active tab
     document.getElementById('home-tab').classList.add('active-tab')
   }
@@ -222,6 +242,21 @@ function loadHTML_Local(className, fileName) {
       xhttp.send()
       return
     })
+  }
+}
+
+function loadFile(className, fileName)
+{
+  if(isTesting==true)
+  {
+    console.log("Loading local file social links")
+    loadHTML_Local(className,fileName);
+
+  }
+  else 
+  {
+    console.log("Loading from online");
+    loadHTML(className,fileName);
   }
 }
 // ----------------------------------------------------------------------------------------
