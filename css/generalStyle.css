@@ -10,6 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;700&display=swap');
 
 * {
+  /* TODO when uncommenting below lines, website has some glitches */
   /* padding: 0;
   margin: 0;
   box-sizing: border-box; */
@@ -24,6 +25,9 @@ body {
 a:hover {
   cursor: pointer;
   transition: 0.2s;
+}
+.inactive-link{
+  pointer-events: none;
 }
 
 /* ----------------------------------------------------- */
@@ -232,6 +236,7 @@ span.social-links {
 
 span.social-links:hover {
   opacity: 1;
+  cursor: pointer;
 }
 
 a.ext-link-header {
@@ -278,8 +283,6 @@ span.body-sections ul {
   padding: 3px 0;
   text-align: center;
   border-radius: 25px;
-  color: black;
-  border: 2px solid black;
 }
 
 #body span.body-sections {
@@ -404,6 +407,7 @@ a.ext-link-inline:hover {
 footer {
   margin: 0px;
   padding: 2%;
+  padding-bottom: 1%;
 }
 
 #quick-links {
@@ -417,7 +421,7 @@ footer ul {
   padding-left: 0px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 875px) {
   footer ul {
     flex-direction: row;
   }
@@ -429,12 +433,12 @@ footer ul li {
   margin: 1px 20px;
   /* justify-content: center; */
 }
-
-@media (min-width: 550px) {
+/* 
+@media (min-width: 875px) {
   footer ul li {
     display: inline;
   }
-}
+} */
 
 footer ul li a {
   font-weight: bold;

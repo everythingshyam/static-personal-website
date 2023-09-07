@@ -8,9 +8,6 @@ TODO clean up whole project
 /* ---------------------------------------------------------------------------------------------- */
 
 @media screen and (max-width: 950px) {
-  .menu-bar-outer {
-    background-color: rgba(52, 52, 52, 0.5);
-  }
 
   .menu-btn {
     display: flex;
