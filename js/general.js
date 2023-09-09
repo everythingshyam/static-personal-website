@@ -8,7 +8,7 @@
 // var menu_click_count = 0;
 
 //below variable to be made true while isTesting and working on website locally
-var isTesting = true;
+var isTesting = false;
 
 var menuShow = true;
 var tabNo = 0;
@@ -185,7 +185,7 @@ function loadHTML(className, fileName) {
 			};
 			xhttp.open(
 				'GET',
-				'https://everythingshyam.github.io/Portfolio/' + file,
+				'https://everythingshyam.github.io/Portfolio/html/' + file,
 				true
 			);
 			xhttp.send();
@@ -234,7 +234,7 @@ function loadHTML_Local(className, fileName) {
 					}
 				}
 			};
-			xhttp.open('GET', './' + file, true);
+			xhttp.open('GET', './html/' + file, true);
 			xhttp.send();
 			return;
 		});
