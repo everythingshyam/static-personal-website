@@ -2,13 +2,12 @@
 
 //TODO when menu is switched on is mobile view mode, nav bar of desktop mode is affected, resolve this issue
 
-//DONE loadHTML not working in sub-pages
 // ----------------------------------------------------------------------------------------
 //DECLARATIONS
 // var menu_click_count = 0;
 
 //below variable to be made true while isTesting and working on website locally
-var isTesting = false;
+var isTesting = true;
 
 var menuShow = true;
 var tabNo = 0;

@@ -16,15 +16,15 @@ TODO clean up whole project
 
   .menu-btn img {
     margin: 15px;
-    background-color: rgba(190, 190, 190, 0.4);
+    /* background-color: rgba(190, 190, 190, 0.4); */
     border-radius: 5px;
-    border: 1px solid whitesmoke;
+    /* border: 1px solid whitesmoke; */
     width: 35px;
     padding: 2px 4px;
   }
 
   .menu-btn img:hover {
-    background-color: rgba(190, 190, 190, 0.7);
+    /* background-color: rgba(190, 190, 190, 0.7); */
     cursor: pointer;
   }
 
@@ -51,7 +51,7 @@ TODO clean up whole project
     cursor: pointer;
     margin: 7px;
     border-radius: 5px;
-    border-bottom: 1px solid whitesmoke;
+    /* border-bottom: 1px solid whitesmoke; */
   }
 
   #menu-bar ul li a {
@@ -106,7 +106,7 @@ TODO clean up whole project
     display: block;
     position: fixed;
     z-index: 100;
-    top: 75vh;
+    bottom: 10vh;
     left: 0px;
     padding: 7px 6px 7px 2px;
     border-radius: 0px 20px 20px 0;
