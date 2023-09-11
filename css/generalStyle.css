@@ -174,7 +174,9 @@ span.body-sections ul {
 }
 
 #body li {
-	display: flex;
+	/* display: flex; */
+	display: grid;
+	grid-template-columns: 3fr 7fr;
 	padding: 3vw;
 	margin: 2.5vw 0;
 	border-radius: 10px;
@@ -184,7 +186,9 @@ span.body-sections ul {
 .li-img {
 	padding-right: 20px;
 	padding-top: 5px;
-	width: 160px;
+	display: flex;
+	justify-content: end;
+	/* width: 160px; */
 }
 
 .li-img img {
@@ -194,7 +198,7 @@ span.body-sections ul {
 }
 
 .li-text {
-	width: 75vw;
+	/* width: 75vw; */
 }
 
 .li-text.h3 {
@@ -262,6 +266,15 @@ a.ext-link-inline {
 	/* background-color: rgba(252, 252, 252, 0.4); */
 	padding: 5px;
 	border-radius: 7px;
+}
+/* 
+#article{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    } */
+
+.yt-player{
+	border-radius: 10px;
 }
 /* ----------------------------------------------------------------------------------------------- */
 
