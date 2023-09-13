@@ -8,67 +8,37 @@
 }
 
 .home-section{
-    /* background-color: rgba(220, 220, 220, 0.1); */
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 2vw;
+    display: flex;
     padding-top: 2vh;
-    padding: 3vw;
+    padding: 2vw;
     margin-top: 2vh;
     border-radius: 3vw;
-    /* border: solid 1px whitesmoke; */
     justify-content: center;
     align-items: center;
 }
 
-.home-section:first-child{
-    margin-top: 0;
-}
-
-.home-section:nth-child(even){
-    grid-template-columns: 2fr 1fr;
-}
-
-.home-section:nth-child(even) > .section-img, .home-section:nth-child(even) > .section-text{
-    grid-row-start: 1;
-    grid-row-end: 2;    
-}
-
-.home-section:nth-child(even) > .section-text{
-    grid-column-start: 1;
-    grid-column-end: 2;
-}
-
-.home-section:nth-child(even) > .section-img{
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
-
-.section-img, .section-text{
+.section-inner{
     background-color: rgba(52, 52, 52, 0.1);
-    min-height: 20vw;
+    /* min-height: 20vw; */
+    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     border-radius: 3vw;
 }
 
-/* Smartphone CSS */
+.section-inner>h2{
+    justify-content: center;
+    width: 100%;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
 
 @media screen and (max-width: 950px) {
 .home-window{
     margin: 2vw 8vw;
-}
-
-.home-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.section-img{
-    max-width: 40vw;
-    min-width: 30vw;
 }
 
 .section-text{

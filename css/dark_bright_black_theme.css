@@ -22,9 +22,17 @@
 	--sup-primary: yellow;
 }
 
-* {
+body {
 	color: var(--font-primary);
 }
+a{
+	color: var(--font-primary);
+}
+a:hover{
+	color: var(--font-secondary);
+	background-color: var(--bg-primary);
+}
+
 .blur-1 {
 	backdrop-filter: blur(1px);
 }
@@ -48,23 +56,16 @@ a.ext-link-header {
 	background-color: var(--bg-secondary2);
 }
 
+.ext-link-header:hover {
+	background-color: var(--bg-primary);
+}
+
 .ext-link-header img {
 	border: 0.5px solid var(--bg-secondary1);
 }
 
-/* 
-.go-to-top-outer button {
-	border-radius: 2px solid var(--border-secondary);
-}
-
-.go-to-top-outer button:hover {
-	background-color: black;
-	color: whitesmoke;
-} */
-
-.active-tab {
-	background-color: var(--bg-primary);
-	color: var(--font-secondary);
+a.ext-link-header {
+	border: 1px solid var(--border-primary1);
 }
 
 .li-text > h3 > sup {
@@ -108,12 +109,6 @@ a.ext-link-header {
 } */
 
 /* --------------------------------------- */
-
-a:hover{
-	color: var(--font-secondary);
-	background-color: var(--bg-primary);
-}
-
 input,
 textarea {
 	color: var(--font-secondary);
@@ -179,10 +174,9 @@ header {
 	border-bottom: 1px solid var(--border-primary);
 }
 
-/* Change color of dropdown links on hover */
-#dropdown-content a:hover {
+/* #dropdown-content a:hover {
 	color: var(--font-secondary);
-}
+} */
 
 .active-tab {
 	color: var(--font-secondary);
@@ -199,6 +193,8 @@ header {
 
 span.social-links {
 	background-color: var(--bg-tertiary2);
+	border: 0.2px solid var(--border-primary1);
+	display: flex;
 }
 
 #body {
@@ -210,7 +206,7 @@ span.social-links {
 	border: 1px solid var(--border-primary1);
 }
 
-#body h2 {
+#body>h2 {
 	background-color: var(--bg-tertiary2);
 	border: 1px solid var(--border-primary1);
 }
@@ -230,13 +226,6 @@ a.nav-links:hover {
 	background-color: var(--bg-primary);
 }
 
-span.social-links {
-	border: 0.2px solid var(--border-primary1);
-}
-
-a.ext-link-header {
-	border: 1px solid var(--border-primary1);
-}
 
 a.ext-link {
 	background-color: var(--bg-secondary1);
@@ -259,18 +248,6 @@ a.inactive-ext-link {
 a.inactive-ext-link:hover {
 	background-color: var(--bg-secondary);
 }
-
-/* 
-.go-to-top-outer a {
-	color: black;
-	background-color: rgba(218, 218, 218, 0.5);
-	border: 1.5px solid black;
-}
-
-.go-to-top-outer a:hover {
-	color: black;
-	background-color: white;
-} */
 
 footer {
 	border-top: 1px solid var(--border-primary1);
