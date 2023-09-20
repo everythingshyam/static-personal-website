@@ -5,6 +5,7 @@ TODO finish Theme Menu Bar
 TODO height systems to be changed, especially for situations when total height of content is less than that of screen
 TODO hide the contents which overflow...that is "display:none;" them
 TODO add copyright free images to background
+TODO fix Go To Top button
 
 -->
 <!DOCTYPE html>
@@ -16,13 +17,13 @@ TODO add copyright free images to background
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
     <title>Shyam | Web Developer</title>
     <link rel="icon" type="image/x-icon" href="./images/icons/WebsiteIcon2.ico" />
-    <!-- General CSS -->
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/homePage.css" />
+    <link rel="stylesheet" href="./css/contact_style.css" />
+    <link rel="stylesheet" href="./css/resources.css" />
 </head>
 
 <body>
-    <!-- TODO put this below div in a seperate file "overlays.html", for all files -->
-    <!-- Go to top hidden because position:fixed; not working properly -->
     <!-- <div class="go-to-top-outer" id="go-to-top">
         <button onclick="goToTop()">Go To Top</button>
     </div> -->
@@ -81,24 +82,10 @@ TODO add copyright free images to background
     </span>
     <script src="./js/general.js"></script>
     <script class="page-specific-js">
-        // console.log("Internal Javascript working properly.");
         logInternalJS_Status();
-
-        /*
-        loadHTML_Local('header-import', 'header.html');
-        */
-        
-         loadFile("header-import", "header.html");
-
-
-        /*
-        loadHTML_Local('footer-import', 'footer.html');
-        */
-         loadFile("footer-import", "footer.html");
-
-
+        loadFile("header-import", "header.html");
+        loadFile("footer-import", "footer.html");
         hideAlertBar();
-      // activateTab(0);
     </script>
 </body>
 

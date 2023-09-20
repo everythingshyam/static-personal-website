@@ -14,9 +14,9 @@
 	--bg-dark2: rgba(0, 0, 0, 0.2);
 	/* --- */
 	--border-primary: whitesmoke;
-	--border-primary1: rgba(245, 245, 245,.1);
-	--border-primary5: rgba(245, 245, 245,.2);
-	--border-primary8: rgba(245, 245, 245,.8);
+	--border-primary1: rgba(245, 245, 245, 0.1);
+	--border-primary5: rgba(245, 245, 245, 0.2);
+	--border-primary8: rgba(245, 245, 245, 0.8);
 	--border-secondary: black;
 	/* --- */
 	--sup-primary: yellow;
@@ -25,10 +25,10 @@
 body {
 	color: var(--font-primary);
 }
-a{
+a {
 	color: var(--font-primary);
 }
-a:hover{
+a:hover {
 	color: var(--font-secondary);
 	background-color: var(--bg-primary);
 }
@@ -71,7 +71,6 @@ a.ext-link-header {
 .li-text > h3 > sup {
 	color: var(--sup-primary);
 }
-
 
 .home-section {
 	background-color: var(--bg-tertiary2);
@@ -206,7 +205,7 @@ span.social-links {
 	border: 1px solid var(--border-primary1);
 }
 
-#body>h2 {
+.sub-heading {
 	background-color: var(--bg-tertiary2);
 	border: 1px solid var(--border-primary1);
 }
@@ -225,7 +224,6 @@ a.nav-links:hover {
 	color: var(--font-secondary);
 	background-color: var(--bg-primary);
 }
-
 
 a.ext-link {
 	background-color: var(--bg-secondary1);

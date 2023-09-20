@@ -141,6 +141,20 @@ function menu_click() {
 }
 // ----------------------------------------------------------------------------------------
 
+function loadCSS(fileName) {
+	var cssID = fileName;
+	if (!document.getElementById(cssID)) {
+		var head = document.getElementsByTagName('head')[0];
+		var link = document.createElement('link');
+		link.id = cssID;
+		// link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = '../css/' + fileName + '.css';
+		link.media = 'all';
+		head.appendChild(link);
+	}
+}
+
 // ----------------------------------------------------------------------------------------
 function loadHTML(className, fileName) {
 	console.log('Div id: ' + className + ', filename: ' + fileName);
