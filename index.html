@@ -1,11 +1,8 @@
 <!-- 
 
-TODO add links to works at apt places
-TODO finish Theme Menu Bar
-TODO height systems to be changed, especially for situations when total height of content is less than that of screen
-TODO hide the contents which overflow...that is "display:none;" them
-TODO add copyright free images to background
-TODO fix Go To Top button
+    TODO add content whereever missing
+    TODO fix CSS affected after applying * selector
+    TODO fix Go To Top button
 
 -->
 <!DOCTYPE html>
@@ -24,15 +21,14 @@ TODO fix Go To Top button
 </head>
 
 <body>
-    <!-- <div class="go-to-top-outer" id="go-to-top">
+    <div id="go-to-top">
         <button onclick="goToTop()">Go To Top</button>
-    </div> -->
+    </div>
     <header id="header">
         <div class="header-sub">
             <div id="alert-bar">
-                <marquee behavior="scroll" direction="left">This website is still work in progress😅. By it's current
-                    look, you
-                    can guess how awesome it's gonna be😁</marquee>
+                <marquee behavior="scroll" direction="left">This website can also be accessed at
+                    http://www.everythingshyam.in</marquee>
             </div>
             <div class="menu-bar-outer">
                 <div class="menu-btn">
@@ -85,7 +81,7 @@ TODO fix Go To Top button
         logInternalJS_Status();
         loadFile("header-import", "header.html");
         loadFile("footer-import", "footer.html");
-        hideAlertBar();
+        // hideAlertBar();
     </script>
 </body>
 

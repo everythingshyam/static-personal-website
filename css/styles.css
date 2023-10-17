@@ -19,15 +19,21 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	/* text-wrap: wrap; */
+	overflow-wrap: normal;
+	font-family: 'Source Code Pro', monospace;
 }
 body {
-	font-family: 'Source Code Pro', monospace;
+	margin: 0;
 }
 a {
 	text-decoration: none;
 }
 a:hover {
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+button:hover {
 	cursor: pointer;
 	transition: 0.2s;
 }
@@ -43,6 +49,25 @@ a:hover {
 
 #alert-bar marquee {
 	padding: 5px;
+}
+
+/*=============================================================================*/
+
+#go-to-top {
+	padding: 5px;
+	padding-bottom: 0;
+	width: fit-content;
+	position: fixed;
+	bottom: 0;
+	right: 15vw;
+}
+
+#go-to-top > button {
+	font-size: 1.1rem;
+	/* border: 0px; */
+	border-bottom: 0;
+	padding: 5px 10px;
+	border-radius: 15px 15px 0px 0;
 }
 
 header {

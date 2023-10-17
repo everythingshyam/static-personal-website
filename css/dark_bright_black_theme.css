@@ -145,6 +145,18 @@ body {
 	background-color: var(--bg-tertiary);
 }
 
+#go-to-top > button {
+	/* background-color: var(--bg-secondary4); */
+	color: var(--font-primary);
+	backdrop-filter: blur(10px);
+	background-color: var(--bg-secondary1);
+	border: 1px solid var(--border-primary1);
+}
+#go-to-top > button:hover {
+	background-color: var(--bg-primary);
+	color: var(--font-secondary);
+}
+
 header {
 	border-bottom: 1px solid var(--border-primary1);
 }
