@@ -1,7 +1,7 @@
-.body-ul-li {
+/* .body-ul-li {
 	display: flex;
 	flex-wrap: wrap;
-}
+} */
 .message-form {
 	display: flex;
 	flex-direction: column;
@@ -45,8 +45,9 @@
 } */
 
 .form-inputs > input {
-	border-radius: 10px;
+	border-radius: 15px;
 	height: 15px;
+	padding: 15px;
 }
 
 .form-inputs > textarea {

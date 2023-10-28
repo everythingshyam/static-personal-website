@@ -1,48 +1,62 @@
-.home-window{
-    margin: .5vw 5vw;
-    min-height: 25vh;
-    display: flex;
-    flex-direction: column;
-    padding: 0 2vw;
-    margin-top: 0;
+.home-window {
+	margin: 0.5vw 5vw;
+	min-height: 25vh;
+	display: flex;
+	flex-direction: column;
+	padding: 0 2vw;
+	margin-top: 0;
 }
 
-.home-section{
-    display: flex;
-    padding-top: 2vh;
-    padding: 2vw;
-    margin-top: 2vh;
-    border-radius: 3vw;
-    justify-content: center;
-    align-items: center;
+.home-section {
+	display: flex;
+	padding: 2vw;
+	padding-left: 3vw;
+	margin-top: 2vh;
+	border-radius: 3vw;
+	justify-content: center;
+	align-items: center;
 }
 
-.section-inner{
-    background-color: rgba(52, 52, 52, 0.1);
-    /* min-height: 20vw; */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    border-radius: 3vw;
+.section-inner {
+	background-color: rgba(52, 52, 52, 0.1);
+	width: 100%;
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	border-radius: 3vw;
 }
 
-.section-inner>h2{
-    justify-content: center;
-    width: 100%;
+.section-inner > h2 {
+	display: flex;
+	/* justify-content: center; */
+	width: 100%;
+}
+
+.para-contents {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  */
 
 @media screen and (max-width: 950px) {
-.home-window{
-    margin: 2vw 8vw;
-}
+	.home-window {
+		margin: 2vw 8vw;
+	}
 
-.section-text{
-    width: 90%;
-}
+	.section-inner > h2 {
+		justify-content: center;
+	}
 
+	.section-text {
+		width: 90%;
+	}
+
+	.para-contents {
+		width: 100%;
+	}
 }

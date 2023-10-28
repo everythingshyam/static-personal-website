@@ -60,12 +60,22 @@ a.ext-link-header {
 	background-color: var(--bg-primary);
 }
 
-.ext-link-header img {
+.ext-link-header > img {
 	border: 0.5px solid var(--bg-secondary1);
+	color: var(--font-primary);
+	/* stroke: green; */
 }
+/* .ext-link-header > svg {
+	width: 24px;
+	stroke: green;
+} */
 
 a.ext-link-header {
 	border: 1px solid var(--border-primary1);
+}
+
+.yt-player:hover {
+	box-shadow: 0 0 20px var(--bg-secondary4);
 }
 
 .li-text > h3 > sup {
