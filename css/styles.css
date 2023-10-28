@@ -398,6 +398,7 @@ footer ul {
 	}
 	#menu-bar > ul {
 		display: flex;
+		justify-content: center;
 	}
 
 	#menu-bar > ul > li {
