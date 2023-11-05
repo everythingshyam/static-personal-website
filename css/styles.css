@@ -22,6 +22,8 @@
 	overflow-wrap: normal;
 	/* font-family: 'Source Code Pro', monospace; */
 	font-family: 'Poppins', sans-serif;
+	transition: all 0.2s;
+	/* transition: background-color 0s; */
 }
 body {
 	margin: 0;
@@ -311,6 +313,7 @@ a.ext-link-inline {
 
 .yt-player {
 	border-radius: 10px;
+	height: 200px;
 }
 /* ----------------------------------------------------------------------------------------------- */
 
@@ -710,5 +713,10 @@ footer ul {
 		margin: auto;
 		/* align-items: center; */
 		/* flex-wrap: balanced; */
+	}
+
+	.yt-player {
+		width: 60vw;
+		height: auto;
 	}
 }
