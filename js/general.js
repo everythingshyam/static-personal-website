@@ -7,10 +7,12 @@
 // var menu_click_count = 0;
 
 //below variable to be made true while isTesting and working on website locally
-var isTesting = true;
+var isTesting = true; // true if testing, false if not testing
 
-var menuShow = true;
-var tabNo = 0;
+var menuShow = true; // true if menu is shown, false if menu is hidden
+var tabNo = 0; // 0 for home, 1 for about, 2 for contact, 3 for resources
+
+const blogNames = ['learning-resources']; // Names of blog pages here in order
 //----------------------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------------------
@@ -34,13 +36,14 @@ function logInternalJS_Status() {
 // ----------------------------------------------------------------------------------------
 function activateTab(tabNoIn) {
 	tabNo = tabNoIn;
+	tabNoIn = tabNoIn.toString();
 	//removing active status of tabs, if any
 	var activeTabs = document.getElementsByClassName('active-tab');
 	Array.from(activeTabs).forEach((activeTabsPtr) => {
 		activeTabsPtr.classList.remove('active-tab');
 	});
 	// TODO remove below if else if structure using arrays
-	if (tabNo == '0') {
+	if (tabNoIn == '0') {
 		console.log('User clicked on Home Button');
 		if (isTesting) loadHTML_Local('body', 'home.html');
 		else loadHTML('body', 'home.html');
@@ -56,7 +59,7 @@ function activateTab(tabNoIn) {
 		document.getElementById('about-tab').classList.add('active-tab');
 	}
 	//
-	else if (tabNo == '11') {
+	else if (tabNoIn == '11') {
 		console.log('User clicked on About-1 Button');
 		if (isTesting) loadHTML_Local('body', 'aboutPositions.html');
 		else loadHTML('body', 'aboutPositions.html');
@@ -72,7 +75,7 @@ function activateTab(tabNoIn) {
 		document.getElementById('about-tab').classList.add('active-tab');
 	}
 	//
-	else if (tabNo == '13') {
+	else if (tabNoIn == '13') {
 		console.log('User clicked on About-3 Button');
 		if (isTesting) loadHTML_Local('body', 'aboutSkills.html');
 		else loadHTML('body', 'aboutSkills.html');
@@ -88,7 +91,7 @@ function activateTab(tabNoIn) {
 		document.getElementById('about-tab').classList.add('active-tab');
 	}
 	//
-	else if (tabNo == '2') {
+	else if (tabNoIn == '2') {
 		console.log('User clicked on Contact Button');
 		if (isTesting) loadHTML_Local('body', 'contact.html');
 		else loadHTML('body', 'contact.html');
@@ -97,11 +100,22 @@ function activateTab(tabNoIn) {
 	}
 	//
 	else if (tabNoIn == '3') {
-		console.log('User clicked on Resources Button');
-		if (isTesting) loadHTML_Local('body', 'resources.html');
-		else loadHTML('body', 'resources.html');
+		console.log('User clicked on Blog Button');
+		if (isTesting) loadHTML_Local('body', 'blog.html');
+		else loadHTML('body', 'blog.html');
 		//now changing color of active tab
-		document.getElementById('res-tab').classList.add('active-tab');
+		document.getElementById('blog-tab').classList.add('active-tab');
+	} else if (tabNoIn[0] == '3') {
+		const temp1 = Number(tabNoIn.substring(1));
+		console.log(typeof temp1);
+		console.log(temp1);
+
+		console.log('User clicked on Read More of blog no', temp1);
+		if (isTesting)
+			loadHTML_Local('body', 'blogs/' + blogNames[temp1] + '.html');
+		else loadHTML('body', 'blogs/' + blogNames[temp1] + '.html');
+		//now changing color of active tab
+		document.getElementById('blog-tab').classList.add('active-tab');
 	}
 	//
 	else {

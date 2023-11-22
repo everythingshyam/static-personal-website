@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="./css/homePage.css" />
     <link rel="stylesheet" href="./css/contact_style.css" />
     <link rel="stylesheet" href="./css/resources.css" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -35,8 +34,9 @@
     <header id="header">
         <div class="header-sub">
             <div id="alert-bar">
-                <marquee behavior="scroll" direction="left">This website can also be accessed at
-                    http://www.everythingshyam.in</marquee>
+                <!-- <marquee behavior="scroll" direction="left">This website can also be accessed at
+                    http://www.everythingshyam.in</marquee> -->
+                <marquee behavior="scroll" direction="left">'Resources' tab is now renamed to 'Blog' tab.</marquee>
             </div>
             <div class="menu-bar-outer">
                 <div class="menu-btn">
@@ -65,8 +65,8 @@
                                 onclick="activateTab(2)">Contact</a>
                         </li>
                         <li class="outer-nav-li">
-                            <a class="outer-nav-a" id="res-tab" title="Resources I found useful"
-                                onclick="activateTab(3)">Resources</a>
+                            <a class="outer-nav-a" id="blog-tab" title="My-blog"
+                                onclick="activateTab(3)">Blog<sup>✨</sup></a>
                         </li>
                     </ul>
                 </span>
@@ -84,7 +84,6 @@
     <span class="inner-key-abouts2 social-links social-links-abs mobile-view" id="social-links-abs">
         Failed to load Social Links
     </span>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.1/dist/feather.min.js"></script> -->
     <script src="./js/general.js"></script>
     <script class="page-specific-js">
         logInternalJS_Status();
