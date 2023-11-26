@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            border: 1px dotted red;
+        }
+
+        .slideshow-container {
+            /* max-width: 600px;
+            position: relative;
+             */
+            display: block;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 10vw;
+            /* width: 30vw; */
+            /* border-radius: 50%; */
+            background-color: gray;
+            /* grid-template-rows: 50%; */
+        }
+
+        .mySlides {
+            display: none;
+            width: 10vw;
+            /* aspect-ratio: 1/1; */
+            margin: 0;
+            padding: 5px;
+            animation-fill-mode: both;
+        }
+
+        @keyframes slide-in {
+            0% {
+                transform: translateX(100%);
+
+            }
+
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        @keyframes slide-out {
+            0% {
+                transform: translateX(0);
+
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+    <title>Image Slideshow</title>
+</head>
+
+<body>
+    <div class="slideshow-container">
+        <img class="mySlides fade" src="ProfilePic.jpg" alt="Image 1" title="image 1111">
+        <img class="mySlides fade" src="ProfilePic2.jpeg" alt="Image 2" title="image 1111">
+
+        <!-- <img class="mySlides fade" src="ProfilePic3.jpg" alt="Image 3"> -->
+    </div>
+
+    <script>
+        const slides = document.getElementsByClassName("mySlides");
+        let slideIndex = 0;
+        showSlides(0);
+
+        function doNothing() {
+            //does nothing
+        }
+
+        function showSlides(index) {
+            // let i;
+            // for (i = 0; i < slides.length; i++) {
+
+            //to move current image away from centre (left)
+            // slides[index].style.transform = "translateX(0)";
+            slides[index].style.display = "inline";
+            // slides[index].style.animation = "slide-out 1s ease-in-out";
+            setTimeout(slides[index].style.display = "none", 1000);
+            setTimeout(slides[index + 1].style.display = "inline", 1000);
+
+            //to move next image towards centre (left)
+            // slides[index + 1].style.transform = "translateX(100%)";
+            // slides[index + 1].style.display = "inline";
+            // slides[index + 1].style.animation = "slide-in 1s ease-in-out";
+
+            // setTimeout(showSlides(0), 3000);
+            // }
+
+            // if(index<slides.length-1){
+            //     slides[index].style.display = "block";
+            // }
+            // else{
+            //     slides[0].style.display = "block";
+            // }
+
+            // slideIndex++;
+            // if (slideIndex > slides.length) {
+            //     slideIndex = 1;
+            // }
+            // slides[slideIndex - 1].style.display = "block";
+            // setTimeout(showSlides, 2000); // Change slide every 2 seconds (adjust as needed)
+        }
+
+    </script>
+</body>
+
+</html>
