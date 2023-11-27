@@ -22,7 +22,7 @@
 	overflow-wrap: normal;
 	/* font-family: 'Source Code Pro', monospace; */
 	font-family: 'Poppins', sans-serif;
-	transition: all 0.2s;
+	transition: all 0.5s;
 	/* transition: background-color 0s; */
 }
 body {
@@ -64,8 +64,19 @@ iframe {
 	margin: 0;
 }
 
-#alert-bar marquee {
+#alert-bar > marquee {
 	padding: 5px;
+	display: flex;
+}
+
+#alert-bar > marquee > ul {
+	display: flex;
+	list-style-type: disc;
+}
+
+#alert-bar > marquee > ul > li {
+	padding: 0 5px;
+	display: inline;
 }
 
 #go-to-top {
