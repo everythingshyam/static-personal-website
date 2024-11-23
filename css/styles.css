@@ -2,7 +2,6 @@
 /*
   	TODO go to top btn not showing wrt viewport
   	TODO resolve star selector related issues
-
   	TODO span.social links sticky position not working
 	TODO CSS not working properly when 'FORCE TO DESKTOP' enabled on smartphones
 	TODO convert all css to rel css
@@ -20,14 +19,11 @@
 	margin: 0;
 	box-sizing: border-box;
 	overflow-wrap: normal;
-	/* font-family: 'Source Code Pro', monospace; */
 	font-family: 'Poppins', sans-serif;
-	transition: all 0.5s;
-	/* transition: background-color 0s; */
+	transition: all 0.3s;
 }
 body {
 	margin: 0;
-	/* overflow: scroll; */
 }
 a {
 	text-decoration: none;
@@ -46,6 +42,7 @@ button:hover {
 	transition: 0.2s;
 }
 .inactive-link {
+	cursor: not-allowed;
 	pointer-events: none;
 }
 iframe {
@@ -90,7 +87,6 @@ iframe {
 
 #go-to-top > button {
 	font-size: 1.1rem;
-	/* border: 0px; */
 	border-bottom: 0;
 	padding: 5px 10px;
 	border-radius: 15px 15px 0px 0;
@@ -178,7 +174,6 @@ a.ext-link-header {
 }
 
 .ext-link-header:hover {
-	/* background-color: var(--bg-primary); */
 	opacity: 1;
 }
 
@@ -232,7 +227,6 @@ span.body-sections ul {
 	padding: 3vw;
 	margin: 2.5vw 0;
 	border-radius: 10px;
-	/* list-style-type: none; */
 }
 
 .li-img {
@@ -297,7 +291,6 @@ a.ext-link {
 	overflow: hidden;
 
 	text-decoration: none;
-	/* margin: 10px; */
 	padding: 4px;
 	border-radius: 30px;
 }
@@ -427,7 +420,6 @@ footer ul {
 		display: flex;
 		height: 80%;
 		width: 95%;
-		/* margin-top: 50px; */
 	}
 
 	#dropdown-content a {
@@ -452,7 +444,6 @@ footer ul {
 
 	#profile-pic {
 		width: 40%;
-		/* height: 35vh; */
 		padding-top: 1vw;
 		padding-right: 1%;
 		display: flex;
@@ -468,13 +459,11 @@ footer ul {
 
 	.inner-key-abouts .inner-key-abouts2 {
 		margin-left: 20px;
-		/* float: left; */
 		padding-bottom: 10px;
 	}
 
 	#key-abouts {
 		width: 60%;
-		/* height: 35vh; */
 		padding: 30px 0;
 		display: flex;
 		flex-direction: column;
@@ -496,7 +485,6 @@ footer ul {
 		display: flex;
 		margin-left: 20px;
 		padding: 1px 4px;
-		/* padding-top: 4px; */
 		border-radius: 20px;
 		width: fit-content;
 		align-items: center;
@@ -511,7 +499,6 @@ footer ul {
 		height: 30px;
 		border-radius: 20px;
 		margin: 3px;
-		/* text-decoration: none; */
 	}
 
 	a.ext-link-header img {
@@ -722,8 +709,6 @@ footer ul {
 	}
 	.link-contents {
 		margin: auto;
-		/* align-items: center; */
-		/* flex-wrap: balanced; */
 	}
 
 	.yt-player {

@@ -47,8 +47,8 @@ a:hover {
 
 .invisible-link {
 	font-weight: bold;
-	padding: 8px;
-	border-radius: 5px;
+	padding: 5px 6px;
+	border-radius: 15px;
 	text-decoration: none;
 }
 
@@ -63,13 +63,7 @@ a.ext-link-header {
 .ext-link-header > img {
 	border: 0.5px solid var(--bg-secondary1);
 	color: var(--font-primary);
-	/* stroke: green; */
 }
-/* .ext-link-header > svg {
-	width: 24px;
-	stroke: green;
-} */
-
 a.ext-link-header {
 	border: 1px solid var(--border-primary1);
 }
@@ -195,10 +189,6 @@ header {
 	border-bottom: 1px solid var(--border-primary);
 }
 
-/* #dropdown-content a:hover {
-	color: var(--font-secondary);
-} */
-
 .active-tab {
 	color: var(--font-secondary);
 	background-color: var(--bg-primary);
@@ -266,6 +256,8 @@ a.inactive-ext-link {
 }
 
 a.inactive-ext-link:hover {
+	cursor: not-allowed;
+	color: var(--font-primary);
 	background-color: var(--bg-secondary);
 }
 

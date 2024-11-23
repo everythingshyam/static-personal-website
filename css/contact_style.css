@@ -1,7 +1,3 @@
-/* .body-ul-li {
-	display: flex;
-	flex-wrap: wrap;
-} */
 .message-form {
 	display: flex;
 	flex-direction: column;
@@ -11,7 +7,6 @@
 	justify-content: space-around;
 }
 .message-form {
-	/* display: flex; */
 	justify-content: center;
 	align-items: left;
 	flex-direction: column;
@@ -38,11 +33,6 @@
 .form-element {
 	margin: 10px 0;
 }
-
-/* .message-form > label:hover {
-	cursor: pointer;
-	color: #fff;
-} */
 
 .form-inputs > input {
 	border-radius: 15px;
