@@ -1,0 +1,48 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+*.code-workspace
+
+# Node.js (if using npm/node)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build/dist directories
+dist/
+build/
+.cache/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# OS temporary files
+.DS_Store
+.AppleDouble
+.LSOverride
+*.pem
+*.key
+
+# Credentials and sensitive data
+.env
+.env.local
+credentials.json
+secrets.js
+
+# IDE temp files
+*.bak
