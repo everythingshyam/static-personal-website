@@ -35,6 +35,7 @@ function logInternalJS_Status() {
 }
 // ----------------------------------------------------------------------------------------
 function activateTab(tabNoIn) {
+	console.log('Activating tab no: ', tabNoIn);
 	tabNo = tabNoIn;
 	tabNoIn = tabNoIn.toString();
 	//removing active status of tabs, if any
@@ -53,16 +54,16 @@ function activateTab(tabNoIn) {
 	//
 	else if (tabNoIn == '10') {
 		console.log('User clicked on About-0 Button');
-		if (isTesting) loadHTML_Local('body', 'aboutEducation.html');
-		else loadHTML('body', 'aboutEducation.html');
+		if (isTesting) loadHTML_Local('body', 'aboutAcademics.html');
+		else loadHTML('body', 'aboutAcademics.html');
 		//now changing color of active tab
 		document.getElementById('about-tab').classList.add('active-tab');
 	}
 	//
 	else if (tabNoIn == '11') {
 		console.log('User clicked on About-1 Button');
-		if (isTesting) loadHTML_Local('body', 'aboutPositions.html');
-		else loadHTML('body', 'aboutPositions.html');
+		if (isTesting) loadHTML_Local('body', 'aboutCareer.html');
+		else loadHTML('body', 'aboutCareer.html');
 		//now changing color of active tab
 		document.getElementById('about-tab').classList.add('active-tab');
 	}
@@ -120,7 +121,7 @@ function activateTab(tabNoIn) {
 	//
 	else {
 		console.log(
-			"Button clicked is inactive or doesn't link to something valid."
+			"Button clicked is inactive or doesn't link to something valid.",
 		);
 		tabNo = '0';
 	}
@@ -183,11 +184,11 @@ function loadHTML(className, fileName) {
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function () {
 				if (this.readyState == 4) {
-					if ((this.status = 200)) {
+					if (this.status === 200) {
 						var importText = this.responseText;
 						elem.innerHTML = importText;
 						console.log(
-							'Successfully imported ' + file + ' ' + elem.id
+							'Successfully imported ' + file + ' ' + elem.id,
 						);
 
 						//now running javascript of the imported file
@@ -195,7 +196,7 @@ function loadHTML(className, fileName) {
 						var importDoc = this.responseText;
 						var importHTML = parser.parseFromString(
 							importDoc,
-							'text/html'
+							'text/html',
 						);
 						var importScripts =
 							importHTML.querySelectorAll('script');
@@ -213,7 +214,7 @@ function loadHTML(className, fileName) {
 			xhttp.open(
 				'GET',
 				'https://everythingshyam.github.io/Portfolio/html/' + file,
-				true
+				true,
 			);
 			xhttp.send();
 			return;
@@ -234,11 +235,11 @@ function loadHTML_Local(className, fileName) {
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function () {
 				if (this.readyState == 4) {
-					if ((this.status = 200)) {
+					if (this.status === 200) {
 						var importText = this.responseText;
 						elem.innerHTML = importText;
 						console.log(
-							'Successfully imported ' + file + ' ' + elem.id
+							'Successfully imported ' + file + ' ' + elem.id,
 						);
 
 						//now running javascript of the imported file
@@ -246,7 +247,7 @@ function loadHTML_Local(className, fileName) {
 						var importDoc = this.responseText;
 						var importHTML = parser.parseFromString(
 							importDoc,
-							'text/html'
+							'text/html',
 						);
 						var importScripts =
 							importHTML.querySelectorAll('script');
