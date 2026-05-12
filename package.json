@@ -1,0 +1,28 @@
+{
+	"name": "static-personal-website",
+	"version": "1.0.0",
+	"description": "My First Personal Portfolio Website\r So far, I know HTML, CSS and JavaScript properly and hence it doesn't have any backend and is a simple static website.\r This website is still in the making and as I learn, I'll be pushing the updates.\r This project will be completed this month, and then, I'll be working on a new portfolio using React and Firebase.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "tailwindcss -i ./css/input.css -o ./css/output.css",
+		"watch": "tailwindcss -i ./css/input.css -o ./css/output.css --watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/everythingshyam/static-personal-website.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"bugs": {
+		"url": "https://github.com/everythingshyam/static-personal-website/issues"
+	},
+	"homepage": "https://github.com/everythingshyam/static-personal-website#readme",
+	"devDependencies": {
+		"autoprefixer": "^10.5.0",
+		"postcss": "^8.5.14",
+		"tailwindcss": "^3.4.19"
+	}
+}
