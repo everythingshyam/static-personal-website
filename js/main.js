@@ -12,7 +12,7 @@ var isTesting = true; // true if testing, false if not testing
 var menuShow = true; // true if menu is shown, false if menu is hidden
 var tabNo = 0; // 0 for home, 1 for about, 2 for contact, 3 for resources
 
-const blogNames = ['learning-resources']; // Names of blog pages here in order
+const blogNames = ['blog-30', 'blog-31']; // Names of blog pages here in order
 //----------------------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------------------
