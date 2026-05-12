@@ -43,10 +43,11 @@
     <h2 class="sub-heading">Send message</h2>
     <ul>
         <li class="body-ul-li message-form-outer">
-            <!-- TODO: Implement message sending functionality -->
-            <!-- <form onsubmit="sendMessage(); reset(); return false" class="message-form"> -->
-            <form action="https://formsubmit.co/everythingshyam2@gmail.com" onsubmit="reset()" target="_blank"
-                method="POST" class="message-form">
+            <form
+                onsubmit="alert('This option isn\'t activated. To activate, fork this repository and update the email address. To send a message now, use the \'Report an issue\' option from the page footer.'); return false;"
+                class="message-form">
+                <!-- Replace the above form tag with the below one to enable emails. You also need to update the email address in the action attribute. -->
+                <!-- <form action="https://formsubmit.co/your@email.com" method="POST"> -->
                 <div class="form-labels form-sub">
                     <label for="name" class="form-element">Name</label>
                     <label for="email" class="form-element">Email ID</label>
