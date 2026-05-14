@@ -33,6 +33,18 @@ activateTab(tabNo);
 function logInternalJS_Status() {
 	console.log('Internal js working properly');
 }
+
+function switchTheme() {
+	const html = document.documentElement;
+	if (html.classList.contains('dark')) {
+		html.classList.remove('dark');
+		localStorage.setItem('theme', 'light');
+	} else {
+		html.classList.add('dark');
+		localStorage.setItem('theme', 'dark');
+	}
+}
+
 // ----------------------------------------------------------------------------------------
 function activateTab(tabNoIn) {
 	console.log('Activating tab no: ', tabNoIn);

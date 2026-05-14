@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* General stylesheet */
 /*
   	TODO go to top btn not showing wrt viewport
@@ -10,53 +6,81 @@
 	TODO CSS not working properly when 'FORCE TO DESKTOP' enabled on smartphones
 	TODO convert all css to rel css
 */
-
-/* Background colors and images, themes */
-:root {
-	/* Minimalistic Color Palette */
-	--color-bg: 34, 34, 59; /* rgb(34, 34, 59) / background fallback */
-	--color-accent: 74, 78, 105; /* rgb(74, 78, 105) */
-	--color-neutral: 154, 140, 152; /* rgb(154, 140, 152) */
-	--color-highlight: 201, 173, 167; /* rgb(201, 173, 167) */
-	--color-primary: 242, 233, 228; /* rgb(242, 233, 228) */
-	--color-black: 0, 0, 0; /* black */
-}
-
+/* Tailwind CSS */
+@import 'tailwindcss';
 /* External fonts */
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;700&display=swap');
+
+/* Background colors and images, themes */
+@theme {
+	/* Light (Default) Mode */
+	--color-bg: #2d2d46;
+	--color-accent: #4a4e69;
+	--color-neutral: #9a8c98;
+	--color-highlight: #c9ada7;
+	--color-primary: #f2e9e4;
+	--color-black: #000000;
+
+	/* New set of colors, will need to update the colors and then remove the above set of colors */
+	--color-surface: #f4ead5; /* Global Background */
+	--color-surface-soft: #ede0c8; /* Navigation & Footer, Cards */
+	--color-text-main: #433422; /* Headings */
+	--color-text-muted: #6b5a46; /* Subtitles & Dates */
+	--color-accent: #d48a5f; /* Call-to-Action Buttons/Links, Icons & Decorative Lines */
+}
+
+@layer base {
+	/* This looks for the 'dark' class on the <html> tag */
+	.dark {
+		/* Current Dark Mode Palette */
+		--color-bg: #22223b;
+		--color-accent: #4a4e69;
+		--color-neutral: #9a8c98;
+		--color-highlight: #c9ada7;
+		--color-primary: #f2e9e4;
+		--color-black: #000000;
+
+		/* Updated Dark Mode Palette, once the color usage is updated across CSS, above palette will be removed */
+		--color-surface: #1a2a3a;
+		--color-surface-soft: #24374a;
+		--color-text-main: #fafaf0;
+		--color-text-muted: #a0a090;
+		--color-accent: #fde047;
+	}
+}
 
 /*=============================================================================*/
 
 /* Universal and Element Selectors */
 * {
 	@apply p-0 m-0 box-border;
-	overflow-wrap: normal;
-	font-family: 'Poppins', sans-serif;
+	@apply wrap-normal;
+	@apply wrap-normal;
+	@apply font-[Poppins,sans-serif];
+	/* font-family: 'Poppins', sans-serif; */
 	transition: all 0.2s;
 }
 
 body {
 	margin: 0;
-	color: rgb(var(--color-primary));
+	@apply text-text-main;
 	/* Image commented for testing colors during development */
 	/* background-image: url('../images/Background/StarSky.png'); */
 	background-size: contain;
 	background-position: center;
 	background-repeat: repeat;
 	background-attachment: fixed;
-	background-color: rgb(var(--color-bg));
+	@apply bg-surface;
 }
 
 a {
 	text-decoration: none;
-	color: rgb(var(--color-primary));
+	@apply text-primary;
 }
 
 a:hover {
 	cursor: pointer;
 	transition: 0.2s;
-	/* color: rgb(var(--color-primary)); */
-	/* background-color: rgb(var(--color-accent)); */
 	text-decoration: underline;
 }
 
@@ -65,7 +89,7 @@ li {
 }
 
 button {
-	color: rgb(var(--color-primary));
+	@apply text-primary;
 }
 
 button:hover {
@@ -108,7 +132,7 @@ iframe {
 	height: 30px;
 	padding: 0;
 	margin: 0;
-	background-color: rgba(var(--color-accent), 0.2);
+	@apply bg-accent;
 }
 
 #alert-bar > marquee {
@@ -129,7 +153,8 @@ iframe {
 header {
 	margin: 0px;
 	justify-content: center;
-	border-bottom: 1px solid rgba(var(--color-primary), 0.1);
+	@apply border-b-2;
+	@apply border-primary;
 }
 
 #menu-bar-outer {
@@ -144,8 +169,9 @@ header {
 	width: 100vw;
 	font-size: 110%;
 	font-weight: 600;
-	background-color: rgba(var(--color-black), 0.2);
-	border-bottom: 1px solid rgba(var(--color-primary), 0.1);
+	@apply bg-black;
+	@apply border-b-2;
+	@apply border-primary;
 }
 
 #menu-bar ul {
@@ -153,7 +179,6 @@ header {
 }
 
 #menu-bar ul li {
-	/* cursor: pointer; */
 	margin: 0 7px;
 }
 
@@ -166,7 +191,6 @@ header {
 	width: inherit;
 	text-align: center;
 	border-radius: 5px;
-	/* border-bottom: 1px solid rgb(var(--color-primary)); */
 }
 
 #dropdown-content {
@@ -176,8 +200,8 @@ header {
 	position: absolute;
 	left: 40vw;
 	top: 75px;
-	background-color: rgba(var(--color-bg), 0.9);
-	border: 1px solid rgb(var(--color-primary));
+	@apply bg-bg;
+	@apply border-primary;
 }
 
 #dropdown-content a {
@@ -185,7 +209,8 @@ header {
 	padding: 8px;
 	text-decoration: none;
 	display: block;
-	border-bottom: 1px solid rgb(var(--color-primary));
+	@apply border-b-2;
+	@apply border-primary;
 }
 
 #dropdown-content a:last-child {
@@ -202,8 +227,8 @@ header {
 }
 
 .active-tab {
-	color: rgb(var(--color-primary));
-	background-color: rgb(var(--color-accent));
+	@apply text-primary;
+	@apply bg-accent;
 }
 
 /* Main Header */
@@ -217,13 +242,15 @@ header {
 
 #profile-pic img {
 	border-radius: 50%;
-	border: 2px solid rgba(var(--color-primary), 0.2);
+	@apply border-2;
+	@apply border-primary;
 }
 
 #key-abouts {
 	padding-left: 1%;
 	overflow: hidden;
-	border-left: 1px solid rgba(var(--color-primary), 0.1);
+	@apply border-l-2;
+	@apply border-primary;
 }
 
 .inner-key-abouts {
@@ -270,13 +297,14 @@ span.social-links:hover {
 a.ext-link-header {
 	backdrop-filter: blur(2px);
 	border-style: ridge;
-	background-color: rgba(var(--color-accent), 0.2);
-	border: 1px solid rgba(var(--color-primary), 0.1);
+	@apply bg-accent;
+	@apply border-2;
+	@apply border-primary;
 }
 
 a.ext-link-header:hover {
 	opacity: 1;
-	background-color: rgb(var(--color-accent));
+	@apply bg-accent;
 }
 
 a.ext-link-header img {
@@ -284,7 +312,7 @@ a.ext-link-header img {
 	padding: 4px;
 	border-radius: 50%;
 	border: 0.5px solid rgba(var(--color-accent), 0.1);
-	color: rgb(var(--color-primary));
+	@apply text-primary;
 	align-items: center;
 	justify-content: center;
 }
@@ -315,7 +343,8 @@ span.body-sections ul {
 	text-align: center;
 	border-radius: 25px;
 	background-color: rgba(var(--color-bg), 0.2);
-	border: 1px solid rgba(var(--color-primary), 0.1);
+	@apply border-2;
+	@apply border-primary;
 }
 
 #body span.body-sections {
@@ -330,7 +359,8 @@ span.body-sections ul {
 	border-radius: 0 20px 20px 0;
 	border-left: 0px;
 	background-color: rgba(var(--color-bg), 0.2);
-	border: 1px solid rgba(var(--color-primary), 0.1);
+	@apply border-2;
+	@apply border-primary;
 }
 
 #body ul {
@@ -341,7 +371,8 @@ span.body-sections ul {
 
 #body li {
 	background-color: rgba(var(--color-bg), 0.2);
-	border: 1px solid rgba(var(--color-primary), 0.1);
+	@apply border-2;
+	@apply border-primary;
 }
 
 .common-body-layout {
@@ -405,13 +436,13 @@ span.body-sections ul {
 }
 
 a.outer-nav-a:hover {
-	color: rgb(var(--color-primary));
-	background-color: rgb(var(--color-accent));
+	@apply text-primary;
+	@apply bg-accent;
 }
 
 div#dropdown-content > a:hover {
-	color: rgb(var(--color-primary));
-	background-color: rgb(var(--color-accent));
+	@apply text-primary;
+	@apply bg-accent;
 }
 
 a.nav-links {
@@ -425,12 +456,13 @@ a.nav-links {
 	border-radius: 30px;
 	text-align: center;
 	background-color: rgba(var(--color-bg), 0.2);
-	border: 1px solid rgba(var(--color-primary), 0.1);
+	@apply border-2;
+	@apply border-primary;
 }
 
 a.nav-links:hover {
-	color: rgb(var(--color-primary));
-	background-color: rgb(var(--color-accent));
+	@apply text-primary;
+	@apply bg-accent;
 }
 
 a.nav-links p {
@@ -447,12 +479,13 @@ a.ext-link {
 	padding: 4px;
 	border-radius: 30px;
 	background-color: rgba(var(--color-accent), 0.1);
-	border: 1px solid rgba(var(--color-primary), 0.1);
+	@apply border-2;
+	@apply border-primary;
 }
 
 a.ext-link:hover {
-	color: rgb(var(--color-primary));
-	background-color: rgb(var(--color-accent));
+	@apply text-primary;
+	@apply bg-accent;
 }
 
 a.ext-link img {
@@ -477,13 +510,13 @@ a.ext-link-inline {
 }
 
 a.inactive-ext-link {
-	background-color: rgb(var(--color-accent));
+	@apply bg-accent;
 }
 
 a.inactive-ext-link:hover {
 	cursor: not-allowed;
-	color: rgb(var(--color-primary));
-	background-color: rgb(var(--color-accent));
+	@apply text-primary;
+	@apply bg-accent;
 }
 
 .yt-player {
@@ -511,7 +544,8 @@ footer {
 
 #quick-links {
 	padding: 10px;
-	border: 1px solid rgba(var(--color-primary), 0.1);
+	@apply border-2;
+	@apply border-primary;
 	border-radius: 10px;
 }
 
@@ -555,15 +589,16 @@ footer ul {
 	border-bottom: 0;
 	padding: 5px 10px;
 	border-radius: 15px 15px 0px 0;
-	color: rgb(var(--color-primary));
+	@apply text-primary;
 	backdrop-filter: blur(10px);
 	background-color: rgba(var(--color-accent), 0.1);
-	border: 1px solid rgba(var(--color-primary), 0.1);
+	@apply border-2;
+	@apply border-primary;
 }
 
 #go-to-top > button:hover {
-	background-color: rgb(var(--color-accent));
-	color: rgb(var(--color-primary));
+	@apply bg-accent;
+	@apply text-primary;
 }
 
 /* Home Section */
@@ -607,7 +642,8 @@ footer ul {
 
 .section-img,
 .section-text {
-	border: 1px solid rgba(var(--color-primary), 0.1);
+	@apply border-2;
+	@apply border-primary;
 }
 
 .para-contents {
@@ -679,12 +715,12 @@ footer ul {
 	width: 10vw;
 	height: 30px;
 	border-radius: 15px;
-	color: rgb(var(--color-primary));
+	@apply text-primary;
 	font-weight: bold;
 }
 
 .submit-btn:hover {
-	color: rgb(var(--color-accent));
+	@apply text-accent;
 	cursor: pointer;
 }
 
@@ -697,16 +733,17 @@ footer ul {
 
 input,
 textarea {
-	color: rgb(var(--color-black));
-	background-color: rgba(var(--color-accent), 0.2);
-	border: 1px solid rgba(var(--color-primary), 0.1);
+	@apply text-black;
+	@apply bg-accent;
+	@apply border-2;
+	@apply border-primary;
 	font-size: 15px;
 	padding: 4px;
 }
 
 input:hover,
 textarea:hover {
-	background-color: rgb(var(--color-primary));
+	@apply bg-primary;
 }
 
 /* Article Layout */
@@ -953,12 +990,13 @@ textarea:hover {
 		width: 35px;
 		padding: 2px 4px;
 		background-color: rgba(var(--color-accent), 0.4);
-		border: 1px solid rgba(var(--color-primary), 0.1);
+		@apply border-2;
+		@apply border-primary;
 	}
 
 	.menu-btn img:hover {
 		cursor: pointer;
-		background-color: rgb(var(--color-primary));
+		@apply bg-primary;
 	}
 
 	.edgeCovers {
