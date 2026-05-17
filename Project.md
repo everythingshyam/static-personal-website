@@ -54,6 +54,11 @@ Based on your current portfolio structure, here is how you should map these vari
 - unify theme of active and inactive links
 - top notification not scrolling in firefox
 - update all pages <sup>ACTIVE</sup>
+- go to top btn not showing wrt viewport
+- resolve star selector related issues
+- span.social links sticky position not working
+- CSS not working properly when 'FORCE TO DESKTOP' enabled on smartphones
+- convert all css to rel css
 
 #
 

@@ -10,7 +10,7 @@
         content="Alex Rivers - Personal blog and portfolio. Explore my projects, technical skills, career insights, and thoughts on technology and development." />
     <meta name="author" content="Alex Rivers" />
     <meta name="keywords" content="Alex Rivers, portfolio, blog, web development, projects, technical skills" />
-    <link rel="icon" type="image/x-icon" href="./images/icons/WebsiteIcon2.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/icons/favicon.ico" />
     <link rel="stylesheet" href="./css/output.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +41,7 @@
                     <img onclick="menu_click()" src="./images/icons/icons8-menu-rounded-50.png"
                         alt="Hamburger menu icon" />
                 </div>
-                <span id="menu-bar" class="stay-on-top">
+                <span id="menu-bar" class="stay-on-top grid-bg">
                     <ul>
                         <li class="outer-nav-li">
                             <a class="outer-nav-a" id="home-tab" title="Home Page" onclick="activateTab(0)">Home</a>
@@ -49,11 +49,11 @@
                         <li class="outer-nav-li" id="dropdown">
                             <a class="outer-nav-a" id="about-tab" title="About Me" onclick="activateTab(10)">About</a>
                             <div id="dropdown-content" class="blur-4">
-                                <a onclick="activateTab(10)">Academics</a>
-                                <a onclick="activateTab(11)">Career</a>
-                                <a onclick="activateTab(12)">Projects</a>
-                                <a onclick="activateTab(13)">Technical Skills</a>
-                                <a onclick="activateTab(14)">Hobbies</a>
+                                <a class="outer-nav-a" onclick="activateTab(10)">Academics</a>
+                                <a class="outer-nav-a" onclick="activateTab(11)">Career</a>
+                                <a class="outer-nav-a" onclick="activateTab(12)">Projects</a>
+                                <a class="outer-nav-a" onclick="activateTab(13)">Technical Skills</a>
+                                <a class="outer-nav-a" onclick="activateTab(14)">Hobbies</a>
                             </div>
                         </li>
                         <li class="outer-nav-li">
@@ -66,13 +66,13 @@
                     </ul>
                 </span>
             </div>
-            <div class="header-import" id="home-tab-header">
+            <div class="header-import diagonal-bg" id="home-tab-header">
                 Failed to load header section
             </div>
         </div>
     </header>
-    <div id="body" class="body">Failed to load mid-body section.</div>
-    <footer class="footer-import" id="footer">
+    <div id="body" class="body grid-bg">Failed to load mid-body section.</div>
+    <footer class="footer-import diagonal-bg" id="footer">
         Failed to load footer section
     </footer>
     <span class="inner-key-abouts2 social-links social-links-abs mobile-view" id="social-links-abs">

@@ -54,6 +54,7 @@ function activateTab(tabNoIn) {
 	var activeTabs = document.getElementsByClassName('active-tab');
 	Array.from(activeTabs).forEach((activeTabsPtr) => {
 		activeTabsPtr.classList.remove('active-tab');
+		activeTabsPtr.classList.remove('diagonal-bg');
 	});
 	// TODO remove below if else if structure using arrays
 	if (tabNoIn == '0') {
@@ -62,6 +63,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'home.html');
 		//now changing color of active tab
 		document.getElementById('home-tab').classList.add('active-tab');
+		document.getElementById('home-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '10') {
@@ -70,6 +72,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'aboutAcademics.html');
 		//now changing color of active tab
 		document.getElementById('about-tab').classList.add('active-tab');
+		document.getElementById('about-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '11') {
@@ -78,6 +81,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'aboutCareer.html');
 		//now changing color of active tab
 		document.getElementById('about-tab').classList.add('active-tab');
+		document.getElementById('about-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '12') {
@@ -86,6 +90,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'aboutProjects.html');
 		//now changing color of active tab
 		document.getElementById('about-tab').classList.add('active-tab');
+		document.getElementById('about-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '13') {
@@ -94,6 +99,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'aboutSkills.html');
 		//now changing color of active tab
 		document.getElementById('about-tab').classList.add('active-tab');
+		document.getElementById('about-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '14') {
@@ -102,6 +108,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'aboutHobbies.html');
 		//now changing color of active tab
 		document.getElementById('about-tab').classList.add('active-tab');
+		document.getElementById('about-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '2') {
@@ -110,6 +117,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'contact.html');
 		//now changing color of active tab
 		document.getElementById('contact-tab').classList.add('active-tab');
+		document.getElementById('contact-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '3') {
@@ -118,7 +126,10 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'blog.html');
 		//now changing color of active tab
 		document.getElementById('blog-tab').classList.add('active-tab');
-	} else if (tabNoIn[0] == '3') {
+		document.getElementById('blog-tab').classList.add('diagonal-bg');
+	}
+	//
+	else if (tabNoIn[0] == '3') {
 		const temp1 = Number(tabNoIn.substring(1));
 		console.log(typeof temp1);
 		console.log(temp1);
@@ -129,6 +140,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'blogs/' + blogNames[temp1] + '.html');
 		//now changing color of active tab
 		document.getElementById('blog-tab').classList.add('active-tab');
+		document.getElementById('blog-tab').classList.add('diagonal-bg');
 	}
 	//
 	else {
