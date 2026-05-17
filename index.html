@@ -10,6 +10,7 @@
         content="Alex Rivers - Personal blog and portfolio. Explore my projects, technical skills, career insights, and thoughts on technology and development." />
     <meta name="author" content="Alex Rivers" />
     <meta name="keywords" content="Alex Rivers, portfolio, blog, web development, projects, technical skills" />
+    <link rel="manifest" href="./images/icons/site.webmanifest">
     <link rel="icon" type="image/x-icon" href="./images/icons/favicon.ico" />
     <link rel="stylesheet" href="./css/output.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,10 +19,15 @@
 </head>
 
 <body>
-    <div id="go-to-top">
-        <button onclick="goToTop()">Go To Top</button>
-        <button onclick="switchTheme()">Switch Theme</button>
-    </div>
+    <ul id="overlays-top">
+        <li>
+            <img onclick="goToTop()" src="./images/icons/go_to_top.png" alt="Go To Top Icon" title="Go to Top">
+        </li>
+        <li>
+            <img id="switch-theme-icon" onclick="switchTheme()" src="./images/icons/theme_dark.png"
+                alt="Switch Theme Icon" title="Switch Theme">
+        </li>
+    </ul>
     <header id="header">
         <div class="header-sub">
             <div id="alert-bar">

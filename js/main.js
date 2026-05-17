@@ -26,6 +26,20 @@ if (localStorage.hasOwnProperty('tabNo')) {
 }
 activateTab(tabNo);
 
+//setting the theme of website on startup
+if (localStorage.hasOwnProperty('theme')) {
+	const cachedTheme = localStorage.getItem('theme');
+	if (cachedTheme == 'dark') {
+		document.documentElement.classList.add('dark');
+		document.getElementById('switch-theme-icon').src =
+			'./images/icons/theme_light.png';
+	} else {
+		document.documentElement.classList.remove('dark');
+		document.getElementById('switch-theme-icon').src =
+			'./images/icons/theme_dark.png';
+	}
+}
+
 // ----------------------------------------------------------------------------------------
 // TESTING SECTION
 
@@ -38,9 +52,13 @@ function switchTheme() {
 	const html = document.documentElement;
 	if (html.classList.contains('dark')) {
 		html.classList.remove('dark');
+		document.getElementById('switch-theme-icon').src =
+			'./images/icons/theme_dark.png';
 		localStorage.setItem('theme', 'light');
 	} else {
 		html.classList.add('dark');
+		document.getElementById('switch-theme-icon').src =
+			'./images/icons/theme_light.png';
 		localStorage.setItem('theme', 'dark');
 	}
 }

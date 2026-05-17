@@ -27,6 +27,7 @@
     --blur-sm: 8px;
     --blur-md: 12px;
     --blur-lg: 16px;
+    --blur-2xl: 40px;
     --aspect-video: 16 / 9;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -397,9 +398,11 @@ header {
   z-index: 100;
   border-radius: var(--radius-lg);
   border-style: var(--tw-border-style);
-  border-width: 1px;
-  border-color: var(--color-border-faded);
-  background-color: var(--color-surface);
+  border-width: 2px;
+  border-color: var(--color-text-muted);
+  --tw-backdrop-blur: blur(var(--blur-2xl));
+  -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
 }
 #dropdown-content > a {
   display: block;
@@ -733,30 +736,39 @@ footer ul {
   flex-direction: column;
   gap: calc(var(--spacing) * 1.25);
 }
-#go-to-top {
+#overlays-top {
   position: fixed;
-  right: 15vw;
-  bottom: calc(var(--spacing) * 0);
+  right: calc(var(--spacing) * 0);
+  bottom: 15vh;
   width: fit-content;
-  padding: calc(var(--spacing) * 1.25);
-  padding-bottom: calc(var(--spacing) * 0);
-}
-#go-to-top > button {
-  padding-inline: calc(var(--spacing) * 2.5);
-  padding-block: calc(var(--spacing) * 1.25);
-  color: var(--color-text-main);
-  border-radius: 15px 15px 0 0;
+  opacity: 40%;
+  border-radius: 20px 0 0 20px;
   border-style: var(--tw-border-style);
-  border-width: 2px;
-  border-color: var(--color-surface-soft);
+  border-width: 1px;
+  border-color: var(--color-border-faded);
+  background-color: var(--color-surface);
+  --tw-backdrop-blur: blur(var(--blur-sm));
+  -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+}
+#overlays-top:hover {
+  opacity: 100%;
+}
+#overlays-top > li > img {
+  padding: calc(var(--spacing) * 2);
+  color: var(--color-text-main);
+  height: calc(var(--spacing) * 11);
+  width: calc(var(--spacing) * 11);
+  border-radius: calc(infinity * 1px);
   border-bottom-style: var(--tw-border-style);
   border-bottom-width: 0px;
   background-color: rgba(var(--color-accent),0.1);
+  cursor: pointer;
   --tw-backdrop-blur: blur(10px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
 }
-#go-to-top > button:hover {
+#overlays-top > li > img:hover {
   background-color: var(--color-accent);
   color: var(--color-text-main);
 }
@@ -899,16 +911,6 @@ input:hover, textarea:hover {
   .menu-btn {
     display: none;
   }
-  .edge-covers {
-    height: calc(var(--spacing) * 12.5);
-    width: 5vw;
-  }
-  #leftCover {
-    border-bottom-left-radius: 90%;
-  }
-  #rightCover {
-    border-bottom-right-radius: 90%;
-  }
   #menu-bar {
     height: calc(var(--spacing) * 12.5);
     display: flex;
@@ -936,6 +938,9 @@ input:hover, textarea:hover {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    border-right-style: var(--tw-border-style);
+    border-right-width: 1px;
+    border-color: var(--color-border-faded);
     padding-top: 1vw;
     padding-right: 1%;
   }
@@ -964,7 +969,7 @@ input:hover, textarea:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: calc(var(--spacing) * 5);
+    margin-top: calc(var(--spacing) * 2);
     padding-inline: calc(var(--spacing) * 1);
     width: fit-content;
     border-radius: 20px;
@@ -1130,7 +1135,6 @@ input:hover, textarea:hover {
     right: calc(var(--spacing) * 0);
     bottom: 10vh;
     z-index: 100;
-    display: block;
     display: flex;
     width: fit-content;
     align-items: center;

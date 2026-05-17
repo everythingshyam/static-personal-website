@@ -243,7 +243,7 @@ header {
 	@apply z-100;
 
 	/* Border & Background */
-	@apply bg-surface border border-border-faded rounded-lg;
+	@apply  backdrop-blur-2xl border-2 border-text-muted rounded-lg;
 }
 
 #dropdown-content > a {
@@ -262,11 +262,6 @@ header {
 	/* @apply border-2 border-surface-soft; */
 }
 
-#dropdown-content > a:last-child {
-	/* Border & Shape */
-	/* @apply border-b-0 rounded-b-lg; */
-}
-
 #dropdown:hover #dropdown-content {
 	/* Display */
 	@apply inline-block;
@@ -275,11 +270,6 @@ header {
 .active-tab {
 	/* Background & Text */
 	@apply text-text-main bg-surface-soft;
-}
-
-div#dropdown-content > a:hover {
-	/* Background & Text */
-	/* @apply border-border-faded; */
 }
 
 .outer-nav-a:hover {
@@ -707,34 +697,41 @@ footer ul {
 
 /* Go to Top Button */
 
-#go-to-top {
+#overlays-top {
 	/* Positioning */
-	@apply fixed bottom-0 right-[15vw];
+	@apply fixed bottom-[15vh] right-0;
 
 	/* Sizing */
 	@apply w-fit;
 
-	/* Spacing */
-	@apply p-1.25 pb-0;
+	@apply opacity-40;
+
+	@apply border border-border-faded rounded-[20px_0_0_20px] bg-surface backdrop-blur-sm;
 }
 
-#go-to-top > button {
-	/* Spacing */
-	@apply px-2.5 py-1.25;
+#overlays-top:hover {
+	/* Visual Effects */
+	@apply opacity-100;
+}
 
-	/* Text */
+#overlays-top > li > img {
+	@apply p-2;
+
+	/* Text & Image Size */
 	@apply text-text-main;
+	@apply h-11 w-11;
 
 	/* Border & Background */
-	@apply rounded-[15px_15px_0_0] border-2 border-surface-soft;
+	@apply rounded-full;
 	@apply border-b-0;
 	@apply bg-[rgba(var(--color-accent),0.1)];
 
 	/* Visual Effects */
+	@apply cursor-pointer;
 	@apply backdrop-blur-[10px];
 }
 
-#go-to-top > button:hover {
+#overlays-top > li > img:hover {
 	/* Background & Text */
 	@apply bg-accent text-text-main;
 }
@@ -934,21 +931,6 @@ textarea:hover {
 		@apply hidden;
 	}
 
-	.edge-covers {
-		/* Sizing */
-		@apply w-[5vw] h-12.5;
-	}
-
-	#leftCover {
-		/* Shape */
-		@apply rounded-bl-[90%];
-	}
-
-	#rightCover {
-		/* Shape */
-		@apply rounded-br-[90%];
-	}
-
 	#menu-bar {
 		/* Sizing */
 		@apply h-12.5;
@@ -984,39 +966,12 @@ textarea:hover {
 		@apply rounded-t-[10px];
 	}
 
-	#dropdown-content a {
-		/* Display */
-		/* @apply block; */
-
-		/* Spacing */
-		/* @apply p-2; */
-
-		/* Text */
-		/* @apply text-center no-underline; */
-	}
-
-	#dropdown-content a:last-child {
-		/* Border & Shape */
-		/* @apply border-b-0 rounded-b-lg; */
-	}
-
-	#dropdown:hover #dropdown-content {
-		/* Display */
-		/* @apply inline-block; */
-
-		/* Positioning */
-		/* @apply absolute top-20; */
-
-		/* Border & Shape */
-		/* @apply rounded-b-[10px] border-t-0; */
-	}
-
 	#profile-pic {
 		/* Sizing */
 		@apply w-[40%];
 
 		/* Layout */
-		@apply flex justify-end items-center;
+		@apply flex justify-end items-center border-r border-border-faded;
 
 		/* Spacing */
 		@apply pt-[1vw] pr-[1%];
@@ -1059,17 +1014,12 @@ textarea:hover {
 		@apply mb-0;
 	}
 
-	.inner-key-abouts2 {
-		/* Spacing */
-		/* @apply px-2.5; */
-	}
-
 	span.social-links {
 		/* Layout */
 		@apply flex items-center justify-center;
 
 		/* Spacing */
-		@apply ml-5 px-1;
+		@apply mt-2 px-1;
 
 		/* Sizing */
 		@apply w-fit;
@@ -1328,7 +1278,7 @@ textarea:hover {
 		@apply fixed bottom-[10vh] right-0;
 
 		/* Sizing & Layout */
-		@apply z-100 block w-fit flex items-center justify-center;
+		@apply z-100 w-fit flex items-center justify-center;
 
 		/* Spacing & Shape */
 		@apply p-[7px_6px_7px_2px] rounded-[20px_0_0_20px];
