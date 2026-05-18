@@ -313,10 +313,10 @@ function loadHTML_Local(className, fileName) {
 
 function loadFile(className, fileName) {
 	if (isTesting == true) {
-		console.log('Loading local file social links');
+		console.log('Loading local file');
 		loadHTML_Local(className, fileName);
 	} else {
-		console.log('Loading from online');
+		console.log('Loading remote file');
 		loadHTML(className, fileName);
 	}
 }
