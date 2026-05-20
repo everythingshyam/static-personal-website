@@ -180,14 +180,13 @@ function goToTop() {
 // ----------------------------------------------------------------------------------------
 function hideAlertBar() {
 	document.getElementById('alert-bar').style.display = 'none';
-	document.getElementById('dropdown-content').style.top = '50px';
 }
 // ----------------------------------------------------------------------------------------
 function menu_click() {
 	console.log('menu btn clicked');
 	var v = document.getElementById('menu-bar');
 	if (menuShow == false) {
-		v.style.display = 'inline';
+		v.style.display = 'flex';
 		console.log('menu switched on');
 		menuShow = true;
 	} else {
