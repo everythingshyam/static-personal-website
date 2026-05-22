@@ -311,9 +311,9 @@ a.ext-link-header img {
 
 /* Body Section */
 #body {
-	@apply z-25 min-h-[30vh] px-6 py-2 bg-surface drop-shadow-[0_-10px_10px_rgba(0,0,0,0.1)] pb-4;
+	@apply z-25 min-h-[30vh] px-6 py-2 bg-surface pb-6;
 
-	@apply md:px-12 md:py-4 lg:px-16 lg:py-6;
+	@apply md:px-12 md:pb-6 lg:px-16 lg:pb-8;
 }
 
 .nav-sub-pane {
@@ -334,7 +334,7 @@ a.ext-link-header img {
 }
 
 a.nav-links {
-	@apply flex max-w-30 truncate px-2.5 py-0.5 mx-0 my-2.5 font-bold text-center rounded-full bg-surface-soft border border-border-faded drop-shadow-md;
+	@apply flex max-w-36 truncate px-2.5 py-0.5 mx-0 my-2.5 font-bold text-center rounded-full bg-surface-soft border border-border-faded drop-shadow-md;
 
 	@apply md:max-w-40;
 }
@@ -433,15 +433,31 @@ a.ext-link h3 {
 /* Done till here */
 
 a.ext-link-inline {
-	@apply font-bold no-underline p-1.25 rounded-[7px];
+	@apply font-bold;
+}
+
+a.ext-link-inline:hover {
+	@apply text-text-main text-shadow-2xs underline;
 }
 
 a.inactive-ext-link {
-	@apply bg-accent;
+	@apply inline-flex h-auto p-0.5 rounded-full bg-surface border border-border-faded items-center justify-center;
 }
 
 a.inactive-ext-link:hover {
-	@apply cursor-not-allowed;
+	@apply cursor-not-allowed no-underline;
+}
+
+a.inactive-ext-link img {
+	@apply size-5 rounded-full mr-0.5;
+
+	@apply md:size-6;
+}
+
+a.inactive-ext-link h3 {
+	@apply text-sm pl-0.5 pr-1 border-l border-border-faded font-bold text-text-muted/80;
+
+	@apply md:text-base md:font-semibold;
 }
 
 .yt-player {
@@ -455,29 +471,35 @@ a.inactive-ext-link:hover {
 /* Footer */
 
 footer {
-	@apply flex flex-col gap-1.25 m-0 p-2.5 pb-1.25 border-t border-[rgba(var(--color-primary),0.1)] bg-surface-soft;
+	@apply flex flex-col gap-1 p-4 border-t border-border-faded bg-surface-soft;
+
+	@apply md:p-6;
 }
 
-#quick-links {
-	@apply p-2.5 border-2 border-surface-soft rounded-[10px];
+footer * {
+	@apply text-sm;
 }
 
-footer ul {
-	@apply flex flex-col items-center justify-evenly pl-0;
+ul#quick-links {
+	@apply p-2 flex flex-col items-center justify-evenly gap-2.5;
 
 	@apply md:flex-row;
 }
 
-#quick-links > ul > li {
-	@apply py-2.5 mx-5 my-px;
+a.invisible-link:hover {
+	@apply underline text-text-main;
 }
 
-.footer-text {
-	@apply p-2.5 text-sm;
+ul.footer-text {
+	@apply p-2 flex flex-col gap-2 items-center text-center;
 }
 
-.footer-text > ul {
-	@apply flex flex-col gap-1.25;
+img.clickable-github-repo {
+	@apply drop-shadow-sm;
+}
+
+img.clickable-github-repo:hover {
+	@apply drop-shadow-lg cursor-pointer;
 }
 
 /* Home Section */
