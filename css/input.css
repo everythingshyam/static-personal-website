@@ -202,7 +202,7 @@ header {
 
 #dropdown-content {
 	@apply hidden absolute left-0 top-full z-100 rounded-2xl w-max;
-	@apply bg-surface border border-border-faded drop-shadow-2xl;
+	@apply bg-surface border border-border-faded shadow-2xl;
 }
 
 #dropdown-content > a {
@@ -347,6 +347,12 @@ a.nav-links:hover {
 	@apply font-semibold text-lg text-left border-b border-border-faded text-text-main text-shadow-xs mb-4;
 
 	@apply md:text-xl;
+}
+
+h2.page-heading-home {
+	@apply text-xl my-4;
+
+	@apply md:text-2xl;
 }
 
 .body-sections ul {
