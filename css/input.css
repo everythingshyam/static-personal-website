@@ -127,7 +127,7 @@ a.inactive-link {
 }
 
 .invisible-link {
-	@apply font-bold px-1;
+	@apply font-semibold px-1;
 }
 
 /* Header Section */
@@ -344,7 +344,7 @@ a.nav-links:hover {
 }
 
 .body-sections h2 {
-	@apply font-semibold text-lg text-left border-b border-border-faded text-text-main text-shadow-xs mb-4;
+	@apply font-semibold text-lg text-left border-b border-border-faded text-text-main text-shadow-xs mb-4 mt-2;
 
 	@apply md:text-xl;
 }
@@ -411,13 +411,13 @@ h2.page-heading-home {
 }
 
 .link-contents {
-	@apply flex flex-col gap-2 m-auto pt-2;
+	@apply flex flex-wrap gap-2 place-items-center m-auto pt-2;
 
-	@apply md:m-0 md:ml-1 md:flex-wrap md:flex-row;
+	@apply md:m-0 md:ml-1;
 }
 
 a.ext-link {
-	@apply inline-flex h-auto p-0.5 rounded-full bg-surface border border-border-faded drop-shadow-lg items-center justify-center;
+	@apply inline-flex h-auto p-0.5 rounded-full bg-surface border border-border-faded drop-shadow-lg items-center justify-start overflow-hidden;
 }
 
 a.ext-link:hover {
@@ -425,9 +425,9 @@ a.ext-link:hover {
 }
 
 a.ext-link img {
-	@apply size-5 rounded-full mr-0.5;
+	@apply size-4 rounded-full mx-0.5;
 
-	@apply md:size-6;
+	@apply md:size-5;
 }
 
 a.ext-link h3 {
@@ -508,97 +508,91 @@ img.clickable-github-repo:hover {
 	@apply drop-shadow-lg cursor-pointer;
 }
 
-/* Home Section */
+/* Contact Page Specific CSS */
 
-.home-window {
-	@apply flex flex-col min-h-[25vh] px-[2vw] m-[2vw_8vw];
-
-	@apply md:mt-0 md:mx-[5vw] md:my-[0.5vw];
+#contacts > ul {
+	@apply flex flex-wrap flex-row;
 }
 
-.home-section {
-	@apply flex justify-center items-center p-[2vw] pl-[3vw] mt-[2vh] rounded-[3vw] border border-[rgba(var(--color-primary),0.1)] bg-[rgba(var(--color-bg),0.2)];
+.common-contact-layout {
+	@apply flex flex-col border border-border-faded rounded-2xl p-4 mx-auto bg-surface-soft/80 shadow-lg text-center gap-2;
+
+	@apply md:text-left md:items-start lg:p-6 lg:gap-4 lg:min-w-136;
 }
 
-.section-inner {
-	@apply flex flex-col justify-center items-start gap-2.5 w-full rounded-[3vw] bg-[rgba(52,52,52,0.1)];
+.common-contact-layout:hover {
+	@apply shadow-2xl bg-surface-soft;
 }
 
-.section-inner > h2 {
-	@apply flex w-full justify-center;
+.common-contact-layout > * {
+	@apply w-full;
 }
 
-.section-img,
-.section-text {
-	@apply border-2 border-surface-soft;
+.common-contact-layout > h3 {
+	@apply font-semibold text-base text-text-main border-b border-border-faded;
+
+	@apply md:text-lg md:font-bold;
 }
 
-.section-text {
-	@apply w-[90%];
+/*  */
 
-	@apply md:w-full;
+.send-message-form {
+	@apply flex flex-col gap-1 font-bold border border-border-faded rounded-2xl p-4 mx-auto bg-surface-soft/80 shadow-lg text-center overflow-clip max-w-124;
+
+	@apply md:text-left lg:p-6 lg:gap-4 md:grid md:grid-cols-[2fr_7fr] lg:max-w-200;
 }
 
-/* Form Styles */
-
-.message-form {
-	@apply grid grid-cols-[2fr_5fr] justify-center items-start font-bold;
+.send-message-form:hover {
+	@apply bg-surface-soft shadow-2xl;
 }
 
-.message-form-outer {
-	@apply flex justify-around;
+.send-message-form > label:nth-child(2n + 1) {
+	@apply flex justify-start md:justify-end pl-2 md:pl-0;
 }
 
-.message-form > * {
-	@apply m-1.25 rounded-[10px];
+.send-message-form input.form-input,
+.send-message-form textarea {
+	@apply p-1 text-text-muted bg-surface border border-surface-soft drop-shadow-lg w-full;
 }
 
-.form-sub {
-	@apply flex flex-col;
+.send-message-form input.form-input:hover,
+.send-message-form textarea:hover,
+.send-message-form input.form-input:focus,
+.send-message-form textarea:focus {
+	@apply bg-surface-soft text-text-main border-text-muted outline-none;
 }
 
-.form-labels {
-	@apply flex flex-col items-end;
+.send-message-form input.form-input:active,
+.send-message-form textarea:active {
+	@apply drop-shadow-2xl;
 }
 
-.form-element {
-	@apply my-2.5;
+.send-message-form input.form-input {
+	@apply rounded-full px-4;
 }
 
-.form-inputs > input {
-	@apply h-3.75 p-3.75 rounded-[15px];
+.send-message-form textarea {
+	@apply rounded-2xl px-3 py-2;
 }
 
-.form-inputs > textarea {
-	@apply text-[16px] rounded-lg;
+.form-submit-btn-container {
+	@apply col-span-2 row-span-1 flex justify-end pr-2 pt-1;
 }
 
-.form-submit {
-	@apply col-span-2 flex items-center;
+.send-message-form .form-submit-btn {
+	@apply font-bold rounded-full py-1 px-3 text-text-muted bg-surface border border-surface-soft drop-shadow-lg;
 }
 
-.submit-btn {
-	@apply w-[15vw] h-7.5 text-text-main font-bold rounded-[15px];
-
-	@apply md:w-[10vw];
+.form-submit-btn:hover {
+	@apply cursor-pointer text-text-main bg-accent drop-shadow-2xl;
 }
 
-.submit-btn:hover {
-	@apply cursor-pointer text-accent;
+.send-message-form hr{
+	@apply col-span-2 row-span-1 border-t border-border-faded mt-2;
 }
 
-.form-footer {
-	@apply col-span-2 flex items-end;
-}
-
-input,
-textarea {
-	@apply p-1.25 text-[15px] text-black bg-accent border-2 border-surface-soft;
-}
-
-input:hover,
-textarea:hover {
-	@apply bg-text-main;
+.send-message-form .form-footer-text {
+	@apply col-span-2 row-span-1 text-xs text-text-muted text-center;
 }
 
 /* Article Layout */

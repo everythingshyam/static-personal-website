@@ -1,72 +1,59 @@
-<h1>Contact Me</h1>
-<span class="body-sections">
-    <h2 class="sub-heading">Social Media Links</h2>
+<span class="body-sections" id="contacts">
+    <h2 class="sub-heading">Contact Information</h2>
     <ul>
-        <li class="link-contents">
-            <a class="ext-link" href="https://youtube.com/" target="_blank">
-                <img src="./images/icons/youtube.png" alt="YouTube Logo">
-                <h3>YouTube</h3>
-            </a>
-            <a class="ext-link" href="https://www.linkedin.com/in/" target="_blank">
-                <img src="./images/icons/linkedin.png" alt="LinkedIn Logo">
-                <h3>LinkedIn</h3>
-            </a>
-            <a class="ext-link" href="https://www.instagram.com/" target="_blank">
-                <img src="./images/icons/instagram.png" alt="Instagram Logo">
-                <h3>Instagram</h3>
-            </a>
-
+        <li class="common-contact-layout">
+            <h3>Social Platforms</h3>
+            <div class="link-contents">
+                <a class="ext-link" href="https://youtube.com/" target="_blank">
+                    <img src="./images/icons/youtube.png" alt="YouTube Logo">
+                    <h3>YouTube</h3>
+                </a>
+                <a class="ext-link" href="https://www.linkedin.com/in/" target="_blank">
+                    <img src="./images/icons/linkedin.png" alt="LinkedIn Logo">
+                    <h3>LinkedIn</h3>
+                </a>
+                <a class="ext-link" href="https://www.instagram.com/" target="_blank">
+                    <img src="./images/icons/instagram.png" alt="Instagram Logo">
+                    <h3>Instagram</h3>
+                </a>
+            </div>
+        </li>
+        <li class="common-contact-layout">
+            <h3>Coding Platforms</h3>
+            <div class="link-contents">
+                <a class="ext-link" href="https://github.com/" target="_blank">
+                    <img src="./images/icons/github.png" alt="GitHub Logo">
+                    <h3>GitHub</h3>
+                </a>
+                <a class="ext-link" href="https://leetcode.com/" target="_blank">
+                    <img src="./images/icons/leetcode.png" alt="LeetCode Icon">
+                    <h3>LeetCode</h3>
+                </a>
+                <a class="ext-link" href="https://replit.com/" target="_blank">
+                    <img src="./images/icons/replit.png" alt="ReplIt Icon">
+                    <h3>ReplIt</h3>
+                </a>
+            </div>
         </li>
     </ul>
-</span>
-<span class="body-sections">
-    <h2 class="sub-heading">Coding Platforms I'm On</h2>
-    <ul>
-        <li class="link-contents">
-            <a class="ext-link" href="https://github.com/" target="_blank">
-                <img src="./images/icons/github.png" alt="GitHub Logo">
-                <h3>GitHub</h3>
-            </a>
-            <a class="ext-link" href="https://leetcode.com/" target="_blank">
-                <img src="./images/icons/leetcode.png" alt="LeetCode Icon">
-                <h3>LeetCode</h3>
-            </a>
-            <a class="ext-link" href="https://replit.com/" target="_blank">
-                <img src="./images/icons/replit.png" alt="ReplIt Icon">
-                <h3>ReplIt</h3>
-            </a>
-
-        </li>
-    </ul>
-</span>
-<span class="body-sections">
-    <h2 class="sub-heading">Send message</h2>
-    <ul>
-        <li class="body-ul-li message-form-outer">
-            <form
-                onsubmit="alert('This option isn\'t activated. To activate, fork this repository and update the email address. To send a message now, use the \'Report an issue\' option from the page footer.'); return false;"
-                class="message-form">
-                <!-- Replace the above form tag with the below one to enable emails. You also need to update the email address in the action attribute. -->
-                <!-- <form action="https://formsubmit.co/your@email.com" method="POST"> -->
-                <div class="form-labels form-sub">
-                    <label for="name" class="form-element">Name</label>
-                    <label for="email" class="form-element">Email ID</label>
-                    <label for="message" class="form-element">Message</label>
-                </div>
-                <div class="form-inputs form-sub">
-                    <input type="text" name="name" id="name" class="form-element">
-                    <input type="email" name="email" id="email" class="form-element">
-                    <textarea name="message" id="message" cols="30" rows="3" placeholder="Enter your message here"
-                        class="form-element"></textarea>
-                </div>
-                <div class="form-submit form-sub">
-                    <input type="submit" value="Submit" class="submit-btn">
-                </div>
-                <div class="form-footer form-sub">
-                    <p class="font-small">Works using <a class="invisible-link" href="https://formsubmit.co/"
-                            target="_blank">FormSubmit</a></p>
-                </div>
-            </form>
-        </li>
-    </ul>
+    <h2 class="sub-heading">Send Message</h2>
+    <form
+        onsubmit="alert('This option isn\'t activated. To activate, fork this repository and update the email address. To send a message now, use the \'Report an issue\' option from the page footer.'); return false;"
+        class="send-message-form">
+        <!-- Replace the above form tag with the below one to enable emails. You also need to update the email address in the action attribute. -->
+        <!-- <form action="https://formsubmit.co/your@email.com" method="POST"> -->
+        <label for="name" class="form-label form-label-name">Name</label>
+        <input type="text" name="name" id="name" class="form-input form-imput-name">
+        <label for="email" class="form-label form-label-email">Email ID</label>
+        <input type="email" name="email" id="email" class="form-input form-input-email">
+        <label for="message" class="form-label form-label-message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="3" placeholder="Enter your message here"
+            class="form-input form-input-messsage"></textarea>
+        <div class="form-submit-btn-container">
+            <input type="submit" value="Submit" class="form-submit-btn">
+        </div>
+        <hr>
+        <div class="form-footer-text">Works using <a class="invisible-link" href="https://formsubmit.co/"
+                target="_blank">FormSubmit</a></div>
+    </form>
 </span>
