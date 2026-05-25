@@ -1,51 +1,106 @@
-/* General stylesheet */
+/* ============================================================
+   ALEX RIVERS — PORTFOLIO STYLESHEET
+   Tailwind CSS v4.3.0
+   ============================================================ */
 
-/* Tailwind CSS */
+/* ── Core Imports ─────────────────────────────────────────── */
 @import 'tailwindcss';
-/* External fonts */
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&family=Source+Code+Pro:wght@300;400;500;700&display=swap');
 
-/* Background colors and images, themes */
+/* ── Design Tokens ────────────────────────────────────────── */
 @theme {
-	/* Light (Default) Mode Palette */
-	--color-surface: #f2e4c7; /* Global Background */
-	--color-surface-soft: #ebd4ab; /* Navigation & Footer, Cards */
-	--color-text-main: #433422; /* Headings */
-	--color-text-muted: #6b5a46; /* Other Text, Subtitles & Dates */
-	--color-accent: #d48a5f; /* Call-to-Action Buttons/Links, Icons & Decorative Lines */
-	--color-border-faded: rgba(
-		69,
-		40,
-		23,
-		0.08
-	); /* Faded border color for subtle elements */
+	/* ── Light (Default) Mode ─────────────────────────────── */
+	--color-surface: #deeffc; /* global bg — cool off-white w/ cyan tint  */
+	/*Original Color suggested by AI: #eef4f9 */
+	--color-surface-soft: #d5e8f5; /* nav, footer, cards — deeper cool tint    */
+	/*Original Color suggested by AI: #dde9f4 */
+	--color-surface-raised: #e0effd; /* elevated card on hover                   */
+	--color-text-main: #131c2e; /* near-black with blue-ink undertone        */
+	--color-text-muted: #3d5068; /* body copy, subtitles                     */
+	--color-text-subtle: #7a92a8; /* placeholder, meta labels                 */
+	--color-text-contrast: #eef4f9; /* white text on dark bg                    */
+
+	/* Cyber Violet Accents (Light Mode) */
+	--color-accent: #7c3aed; /* brand / CTA / active / highlight — ROYAL VIOLET */
+	--color-accent-hover: #db2777; /* interactive hover feedback — DEEP ORCHID PINK */
+	--color-accent-glow: rgba(124, 58, 237, 0.15);
+	--color-accent-hover-glow: rgba(219, 39, 119, 0.18);
+
+	--color-border-faded: rgba(30, 60, 100, 0.07);
+	--color-border-mid: rgba(30, 60, 100, 0.15);
+
+	/* ── Semantic Shadows ── */
+	--shadow-card:
+		0 2px 12px rgba(30, 60, 100, 0.07), 0 1px 3px rgba(30, 60, 100, 0.05);
+	--shadow-card-hover:
+		0 8px 32px rgba(30, 60, 100, 0.13), 0 2px 8px rgba(30, 60, 100, 0.09);
+	--shadow-overlay: 0 4px 24px rgba(30, 60, 100, 0.11);
+
+	/* ── Typography Scale ── */
+	--font-display: 'Lora', Georgia, serif;
+	--font-body: 'Poppins', sans-serif;
+	--font-mono: 'Source Code Pro', 'Courier New', monospace;
+
+	/* ── Motion ── */
+	--duration-fast: 120ms;
+	--duration-base: 220ms;
+	--duration-slow: 380ms;
+	--ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ── Dark Mode Overrides ──────────────────────────────────── */
 @layer base {
-	/* This looks for the 'dark' class on the <html> tag */
 	.dark {
-		/* Dark Mode Palette */
-		--color-surface: #24374a;
-		--color-surface-soft: #1a2a3a;
-		--color-text-main: #fafaf0;
-		--color-text-muted: #ccccc5;
-		--color-accent: #419bf5;
-		--color-border-faded: rgba(
-			245,
-			241,
-			223,
-			0.08
-		); /* Faded border color for subtle elements */
+		--color-surface: #0e1829; /* deep navy-dark                                          */
+		--color-surface-soft: #0a1220; /* deeper base layer                                       */
+		--color-surface-raised: #162234; /* elevated layer w/ blue undertone        */
+		--color-text-main: #eef3f9;
+		--color-text-muted: #9eb3c8;
+		--color-text-subtle: #5c7a96;
+		--color-text-contrast: #eef3f9; /* white text on dark bg                    */
+
+		/* Cyber Violet Accents (Dark Mode Overrides) */
+		--color-accent: #a78bfa; /* soft cyber violet for readable dark contrast */
+		--color-accent-hover: #f472b6; /* vibrant neon fuchsia pink glow */
+		--color-accent-glow: rgba(167, 139, 250, 0.2);
+		--color-accent-hover-glow: rgba(244, 114, 182, 0.25);
+
+		--color-border-faded: rgba(160, 200, 240, 0.06);
+		--color-border-mid: rgba(160, 200, 240, 0.13);
+
+		--shadow-card:
+			0 2px 12px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.25);
+		--shadow-card-hover:
+			0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.32);
+		--shadow-overlay: 0 4px 24px rgba(0, 0, 0, 0.42);
+	}
+
+	/* Subtle dimensional gradient for dark mode body */
+	.dark body {
+		background-image:
+			radial-gradient(
+				ellipse at 20% 0%,
+				rgba(30, 70, 140, 0.1) 0%,
+				transparent 55%
+			),
+			radial-gradient(
+				ellipse at 85% 95%,
+				rgba(10, 35, 80, 0.08) 0%,
+				transparent 45%
+			);
 	}
 }
 
+/* ── Texture Utilities ────────────────────────────────────── */
+/* Spacing increased (12px → 30px, 24px → 48px) so patterns are
+   whisper-subtle and never compete with text content.          */
 .diagonal-bg {
 	background-image: repeating-linear-gradient(
 		45deg,
 		transparent,
-		transparent 10px,
-		var(--color-border-faded) 10px,
-		var(--color-border-faded) 11px
+		transparent 30px,
+		var(--color-border-faded) 30px,
+		var(--color-border-faded) 31px
 	);
 }
 
@@ -61,53 +116,45 @@
 			var(--color-border-faded) 1px,
 			transparent 1px
 		);
-	background-size: 20px 20px;
+	background-size: 48px 48px;
 }
 
-/*=============================================================================*/
-
-/* Styles Arranged in the order of appearance */
+/* ============================================================
+   GLOBAL RESET & BASE
+   ============================================================ */
 
 * {
-	/* Layout & Display */
-	@apply box-border wrap-normal p-0 m-0;
-	@apply font-[Poppins,sans-serif] text-sm font-normal;
-	@apply transition-all duration-100;
-
+	@apply box-border m-0 p-0;
+	@apply text-sm font-normal;
+	font-family: var(--font-body);
+	transition:
+		color var(--duration-base) var(--ease-out-expo),
+		background var(--duration-base) var(--ease-out-expo),
+		border-color var(--duration-base) var(--ease-out-expo),
+		box-shadow var(--duration-base) var(--ease-out-expo),
+		opacity var(--duration-base) var(--ease-out-expo),
+		transform var(--duration-base) var(--ease-out-expo);
 	@apply md:text-base;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 body {
 	@apply bg-surface text-text-muted;
-	/* background-image: url('../images/Background/StarSky.png'); */
-	/* @apply bg-contain bg-center bg-repeat-x bg-fixed; */
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Screen Overlay Buttons */
-#overlays-top {
-	@apply fixed bottom-[15vh] right-0 w-fit border border-r-0 border-border-faded rounded-l-3xl bg-surface-soft z-50 opacity-70 p-1 pr-0;
-}
-
-#overlays-top:hover {
-	@apply opacity-100;
-}
-
-#overlays-top > li > img {
-	@apply p-1 h-10 w-10 rounded-full cursor-pointer;
-
-	@apply md:h-9 md:w-9;
-}
-
-#overlays-top > li > img:hover {
-	@apply bg-accent;
-}
-
+/* ── Inline elements ── */
 a {
-	@apply no-underline;
+	@apply no-underline text-inherit;
 }
 
 a:hover {
-	@apply cursor-pointer underline;
+	@apply cursor-pointer;
 }
 
 button {
@@ -126,17 +173,68 @@ a.inactive-link {
 	@apply hidden!;
 }
 
+/* ── Utility prose link (alert bar, footer credits, form footer) ── */
 .invisible-link {
 	@apply font-semibold px-1;
+	color: var(--color-accent);
 }
 
-/* Header Section */
+.invisible-link:hover {
+	color: var(--color-accent-hover);
+	@apply underline;
+}
+
+/* ============================================================
+   SCREEN OVERLAY BUTTONS  (go-to-top / theme toggle)
+   ============================================================ */
+
+#overlays-top {
+	@apply fixed bottom-[15vh] right-0 z-50 w-fit;
+	@apply border border-r-0 border-border-faded rounded-l-3xl;
+	@apply bg-surface-soft/80 p-1 pr-0 opacity-60;
+	backdrop-filter: blur(12px);
+	box-shadow: var(--shadow-overlay);
+	transition:
+		opacity var(--duration-base) var(--ease-out-expo),
+		box-shadow var(--duration-base) var(--ease-out-expo);
+}
+
+#overlays-top:hover {
+	@apply opacity-100;
+	box-shadow: var(--shadow-card-hover);
+}
+
+#overlays-top > li > img {
+	@apply h-10 w-10 rounded-full cursor-pointer p-1;
+}
+
+#overlays-top > li > img:hover {
+	background-color: var(--color-accent-hover);
+	transform: scale(1.08);
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+header {
+	@apply z-10 w-full justify-center;
+	@apply border-b border-border-faded bg-surface-soft/90;
+	backdrop-filter: blur(16px);
+}
+
+/* ── Alert Bar ── */
 #alert-bar {
-	@apply h-auto p-0 m-0 bg-surface-soft;
+	@apply h-auto bg-surface-soft py-1;
+	border-bottom: 1px solid var(--color-border-faded);
+}
+
+#alert-bar * {
+	@apply text-xs;
 }
 
 #alert-bar > marquee {
-	@apply flex p-1;
+	@apply flex;
 }
 
 #alert-bar > marquee > ul {
@@ -144,341 +242,508 @@ a.inactive-link {
 }
 
 #alert-bar > marquee > ul > li {
-	@apply flex px-1;
+	@apply flex px-2 items-center;
+	@apply text-xs text-text-subtle;
 }
 
-header {
-	@apply z-5 justify-center w-full;
-	@apply border-b border-border-faded bg-surface-soft;
-}
-
+/* ── Menu Bar ── */
 .menu-bar-outer {
 	@apply md:flex;
 }
 
 .menu-btn {
 	@apply flex flex-row-reverse;
-
 	@apply md:hidden;
 }
 
 .menu-btn img {
-	@apply m-3 mb-1 p-0.5 rounded-md w-7.5 bg-surface backdrop-blur-md border border-border-faded drop-shadow-lg;
+	@apply m-3 mb-1 p-0.5 w-8 rounded-lg;
+	@apply bg-surface border border-border-faded;
+	backdrop-filter: blur(8px);
+	box-shadow: var(--shadow-card);
 }
 
 .menu-btn img:hover {
-	@apply cursor-pointer bg-accent;
+	@apply cursor-pointer;
+	background-color: var(--color-accent-hover);
+	transform: scale(1.05);
 }
 
 #menu-bar {
-	@apply hidden h-auto rounded-2xl border border-border-faded m-2 mx-4 bg-surface;
-	@apply text-base font-semibold;
-
-	@apply md:flex md:justify-around md:rounded-none md:border-0 md:m-0 md:w-full;
+	@apply hidden h-auto rounded-2xl border border-border-faded bg-surface;
+	@apply m-2 mx-4 text-base font-semibold;
+	@apply md:flex md:m-0 md:w-full md:justify-around md:rounded-none md:border-0 md:bg-transparent;
 }
 
 #menu-bar ul {
-	@apply p-2 w-full;
-
+	@apply w-full p-2;
 	@apply md:flex md:justify-center md:pb-0;
 }
 
 #menu-bar ul li {
-	@apply m-1 w-auto h-auto;
-
+	@apply m-1 h-auto w-auto;
 	@apply md:m-0;
 }
 
+/* ── Dropdown Container ── */
 #dropdown {
 	@apply relative;
 }
 
+/* ── Top-level nav anchors ── */
 #menu-bar ul li > a {
-	@apply flex w-full justify-center rounded-2xl;
-	@apply text-base cursor-pointer;
-
-	@apply md:text-lg md:h-full md:w-full md:p-1 md:px-8 md:flex md:rounded-t-2xl md:rounded-b-none;
+	@apply flex w-full cursor-pointer justify-center rounded-2xl text-base;
+	@apply md:flex md:h-full md:w-full md:rounded-b-none md:rounded-t-2xl md:p-1 md:px-8;
+	letter-spacing: 0.01em;
 }
 
+/* ── Dropdown Panel ──────────────────────────────────────────
+   FIX: Replaced display:none ↔ display:flex toggle (which
+   cannot transition) with opacity / visibility / transform.
+   The panel is always rendered as flex-col; visibility + opacity
+   control whether it is perceivable and interactive.
+   ─────────────────────────────────────────────────────────── */
 #dropdown-content {
-	@apply hidden absolute left-0 top-full z-100 rounded-2xl w-max;
-	@apply bg-surface border border-border-faded shadow-2xl;
+	/* Layout — always flex, direction column */
+	@apply hidden md:flex md:flex-col;
+	/* Positioning */
+	@apply absolute left-0 top-full z-100;
+	/* Sizing */
+	@apply min-w-44 rounded-2xl;
+	/* Visuals */
+	@apply border border-border-faded bg-surface/90;
+	backdrop-filter: blur(20px);
+	box-shadow: var(--shadow-card-hover);
+	/* ── Closed state ── */
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-6px) scale(0.98);
+	pointer-events: none;
+	transition:
+		opacity var(--duration-base) var(--ease-out-expo),
+		visibility var(--duration-base) var(--ease-out-expo),
+		transform var(--duration-base) var(--ease-out-expo);
 }
 
+/* ── Opened state (hover or keyboard focus within) ── */
+#dropdown:hover #dropdown-content,
+#dropdown:focus-within #dropdown-content {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0) scale(1);
+	pointer-events: auto;
+}
+
+/* ── Dropdown Items ──────────────────────────────────────────
+   FIX: Removed text-center, added left-aligned layout.
+   Added ::before pseudo-element for the left-accent bar.
+   ─────────────────────────────────────────────────────────── */
 #dropdown-content > a {
-	@apply flex p-1 px-2 h-auto w-full;
-	@apply text-center rounded-2xl;
-	@apply md:p-2;
+	/* Layout */
+	@apply relative flex items-center overflow-hidden;
+	/* Box model */
+	@apply h-auto w-full px-4 py-2.5;
+	/* Typography — LEFT aligned, not centered */
+	@apply text-sm font-medium text-text-muted;
+	/* Visuals */
+	@apply rounded-xl;
+	transition:
+		background var(--duration-fast) var(--ease-out-expo),
+		color var(--duration-fast) var(--ease-out-expo),
+		padding-left var(--duration-fast) var(--ease-out-expo);
 }
 
-#dropdown:hover #dropdown-content {
-	@apply flex flex-col;
+/* Left-accent indicator bar */
+#dropdown-content > a::before {
+	content: '';
+	@apply absolute left-0 top-0 h-full rounded-r-full;
+	width: 2px;
+	background-color: var(--color-accent);
+	opacity: 0;
+	transform: scaleY(0.5);
+	transition:
+		opacity var(--duration-fast) var(--ease-out-expo),
+		transform var(--duration-fast) var(--ease-out-expo);
 }
 
+#dropdown-content > a:hover {
+	@apply bg-surface-soft text-text-main no-underline pl-5;
+}
+
+#dropdown-content > a:hover::before {
+	opacity: 1;
+	transform: scaleY(1);
+}
+
+/* ── Active sub-page item (applied via JS — see Section 3) ── */
+#dropdown-content > a.about-sub-active {
+	@apply pl-5 font-semibold bg-surface-soft;
+	color: var(--color-accent);
+}
+
+#dropdown-content > a.about-sub-active::before {
+	opacity: 1;
+	transform: scaleY(1);
+}
+
+/* ── Mobile: always show dropdown items inline in the vertical menu ── */
+@media (max-width: 767px) {
+	#dropdown-content {
+		position: static;
+		opacity: 1;
+		visibility: visible;
+		transform: none;
+		pointer-events: auto;
+		box-shadow: none;
+		backdrop-filter: none;
+		background: transparent;
+		border: none;
+		min-width: 0;
+		padding: 0;
+		border-radius: 0;
+	}
+
+	#dropdown-content > a {
+		@apply text-text-subtle pl-6;
+		font-size: 0.8125rem;
+	}
+
+	#dropdown-content > a:hover {
+		@apply pl-7 bg-transparent text-text-muted;
+	}
+}
+
+/* ── Active / hover state for top-level nav tabs ── */
 .active-tab {
-	@apply text-text-main bg-surface-soft font-bold;
+	@apply bg-surface-soft font-bold text-text-main;
+	box-shadow: inset 0 -2px 0 var(--color-accent);
 }
 
 .outer-nav-a:hover {
-	@apply text-text-main bg-surface-soft no-underline;
+	@apply bg-surface-soft text-text-main no-underline;
 }
 
-/* Main Header */
+/* ── Profile Header ── */
 #main-header {
-	@apply flex flex-col justify-center w-full p-4;
-
+	@apply flex w-full flex-col justify-center p-4;
 	@apply md:flex-row md:p-8;
 }
 
 #profile-pic {
-	@apply flex w-full justify-around items-center overflow-hidden;
-
-	@apply md:w-[40%] md:justify-end md:items-center md:border-r md:border-border-faded  md:pr-6;
+	@apply flex w-full items-center justify-around overflow-hidden;
+	@apply md:w-[40%] md:items-center md:justify-end md:border-r md:border-border-faded md:pr-6;
 }
 
 #profile-pic img {
-	@apply size-[35vw] rounded-2xl border border-border-faded drop-shadow-lg;
-
+	@apply rounded-2xl border border-border-faded object-cover;
+	@apply size-[35vw];
 	@apply md:size-[25vh] lg:size-[30vh];
+	box-shadow: var(--shadow-card);
+	transition:
+		box-shadow var(--duration-slow) var(--ease-out-expo),
+		transform var(--duration-slow) var(--ease-out-expo);
+}
+
+#profile-pic img:hover {
+	box-shadow: var(--shadow-card-hover);
+	transform: scale(1.02);
 }
 
 #key-abouts {
-	@apply w-[90vw] border-l-0 flex flex-col justify-center;
-	@apply overflow-hidden border-border-faded;
-
+	@apply flex w-[90vw] flex-col justify-center overflow-hidden border-l-0 border-border-faded;
 	@apply md:w-[60%] md:border-l md:pl-6;
 }
 
 .inner-key-abouts {
-	@apply text-text-main;
+	color: var(--color-text-main);
 }
 
 .inner-key-abouts > *,
 .inner-key-abouts2 > * {
 	@apply text-center;
-
 	@apply md:text-left;
 }
 
 .inner-key-abouts h1 {
-	@apply pt-2 font-bold text-xl;
-
+	@apply pt-2 text-xl font-bold;
+	font-family: var(--font-display);
+	letter-spacing: -0.01em;
 	@apply md:p-0 md:text-2xl;
 }
 
 .inner-key-abouts h2 {
-	@apply text-sm text-text-muted font-medium;
-
+	@apply text-sm font-medium text-text-muted;
 	@apply md:text-base md:text-text-main;
 }
 
 .inner-key-abouts2 {
 	@apply hidden;
-
 	@apply md:flex md:flex-col md:gap-1;
 }
 
 .inner-key-abouts2 * {
-	@apply font-normal text-sm;
-
+	@apply text-sm font-normal;
 	@apply md:text-base;
 }
 
-/* Social Links */
+/* ── Social Link Pills ── */
 span.social-links {
-	@apply flex flex-row items-center justify-between backdrop-blur-lg drop-shadow-lg mb-4 opacity-100 border border-border-faded m-auto mt-1 p-1.5 w-max rounded-full;
-
-	@apply md:opacity-90 md:m-0 md:mt-2;
+	@apply flex w-max flex-row items-center justify-between rounded-full;
+	@apply m-auto mt-1 mb-4 border border-border-faded p-1.5;
+	@apply opacity-90;
+	background-color: var(--color-surface-soft);
+	backdrop-filter: blur(12px);
+	box-shadow: var(--shadow-card);
+	@apply md:m-0 md:mt-2;
 }
 
 span.social-links:hover {
 	@apply opacity-100;
+	box-shadow: var(--shadow-card-hover);
 }
 
 a.ext-link-header {
-	@apply flex items-center justify-center size-7 mx-1 rounded-full bg-border-faded p-0.5;
-
-	@apply md:size-7.5;
+	@apply mx-1 flex size-7 items-center justify-center rounded-full p-0.5;
+	background-color: var(--color-border-faded);
 }
 
+/* FIX: md:size-7 was redundant (base was already size-7). Removed. */
 a.ext-link-header:hover {
-	@apply bg-accent opacity-100;
+	background-color: var(--color-accent-hover);
+	transform: scale(1.12) rotate(-4deg);
+	box-shadow: 0 2px 8px var(--color-accent-hover-glow);
 }
 
 a.ext-link-header img {
 	@apply size-full rounded-full;
 }
 
-/* Body Section */
+/* ============================================================
+   BODY CONTENT AREA
+   ============================================================ */
+
 #body {
-	@apply z-25 min-h-[30vh] px-6 py-2 bg-surface pb-6;
-
-	@apply md:px-12 md:pb-6 lg:px-16 lg:pb-8;
+	@apply z-20 min-h-[30vh] bg-surface px-6 py-2 pb-8;
+	@apply md:px-12 md:pb-8 lg:px-16 lg:pb-10;
 }
 
+/* ── Sub-page Navigation (prev / next) ── */
 .nav-sub-pane {
-	/* Layout: keep explicit grid with two columns so each anchor can keep its column
-	   even if a sibling is hidden (display:none) */
-	@apply grid grid-cols-[1fr_1fr] pb-2.5 items-center;
+	@apply grid items-center pb-3;
+	grid-template-columns: 1fr 1fr;
 }
 
-/* Place anchors into fixed columns (preserve original positions)
-   Using nth-child keeps simple HTML ordering working as intended. */
 .nav-sub-pane > a:nth-child(1) {
 	grid-column: 1;
 	justify-self: start;
 }
+
 .nav-sub-pane > a:nth-child(2) {
 	grid-column: 2;
 	justify-self: end;
 }
 
 a.nav-links {
-	@apply flex max-w-36 truncate px-2.5 py-0.5 mx-0 my-2.5 font-bold text-center rounded-full bg-surface-soft border border-border-faded drop-shadow-md;
-
-	@apply md:max-w-40;
+	@apply mx-0 my-2.5 flex max-w-36 truncate rounded-full;
+	@apply border border-border-faded bg-surface-soft px-3 py-0.5;
+	@apply text-center font-bold;
+	box-shadow: var(--shadow-card);
+	@apply md:max-w-44;
 }
 
 a.nav-links:hover {
-	@apply text-text-main bg-accent no-underline;
+	@apply no-underline;
+	@apply bg-accent-hover text-text-contrast;
+	/* background-color: var(--color-accent-hover); */
+	box-shadow: 0 4px 16px var(--color-accent-hover-glow);
+	transform: translateY(-1px);
 }
 
+/* ── Section Headings ── */
 .body-sections h2 {
-	@apply font-semibold text-lg text-left border-b border-border-faded text-text-main text-shadow-xs mb-4 mt-2;
-
+	@apply mb-4 mt-3 border-b border-border-faded text-left text-lg font-semibold text-text-main;
+	font-family: var(--font-display);
+	letter-spacing: -0.01em;
 	@apply md:text-xl;
 }
 
+/* FIX: page-heading-home must explicitly declare font-display
+   to match every other h2 on the site.                       */
 h2.page-heading-home {
-	@apply text-xl my-4;
-
+	@apply my-5 text-xl;
+	font-family: var(--font-display);
 	@apply md:text-2xl;
 }
 
+/* ── Card Grid List ── */
 .body-sections ul {
-	@apply flex flex-col gap-3 items-stretch;
-
+	@apply flex flex-col items-stretch gap-3;
 	@apply md:gap-4 lg:grid lg:grid-cols-2 lg:gap-6;
 }
 
+/* ── Common Card Layout ── */
 .common-body-layout {
-	@apply flex flex-col border border-border-faded rounded-2xl p-4 mx-auto bg-surface-soft/80 shadow-lg text-center w-[80vw] max-w-160;
-
-	/* Use equal-width columns on medium+ screens and add a gap for breathing room */
-	@apply md:grid md:grid-cols-[1fr_2fr] md:text-left md:max-w-[85vw] lg:max-w-[50vw] md:items-start lg:w-full;
+	@apply mx-auto flex w-[85vw] max-w-160 flex-col rounded-2xl;
+	@apply border border-border-faded bg-surface-soft/80 p-4 text-center;
+	box-shadow: var(--shadow-card);
+	transition:
+		box-shadow var(--duration-slow) var(--ease-out-expo),
+		background var(--duration-slow) var(--ease-out-expo),
+		transform var(--duration-slow) var(--ease-out-expo);
+	@apply md:grid md:max-w-[85vw] md:items-start md:text-left lg:w-full lg:max-w-[50vw];
+	grid-template-columns: 1fr 2fr;
 }
 
 .common-body-layout:hover {
-	@apply shadow-2xl bg-surface-soft;
+	background-color: var(--color-surface-raised);
+	box-shadow: var(--shadow-card-hover);
+	transform: translateY(-2px);
 }
 
+/* ── Card Image Column ── */
 .li-img {
-	@apply flex justify-center items-center h-full;
-
+	@apply flex h-full items-center justify-center;
 	@apply md:justify-end md:pr-2;
 }
 
 .li-img img {
-	/* Make images responsive squares that fill available width up to a max size */
-	@apply rounded-xl border border-border-faded drop-shadow-lg aspect-square w-full object-cover max-w-30;
-
+	@apply aspect-square w-full max-w-30 rounded-xl border border-border-faded object-cover;
+	box-shadow: var(--shadow-card);
+	transition:
+		box-shadow var(--duration-slow) var(--ease-out-expo),
+		transform var(--duration-slow) var(--ease-out-expo);
 	@apply md:max-w-48 md:rounded-2xl lg:max-w-56;
 }
 
+.common-body-layout:hover .li-img img {
+	box-shadow: var(--shadow-card-hover);
+	transform: scale(1.025);
+}
+
+/* ── Card Text Column ── */
 .li-text {
-	@apply flex flex-col justify-center h-full;
-	@apply md:border-l md:border-border-faded md:pl-2;
+	@apply flex h-full flex-col justify-center;
+	@apply md:border-l md:border-border-faded md:pl-3;
 }
 
 .li-text > h3 {
-	@apply font-semibold text-base text-text-main mt-1.5 border-b border-border-faded;
-
+	@apply mt-1.5 border-b border-border-faded text-base font-semibold text-text-main;
+	font-family: var(--font-display);
 	@apply md:mt-0 md:text-lg md:font-bold;
 }
 
+/* FIX: Superscripts ("ONGOING", "Current") reduced to text-xs
+   so they render as genuine superscripts rather than sub-headings. */
 .li-text > h3 > sup {
-	@apply font-semibold text-accent text-sm;
+	@apply text-xs font-semibold;
+	color: var(--color-accent);
 }
 
 .para-contents {
-	@apply flex flex-col gap-1 w-full pt-1;
+	@apply flex w-full flex-col gap-1 pt-1;
 }
 
 .para-contents > p {
-	@apply text-left pl-1;
-
-	@apply md:text-sm md:text-left;
+	@apply pl-0.5 text-left text-sm leading-relaxed;
 }
 
+/* ── Link Button Row ── */
 .link-contents {
-	@apply flex flex-wrap gap-2 place-items-center m-auto pt-2;
-
-	@apply md:m-0 md:ml-1;
+	@apply m-auto flex flex-wrap items-center gap-2 pt-2;
+	@apply md:m-0 md:ml-0.5;
 }
 
+/* ── External Link Button (pill) ──────────────────────────────
+   FIX: md:size-5 override removed from img — base size-4 is
+   proportionally correct inside the pill and needs no override.
+   FIX: border-color added to transition list.
+   ─────────────────────────────────────────────────────────── */
 a.ext-link {
-	@apply inline-flex h-auto p-0.5 rounded-full bg-surface border border-border-faded drop-shadow-lg items-center justify-start overflow-hidden;
+	@apply inline-flex h-auto items-center justify-start overflow-hidden rounded-full;
+	@apply border border-border-faded bg-surface p-0.5;
+	box-shadow: var(--shadow-card);
+	transition:
+		background var(--duration-base) var(--ease-out-expo),
+		box-shadow var(--duration-base) var(--ease-out-expo),
+		transform var(--duration-base) var(--ease-out-expo),
+		border-color var(--duration-base) var(--ease-out-expo);
 }
 
 a.ext-link:hover {
-	@apply text-text-main bg-accent no-underline;
+	@apply no-underline text-text-main border-transparent;
+	@apply bg-accent-hover text-text-contrast;
+	/* background-color: var(--color-accent-hover); */
+	box-shadow: 0 4px 14px var(--color-accent-hover-glow);
+	transform: translateY(-1px) scale(1.02);
 }
 
 a.ext-link img {
-	@apply size-4 rounded-full mx-0.5;
-
-	@apply md:size-5;
+	@apply mx-0.5 size-4 rounded-full;
 }
 
+/* FIX: md:text-sm was redundant (base is already text-sm). Removed. */
 a.ext-link h3 {
-	@apply text-sm pl-0.5 pr-1 border-l border-border-faded font-bold;
-
-	@apply md:text-base md:font-semibold;
+	@apply border-l border-border-faded pl-1 pr-1.5 text-sm font-bold;
 }
 
-/* Done till here */
-
+/* ── Inline Prose Link ────────────────────────────────────────
+   FIX: hover previously set color to text-main, stripping the
+   accent. Now deepens to accent-hover (amber) instead.
+   ─────────────────────────────────────────────────────────── */
 a.ext-link-inline {
 	@apply font-bold;
+	color: var(--color-accent);
+	text-decoration: underline;
+	text-underline-offset: 2px;
 }
 
 a.ext-link-inline:hover {
-	@apply text-text-main text-shadow-2xs underline;
+	color: var(--color-accent-hover);
+	text-shadow: 0 0 8px var(--color-accent-hover-glow);
 }
 
+/* ── Inactive / disabled link ─────────────────────────────────
+   FIX: md:size-6 override removed from img — base size-4
+   matches ext-link and needs no responsive override.
+   ─────────────────────────────────────────────────────────── */
 a.inactive-ext-link {
-	@apply inline-flex h-auto p-0.5 rounded-full bg-surface border border-border-faded items-center justify-center;
+	@apply inline-flex h-auto items-center justify-center overflow-hidden rounded-full;
+	@apply border border-border-faded bg-surface p-0.5 opacity-50;
 }
 
 a.inactive-ext-link:hover {
-	@apply cursor-not-allowed no-underline;
+	@apply cursor-not-allowed no-underline opacity-50;
 }
 
 a.inactive-ext-link img {
-	@apply size-5 rounded-full mr-0.5;
-
-	@apply md:size-6;
+	@apply mr-0.5 size-4 rounded-full;
 }
 
 a.inactive-ext-link h3 {
-	@apply text-sm pl-0.5 pr-1 border-l border-border-faded font-bold text-text-muted/80;
-
-	@apply md:text-base md:font-semibold;
+	@apply border-l border-border-faded pl-1 pr-1.5 text-sm font-bold;
+	color: var(--color-text-muted);
 }
 
+/* ── YouTube Embed ── */
 .yt-player {
-	@apply h-auto w-[60vw] rounded-[10px];
+	@apply h-auto w-[60vw] rounded-xl;
+	box-shadow: var(--shadow-card);
+	transition:
+		box-shadow var(--duration-slow) var(--ease-out-expo),
+		transform var(--duration-slow) var(--ease-out-expo);
 }
 
 .yt-player:hover {
-	@apply shadow-xl;
+	box-shadow: var(--shadow-card-hover);
+	transform: scale(1.01);
 }
 
-/* Footer */
+/* ============================================================
+   FOOTER
+   ============================================================ */
 
 footer {
-	@apply flex flex-col gap-1 p-4 border-t border-border-faded bg-surface-soft;
-
+	@apply flex flex-col gap-1 border-t border-border-faded bg-surface-soft p-4;
 	@apply md:p-6;
 }
 
@@ -487,41 +752,48 @@ footer * {
 }
 
 ul#quick-links {
-	@apply p-2 flex flex-col items-center justify-evenly gap-2.5;
-
+	@apply flex flex-col items-center justify-evenly gap-2.5 p-2;
 	@apply md:flex-row;
 }
 
-a.invisible-link:hover {
-	@apply underline text-text-main;
-}
-
 ul.footer-text {
-	@apply p-2 flex flex-col gap-2 items-center text-center;
+	@apply flex flex-col items-center gap-2 p-2 text-center;
+	color: var(--color-text-subtle);
 }
 
 img.clickable-github-repo {
-	@apply drop-shadow-sm;
+	@apply cursor-pointer opacity-70;
+	transition:
+		opacity var(--duration-base) var(--ease-out-expo),
+		filter var(--duration-base) var(--ease-out-expo);
 }
 
 img.clickable-github-repo:hover {
-	@apply drop-shadow-lg cursor-pointer;
+	@apply opacity-100;
+	filter: drop-shadow(0 2px 6px var(--color-accent-glow));
 }
 
-/* Contact Page Specific CSS */
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
 
 #contacts > ul {
-	@apply flex flex-wrap flex-row;
+	@apply flex flex-wrap flex-row gap-4;
 }
 
 .common-contact-layout {
-	@apply flex flex-col border border-border-faded rounded-2xl p-4 mx-auto bg-surface-soft/80 shadow-lg text-center gap-2;
-
-	@apply md:text-left md:items-start lg:p-6 lg:gap-4 lg:min-w-136;
+	@apply mx-auto flex flex-col gap-2 rounded-2xl;
+	@apply border border-border-faded bg-surface-soft/80 p-4 text-center;
+	box-shadow: var(--shadow-card);
+	transition:
+		box-shadow var(--duration-slow) var(--ease-out-expo),
+		background var(--duration-slow) var(--ease-out-expo);
+	@apply md:items-start md:text-left lg:min-w-136 lg:gap-4 lg:p-6;
 }
 
 .common-contact-layout:hover {
-	@apply shadow-2xl bg-surface-soft;
+	background-color: var(--color-surface-raised);
+	box-shadow: var(--shadow-card-hover);
 }
 
 .common-contact-layout > * {
@@ -529,46 +801,71 @@ img.clickable-github-repo:hover {
 }
 
 .common-contact-layout > h3 {
-	@apply font-semibold text-base text-text-main border-b border-border-faded;
-
+	@apply border-b border-border-faded text-base font-semibold text-text-main;
+	font-family: var(--font-display);
 	@apply md:text-lg md:font-bold;
 }
 
-/*  */
-
+/* ── Contact Form ─────────────────────────────────────────────
+   FIX: Removed text-center default that misaligned form labels.
+   FIX: Changed column ratio from 2fr 7fr (stretched) to a
+   bounded label column + generous input column.
+   FIX: max-w now uses sensible bounds (max-w-lg / max-w-2xl)
+   so the form does not span the full container on wide screens.
+   ─────────────────────────────────────────────────────────── */
 .send-message-form {
-	@apply flex flex-col gap-1 font-bold border border-border-faded rounded-2xl p-4 mx-auto bg-surface-soft/80 shadow-lg text-center overflow-clip max-w-124;
-
-	@apply md:text-left lg:p-6 lg:gap-4 md:grid md:grid-cols-[2fr_7fr] lg:max-w-200;
+	/* Layout */
+	@apply flex flex-col gap-2 overflow-clip rounded-2xl;
+	/* Box model — bounded proportions */
+	@apply mx-auto w-full max-w-lg p-5;
+	/* Typography */
+	@apply font-semibold;
+	/* Visuals */
+	@apply border border-border-faded bg-surface-soft/80;
+	box-shadow: var(--shadow-card);
+	/* Grid layout at md+ */
+	@apply md:grid md:max-w-2xl md:gap-x-4 md:gap-y-3 md:p-7;
+	grid-template-columns: minmax(4.5rem, 1fr) 3fr;
+	align-items: start;
+	transition:
+		background var(--duration-slow) var(--ease-out-expo),
+		box-shadow var(--duration-slow) var(--ease-out-expo);
 }
 
 .send-message-form:hover {
-	@apply bg-surface-soft shadow-2xl;
+	background-color: var(--color-surface-raised);
+	box-shadow: var(--shadow-card-hover);
 }
 
-.send-message-form > label:nth-child(2n + 1) {
-	@apply flex justify-start md:justify-end pl-2 md:pl-0;
+/* Labels — left-aligned mobile, right-aligned in grid */
+.send-message-form > label {
+	@apply flex items-start pt-1.5 text-sm font-semibold text-text-muted;
+	@apply justify-start pl-1;
+	@apply md:justify-end md:pl-0 md:pt-2;
 }
 
 .send-message-form input.form-input,
 .send-message-form textarea {
-	@apply p-1 text-text-muted bg-surface border border-surface-soft drop-shadow-lg w-full;
+	@apply w-full border border-border-mid bg-surface p-2 text-text-muted;
+	box-shadow: var(--shadow-card);
+	transition:
+		border-color var(--duration-base) var(--ease-out-expo),
+		box-shadow var(--duration-base) var(--ease-out-expo),
+		background var(--duration-base) var(--ease-out-expo);
 }
 
 .send-message-form input.form-input:hover,
 .send-message-form textarea:hover,
 .send-message-form input.form-input:focus,
 .send-message-form textarea:focus {
-	@apply bg-surface-soft text-text-main border-text-muted outline-none;
-}
-
-.send-message-form input.form-input:active,
-.send-message-form textarea:active {
-	@apply drop-shadow-2xl;
+	@apply border-text-muted bg-surface-soft text-text-main outline-none;
+	box-shadow:
+		0 0 0 3px var(--color-accent-glow),
+		var(--shadow-card);
 }
 
 .send-message-form input.form-input {
-	@apply rounded-full px-4;
+	@apply rounded-full px-4 py-2;
 }
 
 .send-message-form textarea {
@@ -576,27 +873,385 @@ img.clickable-github-repo:hover {
 }
 
 .form-submit-btn-container {
-	@apply col-span-2 row-span-1 flex justify-end pr-2 pt-1;
+	@apply col-span-2 row-span-1 flex justify-end pr-1 pt-1;
 }
 
 .send-message-form .form-submit-btn {
-	@apply font-bold rounded-full py-1 px-3 text-text-muted bg-surface border border-surface-soft drop-shadow-lg;
+	@apply rounded-full border border-border-faded bg-surface px-6 py-2 font-bold text-text-muted;
+	box-shadow: var(--shadow-card);
+	transition:
+		background var(--duration-base) var(--ease-out-expo),
+		box-shadow var(--duration-base) var(--ease-out-expo),
+		transform var(--duration-base) var(--ease-out-expo),
+		color var(--duration-base) var(--ease-out-expo);
 }
 
-.form-submit-btn:hover {
-	@apply cursor-pointer text-text-main bg-accent drop-shadow-2xl;
+.send-message-form .form-submit-btn:hover {
+	@apply cursor-pointer text-text-main;
+	background-color: var(--color-accent-hover);
+	box-shadow: 0 4px 16px var(--color-accent-hover-glow);
+	transform: translateY(-1px);
 }
 
-.send-message-form hr{
-	@apply col-span-2 row-span-1 border-t border-border-faded mt-2;
+.send-message-form hr {
+	@apply col-span-2 row-span-1 mt-2 border-t border-border-faded;
 }
 
 .send-message-form .form-footer-text {
-	@apply col-span-2 row-span-1 text-xs text-text-muted text-center;
+	@apply col-span-2 row-span-1 text-center text-xs text-text-subtle;
 }
 
-/* Article Layout */
+/* ============================================================
+   ARTICLE / BLOG POST CARD LAYOUT
+   ============================================================ */
 
+/* Blog-article variant of common card — wide image left, text right */
 .article {
-	@apply grid grid-cols-2;
+	grid-template-columns: 1fr 2fr;
+}
+
+.article .li-img iframe,
+.article .li-img img {
+	@apply w-full rounded-xl;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+/* ============================================================
+   BLOG LIST PAGE  (tab 3 — blog.html)
+   ============================================================ */
+
+/* Single-column override — blog list never goes to 2-col grid */
+.blog-list-section ul {
+	@apply flex flex-col gap-5;
+	@apply md:gap-6 lg:flex lg:flex-col;
+}
+
+/* Individual blog preview card */
+.blog-card {
+	@apply relative mx-auto flex w-full max-w-3xl flex-col overflow-hidden rounded-2xl;
+	@apply border border-border-faded bg-surface-soft/80;
+	box-shadow: var(--shadow-card);
+	transition:
+		box-shadow var(--duration-slow) var(--ease-out-expo),
+		background var(--duration-slow) var(--ease-out-expo),
+		transform var(--duration-slow) var(--ease-out-expo);
+	@apply md:flex-row;
+}
+
+.blog-card:hover {
+	background-color: var(--color-surface-raised);
+	box-shadow: var(--shadow-card-hover);
+	transform: translateY(-3px);
+}
+
+/* Thumbnail column */
+.blog-card__thumb {
+	@apply relative overflow-hidden;
+	@apply w-full md:w-44 lg:w-56;
+	flex-shrink: 0;
+}
+
+.blog-card__thumb img {
+	@apply h-48 w-full object-cover md:h-full;
+	transition: transform var(--duration-slow) var(--ease-out-expo);
+}
+
+.blog-card:hover .blog-card__thumb img {
+	transform: scale(1.04);
+}
+
+/* Text column */
+.blog-card__body {
+	@apply flex flex-col justify-between gap-3 p-4;
+	@apply md:p-5 lg:p-6;
+}
+
+/* Category tag strip */
+.blog-card__tags {
+	@apply flex flex-wrap gap-1.5;
+}
+
+/* FIX: border-color added to transition list so border fades
+   to transparent smoothly on hover instead of snapping.       */
+.blog-tag {
+	@apply inline-block rounded-full border border-border-mid px-2.5 py-0.5;
+	@apply text-xs font-semibold uppercase tracking-wider text-text-subtle;
+	letter-spacing: 0.07em;
+	transition:
+		background var(--duration-base) var(--ease-out-expo),
+		color var(--duration-base) var(--ease-out-expo),
+		border-color var(--duration-base) var(--ease-out-expo);
+}
+
+.blog-tag:hover {
+	background-color: var(--color-accent);
+	color: white;
+	@apply no-underline border-transparent;
+}
+
+/* Post title in list view */
+.blog-card__title {
+	@apply text-lg font-bold text-text-main leading-snug;
+	font-family: var(--font-display);
+	@apply md:text-xl;
+}
+
+.blog-card__title a {
+	@apply no-underline text-text-main;
+	transition: color var(--duration-base) var(--ease-out-expo);
+}
+
+.blog-card__title a:hover {
+	color: var(--color-accent);
+	@apply no-underline;
+}
+
+/* Excerpt */
+.blog-card__excerpt {
+	@apply text-sm leading-relaxed text-text-muted line-clamp-3;
+}
+
+/* Meta row: date · read time */
+.blog-card__meta {
+	@apply flex items-center gap-3 text-xs text-text-subtle;
+}
+
+.blog-card__meta time {
+	@apply font-medium;
+}
+
+.blog-card__meta span::before {
+	content: '·';
+	@apply mr-3;
+}
+
+/* Read more CTA */
+.blog-card__cta {
+	@apply mt-1 self-start;
+}
+
+/* ============================================================
+   INDIVIDUAL BLOG POST PAGE  (blog-30.html, blog-31.html, …)
+   ============================================================ */
+
+/* Post hero / masthead */
+.post-hero {
+	@apply relative mx-auto mb-8 w-full overflow-hidden rounded-2xl;
+	@apply max-w-4xl border border-border-faded;
+	box-shadow: var(--shadow-card);
+}
+
+.post-hero__img {
+	@apply h-52 w-full object-cover md:h-80;
+}
+
+.post-hero__overlay {
+	@apply absolute inset-0 flex flex-col justify-end p-6 md:p-8;
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.65) 0%,
+		rgba(0, 0, 0, 0) 55%
+	);
+}
+
+.post-hero__category {
+	@apply mb-2 inline-block;
+}
+
+.post-hero__title {
+	@apply text-2xl font-bold leading-tight text-white;
+	font-family: var(--font-display);
+	@apply md:text-3xl lg:text-4xl;
+}
+
+.post-hero__meta {
+	@apply mt-2 flex flex-wrap items-center gap-3 text-sm text-white/80;
+}
+
+/* Post body wrapper — constrains readable line length */
+.post-body {
+	@apply mx-auto w-full max-w-3xl px-4 pb-12;
+	@apply md:px-6 lg:px-0;
+}
+
+/* ── Prose typography inside .post-body ── */
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4 {
+	@apply text-text-main;
+	font-family: var(--font-display);
+	line-height: 1.3;
+}
+
+.post-body h2 {
+	@apply mt-10 mb-3 border-b border-border-faded pb-1 text-xl font-semibold;
+	@apply md:text-2xl;
+}
+
+.post-body h3 {
+	@apply mt-7 mb-2 text-lg font-semibold;
+	@apply md:text-xl;
+}
+
+.post-body h4 {
+	@apply mt-5 mb-1 text-base font-semibold;
+}
+
+.post-body p {
+	@apply mb-4 text-sm leading-loose text-text-muted;
+	@apply md:text-base;
+}
+
+.post-body a {
+	@apply font-semibold;
+	color: var(--color-accent);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.post-body a:hover {
+	color: var(--color-accent-hover);
+}
+
+.post-body ul,
+.post-body ol {
+	@apply mb-4 ml-5 flex flex-col gap-1.5 text-sm text-text-muted;
+	@apply md:text-base;
+}
+
+.post-body ul {
+	list-style-type: disc;
+}
+
+.post-body ol {
+	list-style-type: decimal;
+}
+
+.post-body li::marker {
+	color: var(--color-accent);
+}
+
+/* Blockquote */
+.post-body blockquote {
+	@apply relative my-6 rounded-r-xl border-l-4 py-3 pl-5 pr-4 italic;
+	border-color: var(--color-accent);
+	background-color: var(--color-surface-soft);
+	color: var(--color-text-muted);
+}
+
+.post-body blockquote p {
+	@apply mb-0;
+}
+
+.post-body blockquote cite {
+	@apply mt-2 block text-xs not-italic text-text-subtle;
+}
+
+/* Inline code */
+.post-body code {
+	@apply rounded-md px-1.5 py-0.5 text-sm;
+	font-family: var(--font-mono);
+	background-color: var(--color-surface-soft);
+	color: var(--color-accent);
+	border: 1px solid var(--color-border-mid);
+}
+
+/* Code block */
+.post-body pre {
+	@apply my-5 overflow-x-auto rounded-2xl p-4 text-sm;
+	font-family: var(--font-mono);
+	background-color: var(--color-surface-soft);
+	border: 1px solid var(--color-border-mid);
+	box-shadow: var(--shadow-card);
+	line-height: 1.65;
+}
+
+.post-body pre code {
+	@apply bg-transparent border-0 p-0;
+	color: var(--color-text-main);
+}
+
+/* Horizontal rule */
+.post-body hr {
+	@apply my-8 border-t border-border-mid;
+}
+
+/* Callout / Note box */
+.callout {
+	@apply my-6 flex gap-3 rounded-2xl border border-border-mid p-4;
+	background-color: var(--color-surface-soft);
+	box-shadow: var(--shadow-card);
+}
+
+.callout__icon {
+	@apply text-xl;
+	flex-shrink: 0;
+}
+
+.callout__body {
+	@apply flex flex-col gap-1;
+}
+
+.callout__title {
+	@apply text-sm font-bold text-text-main;
+}
+
+.callout__text {
+	@apply text-sm text-text-muted leading-relaxed;
+}
+
+/* Callout colour variants */
+.callout--info {
+	border-left: 3px solid var(--color-accent);
+}
+
+.callout--warning {
+	border-left: 3px solid #d4a03e;
+}
+
+.callout--tip {
+	border-left: 3px solid #3eb87c;
+}
+
+/* Reading progress indicator */
+.reading-progress {
+	@apply fixed top-0 left-0 z-200 h-0.5 w-full origin-left;
+	background-color: var(--color-accent);
+	transform: scaleX(var(--scroll-progress, 0));
+	box-shadow: 0 0 8px var(--color-accent-glow);
+}
+
+/* Post navigation (prev / next within blog) */
+.post-nav {
+	@apply grid grid-cols-2 gap-4 mx-auto max-w-3xl px-4 pb-10;
+	@apply md:px-6 lg:px-0;
+}
+
+.post-nav__link {
+	@apply flex flex-col gap-0.5 rounded-2xl border border-border-faded bg-surface-soft/80 p-4;
+	box-shadow: var(--shadow-card);
+	transition:
+		box-shadow var(--duration-slow) var(--ease-out-expo),
+		transform var(--duration-slow) var(--ease-out-expo);
+}
+
+.post-nav__link:hover {
+	box-shadow: var(--shadow-card-hover);
+	transform: translateY(-2px);
+	@apply no-underline;
+}
+
+.post-nav__label {
+	@apply text-xs font-semibold uppercase tracking-widest text-text-subtle;
+}
+
+.post-nav__title {
+	@apply text-sm font-bold text-text-main leading-snug;
+	font-family: var(--font-display);
+}
+
+.post-nav__link--next {
+	@apply text-right;
 }

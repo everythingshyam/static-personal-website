@@ -40,6 +40,14 @@ if (localStorage.hasOwnProperty('theme')) {
 	}
 }
 
+document.addEventListener('scroll', () => {
+	const el = document.getElementById('reading-progress');
+	if (!el) return;
+	const pct =
+		window.scrollY / (document.body.scrollHeight - window.innerHeight);
+	el.style.setProperty('--scroll-progress', Math.min(pct, 1));
+});
+
 // ----------------------------------------------------------------------------------------
 // TESTING SECTION
 
@@ -74,6 +82,30 @@ function activateTab(tabNoIn) {
 		activeTabsPtr.classList.remove('active-tab');
 		activeTabsPtr.classList.remove('diagonal-bg');
 	});
+	// At the top of activateTab(), after the existing activeTab cleanup block:
+
+	// Map from tabNo to the About dropdown anchor text, so we can mark it active
+	const aboutSubMap = {
+		10: 'Academics',
+		11: 'Career',
+		12: 'Projects',
+		13: 'Technical Skills',
+		14: 'Hobbies',
+	};
+
+	// Remove existing active marker from all dropdown items
+	document.querySelectorAll('#dropdown-content > a').forEach((el) => {
+		el.classList.remove('about-sub-active');
+	});
+
+	// Apply active marker if the current tab is an About sub-page
+	if (aboutSubMap[tabNoIn]) {
+		document.querySelectorAll('#dropdown-content > a').forEach((el) => {
+			if (el.textContent.trim() === aboutSubMap[tabNoIn]) {
+				el.classList.add('about-sub-active');
+			}
+		});
+	}
 	// TODO remove below if else if structure using arrays
 	if (tabNoIn == '0') {
 		console.log('User clicked on Home Button');
@@ -323,18 +355,18 @@ function loadFile(className, fileName) {
 //Below block is to change css files on window size change
 
 window.addEventListener('resize', function (event) {
-	if (window.innerWidth <= 950) {
+	if (window.innerWidth < 768) {
+		// match Tailwind's md: exactly
 		if (menuShow == true) {
-			console.log('Screen size changed! (to Smarthphone)');
 			menu_click();
 			menuShow = false;
 		}
 	} else {
-		if (menuShow == false) {
-			console.log('Screen size changed! (to Desktop)');
-			menu_click();
-			menuShow = true;
-		}
+		// Never call menu_click() here; that would set another inline style
+		// and restart the same fight.
+		const v = document.getElementById('menu-bar');
+		v.style.display = ''; // ← remove inline style
+		menuShow = true;
 	}
 });
 // ----------------------------------------------------------------------------------------

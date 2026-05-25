@@ -1,13 +1,65 @@
-<span class="nav-sub-pane">
+<!-- ------------------------------------------- -->
+<!-- Post Hero -->
+<div class="post-hero">
+    <img class="post-hero__img" src="./images/res/blog-30.png" alt="Career So Far">
+    <div class="post-hero__overlay">
+        <div class="post-hero__category">
+            <span class="blog-tag">Career</span>
+        </div>
+        <h1 class="post-hero__title">Career So Far</h1>
+        <div class="post-hero__meta">
+            <time datetime="2024-07-01">July 1, 2024</time>
+            <span>5 min read</span>
+        </div>
+    </div>
+</div>
+
+<!-- Sub-navigation -->
+<!-- <span class="nav-sub-pane">
     <a class="nav-links inactive-link">
         &lt; NA
     </a>
     <a class="nav-links" onclick="activateTab(31)" title="Next Blog">Next Blog &gt;</a>
-</span>
+</span> -->
 
-<!-- ------------------------------------------- -->
+<!-- Post Body — wrap all your body-sections in .post-body -->
+<div class="post-body">
+    <h2>Career Milestones</h2>
 
-<h1>Career So Far</h1>
+    <p>Version control systems like Git have been essential…</p>
+
+    <!-- Callout example -->
+    <div class="callout callout--tip">
+        <span class="callout__icon">💡</span>
+        <div class="callout__body">
+            <p class="callout__title">Pro Tip</p>
+            <p class="callout__text">Start with small commits and descriptive messages.</p>
+        </div>
+    </div>
+
+    <!-- Blockquote example -->
+    <blockquote>
+        <p>The best code is code you never had to write.</p>
+        <cite>— Developer wisdom</cite>
+    </blockquote>
+
+    <!-- Inline code example -->
+    <p>Run <code>git commit -m "feat: add profile section"</code> to start.</p>
+</div>
+
+<!-- Post Navigation -->
+<nav class="post-nav">
+    <a class="post-nav__link post-nav__link--prev" href="#" onclick="activateTab(29)">
+        <span class="post-nav__label">← Previous</span>
+        <span class="post-nav__title">Getting Started</span>
+    </a>
+    <a class="post-nav__link post-nav__link--next" href="#" onclick="activateTab(31)">
+        <span class="post-nav__label">Next →</span>
+        <span class="post-nav__title">Life in Seattle</span>
+    </a>
+</nav>
+
+<!-- <h1>Career So Far</h1>
 <span class="body-sections" id="projects">
     <h2 class="sub-heading">Career Milestones</h2>
     <ul>
@@ -157,4 +209,4 @@
             </div>
         </li>
     </ul>
-</span>
+</span> -->
