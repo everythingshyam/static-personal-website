@@ -175,7 +175,7 @@ a.inactive-link {
 
 /* ── Utility prose link (alert bar, footer credits, form footer) ── */
 .invisible-link {
-	@apply font-semibold px-1;
+	@apply font-semibold px-[0.25em];
 	color: var(--color-accent);
 }
 
@@ -188,29 +188,27 @@ a.inactive-link {
    SCREEN OVERLAY BUTTONS  (go-to-top / theme toggle)
    ============================================================ */
 
-#overlays-top {
-	@apply fixed bottom-[15vh] right-0 z-50 w-fit;
-	@apply border border-r-0 border-border-faded rounded-l-3xl;
-	@apply bg-surface-soft/80 p-1 pr-0 opacity-60;
+#go-to-top {
+	@apply fixed bottom-6 right-6 z-50 flex flex-col gap-2 place-items-center;
+	@apply border border-border-faded rounded-full;
+	@apply bg-surface-soft p-1.5 cursor-pointer;
 	backdrop-filter: blur(12px);
 	box-shadow: var(--shadow-overlay);
 	transition:
 		opacity var(--duration-base) var(--ease-out-expo),
 		box-shadow var(--duration-base) var(--ease-out-expo);
+
+	@apply md:bottom-8 md:right-8;
 }
 
-#overlays-top:hover {
-	@apply opacity-100;
+#go-to-top:hover {
+	background-color: var(--color-accent-hover);
+	transform: scale(1.08);
 	box-shadow: var(--shadow-card-hover);
 }
 
-#overlays-top > li > img {
-	@apply h-10 w-10 rounded-full cursor-pointer p-1;
-}
-
-#overlays-top > li > img:hover {
-	background-color: var(--color-accent-hover);
-	transform: scale(1.08);
+#go-to-top > svg {
+	@apply stroke-text-main;
 }
 
 /* ============================================================
@@ -761,8 +759,12 @@ ul.footer-text {
 	color: var(--color-text-subtle);
 }
 
+ul.footer-text li {
+	@apply flex justify-center gap-2 place-items-center;
+}
+
 img.clickable-github-repo {
-	@apply cursor-pointer opacity-70;
+	@apply cursor-pointer opacity-70 h-6;
 	transition:
 		opacity var(--duration-base) var(--ease-out-expo),
 		filter var(--duration-base) var(--ease-out-expo);
@@ -770,6 +772,19 @@ img.clickable-github-repo {
 
 img.clickable-github-repo:hover {
 	@apply opacity-100;
+	filter: drop-shadow(0 2px 6px var(--color-accent-glow));
+}
+
+button#switch-theme-btn {
+	@apply bg-surface border text-text-muted border-border-faded rounded-full p-0.5 px-1;
+	--drop-shadow-: var(--shadow-card);
+	transition:
+		opacity var(--duration-base) var(--ease-out-expo),
+		filter var(--duration-base) var(--ease-out-expo);
+}
+
+button#switch-theme-btn:hover {
+	@apply bg-accent-hover text-text-contrast border-accent-hover;
 	filter: drop-shadow(0 2px 6px var(--color-accent-glow));
 }
 
@@ -898,7 +913,14 @@ img.clickable-github-repo:hover {
 }
 
 .send-message-form .form-footer-text {
-	@apply col-span-2 row-span-1 text-center text-xs text-text-subtle;
+	@apply w-full md:w-auto flex justify-end md:justify-center col-span-2 row-span-1 text-center text-xs text-text-subtle;
+}
+
+.form-footer-text * {
+	@apply text-xs;
+}
+.form-footer-text p {
+	@apply flex gap-0 justify-center;
 }
 
 /* ============================================================

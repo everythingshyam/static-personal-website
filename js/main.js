@@ -31,12 +31,8 @@ if (localStorage.hasOwnProperty('theme')) {
 	const cachedTheme = localStorage.getItem('theme');
 	if (cachedTheme == 'dark') {
 		document.documentElement.classList.add('dark');
-		document.getElementById('switch-theme-icon').src =
-			'./images/icons/theme_light.png';
 	} else {
 		document.documentElement.classList.remove('dark');
-		document.getElementById('switch-theme-icon').src =
-			'./images/icons/theme_dark.png';
 	}
 }
 
@@ -46,6 +42,30 @@ document.addEventListener('scroll', () => {
 	const pct =
 		window.scrollY / (document.body.scrollHeight - window.innerHeight);
 	el.style.setProperty('--scroll-progress', Math.min(pct, 1));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const goToTopBtn = document.getElementById("go-to-top");
+
+  // Show button when user scrolls down 300px from the top
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+		// console.log('DEBUG: Go to top button is active');
+      goToTopBtn.classList.remove("opacity-0", "pointer-events-none");
+      goToTopBtn.classList.add("opacity-100", "pointer-events-auto");
+    } else {
+      goToTopBtn.classList.remove("opacity-100", "pointer-events-auto");
+      goToTopBtn.classList.add("opacity-0", "pointer-events-none");
+    }
+  });
+
+  // Smooth scroll behavior on click
+  goToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
 });
 
 // ----------------------------------------------------------------------------------------
@@ -60,13 +80,9 @@ function switchTheme() {
 	const html = document.documentElement;
 	if (html.classList.contains('dark')) {
 		html.classList.remove('dark');
-		document.getElementById('switch-theme-icon').src =
-			'./images/icons/theme_dark.png';
 		localStorage.setItem('theme', 'light');
 	} else {
 		html.classList.add('dark');
-		document.getElementById('switch-theme-icon').src =
-			'./images/icons/theme_light.png';
 		localStorage.setItem('theme', 'dark');
 	}
 }

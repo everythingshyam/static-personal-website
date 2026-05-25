@@ -20,15 +20,12 @@
 
 <body>
     <div class="reading-progress" id="reading-progress"></div>
-    <ul id="overlays-top">
-        <li>
-            <img onclick="goToTop()" src="./images/icons/go_to_top.png" alt="Go To Top Icon" title="Go to Top">
-        </li>
-        <li>
-            <img id="switch-theme-icon" onclick="switchTheme()" src="./images/icons/theme_dark.png"
-                alt="Switch Theme Icon" title="Switch Theme">
-        </li>
-    </ul>
+    <div onclick="goToTop()" id="go-to-top" title="Go to Top" class="opacity-0 pointer-events-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+            class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+        </svg>
+    </div>
     <header id="header" class="diagonal-bg">
         <div class="header-sub">
             <div id="alert-bar">

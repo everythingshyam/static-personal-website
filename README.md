@@ -126,3 +126,7 @@ Log into your domain provider's dashboard (such as GoDaddy), locate the **DNS Ma
 - **Hosting on a Subdomain:** If you prefer to host your blog on a dedicated subdomain (like `blog.<your-domain.com>`), you can skip the four **A Records** completely and only create a single **CNAME** record pointing your specific subdomain name directly to `<your-username>.github.io`.
 - **Alternate DNS Providers:** If your domain is registered through platforms like Namecheap, Cloudflare, or Route 53, the underlying record logic is identical; refer to your specific provider's documentation on "Advanced DNS Zone Files" to apply the mappings.
 - **Deploying Fullstack Apps or Server Code:** GitHub Pages only hosts **static files** (HTML, CSS, JS, or built React bundles). If you extend your blog to use a backend server (Node.js/Express) or a live database, refer instead to specialized cloud deployment guides for platforms like **Vercel**, **Render**, **Railway**, or **Heroku**.
+
+## References
+
+- For Icons: [https://heroicons.com/outline](heroicons)
