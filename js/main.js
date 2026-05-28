@@ -26,6 +26,48 @@ if (localStorage.hasOwnProperty('tabNo')) {
 }
 activateTab(tabNo);
 
+//setting the theme of website on startup
+if (localStorage.hasOwnProperty('theme')) {
+	const cachedTheme = localStorage.getItem('theme');
+	if (cachedTheme == 'dark') {
+		document.documentElement.classList.add('dark');
+	} else {
+		document.documentElement.classList.remove('dark');
+	}
+}
+
+document.addEventListener('scroll', () => {
+	const el = document.getElementById('reading-progress');
+	if (!el) return;
+	const pct =
+		window.scrollY / (document.body.scrollHeight - window.innerHeight);
+	el.style.setProperty('--scroll-progress', Math.min(pct, 1));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const goToTopBtn = document.getElementById("go-to-top");
+
+  // Show button when user scrolls down 300px from the top
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+		// console.log('DEBUG: Go to top button is active');
+      goToTopBtn.classList.remove("opacity-0", "pointer-events-none");
+      goToTopBtn.classList.add("opacity-100", "pointer-events-auto");
+    } else {
+      goToTopBtn.classList.remove("opacity-100", "pointer-events-auto");
+      goToTopBtn.classList.add("opacity-0", "pointer-events-none");
+    }
+  });
+
+  // Smooth scroll behavior on click
+  goToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
+
 // ----------------------------------------------------------------------------------------
 // TESTING SECTION
 
@@ -33,6 +75,18 @@ activateTab(tabNo);
 function logInternalJS_Status() {
 	console.log('Internal js working properly');
 }
+
+function switchTheme() {
+	const html = document.documentElement;
+	if (html.classList.contains('dark')) {
+		html.classList.remove('dark');
+		localStorage.setItem('theme', 'light');
+	} else {
+		html.classList.add('dark');
+		localStorage.setItem('theme', 'dark');
+	}
+}
+
 // ----------------------------------------------------------------------------------------
 function activateTab(tabNoIn) {
 	console.log('Activating tab no: ', tabNoIn);
@@ -42,7 +96,32 @@ function activateTab(tabNoIn) {
 	var activeTabs = document.getElementsByClassName('active-tab');
 	Array.from(activeTabs).forEach((activeTabsPtr) => {
 		activeTabsPtr.classList.remove('active-tab');
+		activeTabsPtr.classList.remove('diagonal-bg');
 	});
+	// At the top of activateTab(), after the existing activeTab cleanup block:
+
+	// Map from tabNo to the About dropdown anchor text, so we can mark it active
+	const aboutSubMap = {
+		10: 'Academics',
+		11: 'Career',
+		12: 'Projects',
+		13: 'Technical Skills',
+		14: 'Hobbies',
+	};
+
+	// Remove existing active marker from all dropdown items
+	document.querySelectorAll('#dropdown-content > a').forEach((el) => {
+		el.classList.remove('about-sub-active');
+	});
+
+	// Apply active marker if the current tab is an About sub-page
+	if (aboutSubMap[tabNoIn]) {
+		document.querySelectorAll('#dropdown-content > a').forEach((el) => {
+			if (el.textContent.trim() === aboutSubMap[tabNoIn]) {
+				el.classList.add('about-sub-active');
+			}
+		});
+	}
 	// TODO remove below if else if structure using arrays
 	if (tabNoIn == '0') {
 		console.log('User clicked on Home Button');
@@ -50,6 +129,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'home.html');
 		//now changing color of active tab
 		document.getElementById('home-tab').classList.add('active-tab');
+		document.getElementById('home-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '10') {
@@ -58,6 +138,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'aboutAcademics.html');
 		//now changing color of active tab
 		document.getElementById('about-tab').classList.add('active-tab');
+		document.getElementById('about-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '11') {
@@ -66,6 +147,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'aboutCareer.html');
 		//now changing color of active tab
 		document.getElementById('about-tab').classList.add('active-tab');
+		document.getElementById('about-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '12') {
@@ -74,6 +156,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'aboutProjects.html');
 		//now changing color of active tab
 		document.getElementById('about-tab').classList.add('active-tab');
+		document.getElementById('about-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '13') {
@@ -82,6 +165,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'aboutSkills.html');
 		//now changing color of active tab
 		document.getElementById('about-tab').classList.add('active-tab');
+		document.getElementById('about-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '14') {
@@ -90,6 +174,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'aboutHobbies.html');
 		//now changing color of active tab
 		document.getElementById('about-tab').classList.add('active-tab');
+		document.getElementById('about-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '2') {
@@ -98,6 +183,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'contact.html');
 		//now changing color of active tab
 		document.getElementById('contact-tab').classList.add('active-tab');
+		document.getElementById('contact-tab').classList.add('diagonal-bg');
 	}
 	//
 	else if (tabNoIn == '3') {
@@ -106,7 +192,10 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'blog.html');
 		//now changing color of active tab
 		document.getElementById('blog-tab').classList.add('active-tab');
-	} else if (tabNoIn[0] == '3') {
+		document.getElementById('blog-tab').classList.add('diagonal-bg');
+	}
+	//
+	else if (tabNoIn[0] == '3') {
 		const temp1 = Number(tabNoIn.substring(1));
 		console.log(typeof temp1);
 		console.log(temp1);
@@ -117,6 +206,7 @@ function activateTab(tabNoIn) {
 		else loadHTML('body', 'blogs/' + blogNames[temp1] + '.html');
 		//now changing color of active tab
 		document.getElementById('blog-tab').classList.add('active-tab');
+		document.getElementById('blog-tab').classList.add('diagonal-bg');
 	}
 	//
 	else {
@@ -138,14 +228,13 @@ function goToTop() {
 // ----------------------------------------------------------------------------------------
 function hideAlertBar() {
 	document.getElementById('alert-bar').style.display = 'none';
-	document.getElementById('dropdown-content').style.top = '50px';
 }
 // ----------------------------------------------------------------------------------------
 function menu_click() {
 	console.log('menu btn clicked');
 	var v = document.getElementById('menu-bar');
 	if (menuShow == false) {
-		v.style.display = 'inline';
+		v.style.display = 'flex';
 		console.log('menu switched on');
 		menuShow = true;
 	} else {
@@ -271,10 +360,10 @@ function loadHTML_Local(className, fileName) {
 
 function loadFile(className, fileName) {
 	if (isTesting == true) {
-		console.log('Loading local file social links');
+		console.log('Loading local file');
 		loadHTML_Local(className, fileName);
 	} else {
-		console.log('Loading from online');
+		console.log('Loading remote file');
 		loadHTML(className, fileName);
 	}
 }
@@ -282,18 +371,18 @@ function loadFile(className, fileName) {
 //Below block is to change css files on window size change
 
 window.addEventListener('resize', function (event) {
-	if (window.innerWidth <= 950) {
+	if (window.innerWidth < 768) {
+		// match Tailwind's md: exactly
 		if (menuShow == true) {
-			console.log('Screen size changed! (to Smarthphone)');
 			menu_click();
 			menuShow = false;
 		}
 	} else {
-		if (menuShow == false) {
-			console.log('Screen size changed! (to Desktop)');
-			menu_click();
-			menuShow = true;
-		}
+		// Never call menu_click() here; that would set another inline style
+		// and restart the same fight.
+		const v = document.getElementById('menu-bar');
+		v.style.display = ''; // ← remove inline style
+		menuShow = true;
 	}
 });
 // ----------------------------------------------------------------------------------------

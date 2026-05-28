@@ -7,29 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
     <title>Alex Rivers - Personal Blog</title>
     <meta name="description"
-        content="Detailed information about you to assist Search engines in understanding your website's content and relevance to user queries. This can include your name, profession, location, contact information, and a brief biography. By providing accurate and comprehensive author information, you can enhance your website's credibility and improve its visibility in search engine results." />
-    <link rel="icon" type="image/x-icon" href="./images/icons/WebsiteIcon2.ico" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/homePage.css" />
-    <link rel="stylesheet" href="./css/contact_style.css" />
-    <link rel="stylesheet" href="./css/resources.css" />
+        content="Alex Rivers - Personal blog and portfolio. Explore my projects, technical skills, career insights, and thoughts on technology and development." />
+    <meta name="author" content="Alex Rivers" />
+    <meta name="keywords" content="Alex Rivers, portfolio, blog, web development, projects, technical skills" />
+    <link rel="manifest" href="./images/icons/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="./images/icons/favicon.ico" />
+    <link rel="stylesheet" href="./css/output.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="go-to-top">
-        <button onclick="goToTop()">Go To Top</button>
+    <div class="reading-progress" id="reading-progress"></div>
+    <div onclick="goToTop()" id="go-to-top" title="Go to Top" class="opacity-0 pointer-events-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+            class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+        </svg>
     </div>
-    <header id="header">
+    <header id="header" class="diagonal-bg">
         <div class="header-sub">
             <div id="alert-bar">
                 <marquee behavior="scroll" direction="left">
                     <ul>
                         <li>
-                            🚧Under Construction: Converting this project into a free blog template, featuring an imaginary but dashing personality, "Alex Rivers." Use it to build your own blog soon! Temporary home: <a target="_blank" class="invisible-link"
-                                href="http://www.everythingshyam.in">http://www.everythingshyam.in</a>n. Feel free to surf through the project and stay tuned for updates!
+                            🚧Under Construction: Converting this project into a free blog template, featuring an
+                            imaginary but dashing personality, "Alex Rivers." Use it to build your own blog soon!
+                            Temporary home: <a target="_blank" class="invisible-link"
+                                href="http://www.everythingshyam.in">http://www.everythingshyam.in</a> Feel free to surf
+                            through the project and stay tuned for updates!
                         </li>
                     </ul>
                 </marquee>
@@ -39,20 +46,19 @@
                     <img onclick="menu_click()" src="./images/icons/icons8-menu-rounded-50.png"
                         alt="Hamburger menu icon" />
                 </div>
-                <span class="edge-covers" id="leftCover"> </span>
-                <span id="menu-bar" class="stay-on-top">
+                <div id="menu-bar" class="stay-on-top grid-bg">
                     <ul>
                         <li class="outer-nav-li">
                             <a class="outer-nav-a" id="home-tab" title="Home Page" onclick="activateTab(0)">Home</a>
                         </li>
                         <li class="outer-nav-li" id="dropdown">
                             <a class="outer-nav-a" id="about-tab" title="About Me" onclick="activateTab(10)">About</a>
-                            <div id="dropdown-content" class="blur-4">
-                                <a onclick="activateTab(10)">Academics</a>
-                                <a onclick="activateTab(11)">Career</a>
-                                <a onclick="activateTab(12)">Projects</a>
-                                <a onclick="activateTab(13)">Technical Skills</a>
-                                <a onclick="activateTab(14)">Hobbies</a>
+                            <div id="dropdown-content">
+                                <a class="outer-nav-a" onclick="activateTab(10)">Academics</a>
+                                <a class="outer-nav-a" onclick="activateTab(11)">Career</a>
+                                <a class="outer-nav-a" onclick="activateTab(12)">Projects</a>
+                                <a class="outer-nav-a" onclick="activateTab(13)">Technical Skills</a>
+                                <a class="outer-nav-a" onclick="activateTab(14)">Hobbies</a>
                             </div>
                         </li>
                         <li class="outer-nav-li">
@@ -60,25 +66,23 @@
                                 onclick="activateTab(2)">Contact</a>
                         </li>
                         <li class="outer-nav-li">
-                            <a class="outer-nav-a" id="blog-tab" title="My Blogs"
-                                onclick="activateTab(3)">Blog<sup>✨</sup></a>
+                            <a class="outer-nav-a" id="blog-tab" title="My Blogs" onclick="activateTab(3)">Blog</a>
                         </li>
                     </ul>
-                </span>
-                <span class="edge-covers" id="rightCover"> </span>
+                </div>
             </div>
             <div class="header-import" id="home-tab-header">
                 Failed to load header section
             </div>
         </div>
     </header>
-    <div id="body" class="body">Failed to load mid-body section.</div>
-    <footer class="footer-import" id="footer">
+    <div id="body" class="body grid-bg">Failed to load mid-body section.</div>
+    <footer class="footer-import diagonal-bg" id="footer">
         Failed to load footer section
     </footer>
-    <span class="inner-key-abouts2 social-links social-links-abs mobile-view" id="social-links-abs">
+    <!-- <span class="inner-key-abouts2 social-links social-links-abs mobile-view" id="social-links-abs">
         Failed to load Social Links
-    </span>
+    </span> -->
     <script src="./js/main.js"></script>
     <script>
         logInternalJS_Status();

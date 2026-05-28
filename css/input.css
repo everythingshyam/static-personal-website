@@ -1,0 +1,670 @@
+/* ALEX RIVERS — PORTFOLIO STYLESHEET Tailwind CSS v4.3.0 */ /* Core Imports ─────────────────────────────────────────*/
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&family=Source+Code+Pro:wght@300;400;500;700&display=swap'); /* Design Tokens ────────────────────────────────────────*/
+@theme {
+	/* Light (Default) Mode ─────────────────────────────*/
+	--color-surface: #deeffc; /* global bg — cool off-white w/ cyan tint */
+	--color-surface-soft: #d5e8f5; /* nav, footer, cards — deeper cool tint */
+	--color-surface-raised: #e0effd; /* elevated card on hover */
+	--color-text-main: #131c2e; /* near-black with blue-ink undertone */
+	--color-text-muted: #3d5068; /* body copy, subtitles */
+	--color-text-subtle: #7a92a8; /* placeholder, meta labels */
+	--color-text-contrast: #eef4f9; /* white text on dark bg */ /* Cyber Violet Accents (Light Mode) */
+	--color-accent: #7c3aed; /* brand / CTA / active / highlight — ROYAL VIOLET */
+	--color-accent-hover: #db2777; /* interactive hover feedback — DEEP ORCHID PINK */
+	--color-accent-glow: rgba(124, 58, 237, 0.15);
+	--color-accent-hover-glow: rgba(219, 39, 119, 0.18);
+	--color-border-faded: rgba(30, 60, 100, 0.07);
+	--color-border-mid: rgba(30, 60, 100, 0.15); /* Semantic Shadows */
+	--shadow-card:
+		0 2px 12px rgba(30, 60, 100, 0.07), 0 1px 3px rgba(30, 60, 100, 0.05);
+	--shadow-card-hover:
+		0 8px 32px rgba(30, 60, 100, 0.13), 0 2px 8px rgba(30, 60, 100, 0.09);
+	--shadow-overlay: 0 4px 24px rgba(30, 60, 100, 0.11); /* Typography Scale */
+	--font-family-display: 'Lora', Georgia, serif;
+	--font-family-body: 'Poppins', sans-serif;
+	--font-family-mono: 'Source Code Pro', 'Courier New', monospace; /* Motion */
+	--duration-fast: 120ms;
+	--duration-base: 220ms;
+	--duration-slow: 380ms;
+	--ease-out-customexpo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Dark Mode Overrides ──────────────────────────────────*/
+@layer base {
+	.dark {
+		--color-surface: #0e1829; /* deep navy-dark */
+		--color-surface-soft: #0a1220; /* deeper base layer */
+		--color-surface-raised: #162234; /* elevated layer w/ blue undertone */
+		--color-text-main: #eef3f9;
+		--color-text-muted: #9eb3c8;
+		--color-text-subtle: #5c7a96;
+		--color-text-contrast: #eef3f9; /* white text on dark bg */ /* Cyber Violet Accents (Dark Mode Overrides) */
+		--color-accent: #a78bfa; /* soft cyber violet for readable dark contrast */
+		--color-accent-hover: #f472b6; /* vibrant neon fuchsia pink glow */
+		--color-accent-glow: rgba(167, 139, 250, 0.2);
+		--color-accent-hover-glow: rgba(244, 114, 182, 0.25);
+		--color-border-faded: rgba(160, 200, 240, 0.06);
+		--color-border-mid: rgba(160, 200, 240, 0.13);
+		--shadow-card:
+			0 2px 12px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.25);
+		--shadow-card-hover:
+			0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.32);
+		--shadow-overlay: 0 4px 24px rgba(0, 0, 0, 0.42);
+	}
+/* Subtle dimensional gradient for dark mode body */
+	.dark body {
+		@apply bg-[radial-gradient(ellipse_at_20%_0%,rgba(30,70,140,0.1)_0%,transparent_55%),radial-gradient(ellipse_at_85%_95%,rgba(10,35,80,0.08)_0%,transparent_45%)];
+	}
+}
+/* Texture Utilities ────────────────────────────────────*/ /* Spacing increased (12px → 30px, 24px → 48px) so patterns are whisper-subtle and never compete with text content. */
+.diagonal-bg {
+	@apply bg-[repeating-linear-gradient(45deg,transparent,transparent_30px,var(--color-border-faded)_30px,var(--color-border-faded)_31px)];
+}
+.grid-bg {
+	@apply bg-[linear-gradient(to_right,var(--color-border-faded)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border-faded)_1px,transparent_1px)] bg-size-[48px_48px];
+}
+/* GLOBAL RESET & BASE */
+* {
+	@apply m-0 box-border p-0 text-sm font-normal font-(--font-body) transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-(--duration-base) ease-out-customexpo md:text-base;
+}
+html {
+	@apply scroll-smooth;
+}
+body {
+	@apply bg-surface text-text-muted leading-[1.65] antialiased [font-smooth:always];
+}
+/* Inline elements */
+a {
+	@apply text-inherit no-underline;
+}
+a:hover {
+	@apply cursor-pointer;
+}
+button {
+	@apply text-text-main;
+}
+button:hover {
+	@apply cursor-pointer;
+}
+iframe {
+	@apply aspect-video;
+}
+a.inactive-link {
+	@apply hidden!;
+}
+/* Utility prose link (alert bar, footer credits, form footer) */
+.invisible-link {
+	@apply font-semibold px-[0.25em] text-accent;
+}
+.invisible-link:hover {
+	@apply text-accent-hover underline;
+}
+/* SCREEN OVERLAY BUTTONS (go-to-top / theme toggle) */
+#go-to-top {
+	@apply fixed bottom-6 right-6 z-50 flex flex-col place-items-center gap-2 border-border-faded rounded-full border bg-surface-soft cursor-pointer p-1.5 backdrop-blur-sm shadow-(--shadow-overlay) md:bottom-8 md:right-8 transition-opacity duration-(--duration-base) ease-out-customexpo;
+}
+#go-to-top:hover {
+	@apply bg-accent-hover shadow-(--shadow-card-hover) scale-[1.08];
+}
+#go-to-top > svg {
+	@apply stroke-text-main;
+}
+/* HEADER */
+header {
+	@apply z-10 w-full justify-center border-border-faded bg-surface-soft/90 border-b backdrop-blur-lg;
+}
+/* Alert Bar */
+#alert-bar {
+	@apply bg-surface-soft border-border-faded h-auto border-b border-solid py-1;
+}
+#alert-bar * {
+	@apply text-xs;
+}
+#alert-bar > marquee {
+	@apply flex;
+}
+#alert-bar > marquee > ul {
+	@apply flex;
+}
+#alert-bar > marquee > ul > li {
+	@apply flex items-center px-2 text-text-subtle text-xs;
+}
+/* Menu Bar */
+.menu-bar-outer {
+	@apply md:flex;
+}
+.menu-btn {
+	@apply flex flex-row-reverse md:hidden;
+}
+.menu-btn img {
+	@apply m-4 mb-1 w-8 rounded-lg p-0.5 bg-surface border-border-faded border backdrop-blur-sm shadow-(--shadow-card);
+}
+.menu-btn img:hover {
+	@apply cursor-pointer bg-accent-hover scale-[1.05];
+}
+#menu-bar {
+	@apply border-border-faded bg-surface hidden h-auto rounded-2xl border m-2 mx-4 text-base font-semibold md:m-0 md:flex md:w-full md:justify-around md:rounded-none md:border-0 md:bg-transparent;
+}
+#menu-bar ul {
+	@apply w-full p-2 md:flex md:justify-center md:pb-0;
+}
+#menu-bar ul li {
+	@apply m-1 h-auto w-auto md:m-0;
+}
+/* Dropdown Container */
+#dropdown {
+	@apply relative;
+}
+/* Top-level nav anchors */
+#menu-bar ul li > a {
+	@apply flex w-full cursor-pointer justify-center rounded-2xl text-base md:flex md:h-full md:w-full md:rounded-b-none md:rounded-t-2xl md:p-1 md:px-8 tracking-[0.01em];
+}
+/* Dropdown Panel ────────────────────────────────────────── FIX: Replaced display:none ↔ display:flex toggle (which cannot transition) with opacity / visibility / transform. The panel is always rendered as flex-col; visibility + opacity control whether it is perceivable and interactive. ─────────────────────────────────────────────────────────*/
+#dropdown-content {
+	@apply md:flex md:flex-col z-100 absolute left-0 top-full min-w-44 rounded-2xl border-border-faded bg-surface/90 border backdrop-blur-xl shadow-(--shadow-card) opacity-0 -translate-y-1.5 pointer-events-none scale-[0.98] transition-[opacity,visibility,transform] duration-(--duration-base) ease-out-customexpo;
+}
+/* Opened state (hover or keyboard focus within) */
+#dropdown:hover #dropdown-content,
+#dropdown:focus-within #dropdown-content {
+	@apply md:pointer-events-auto translate-y-0 scale-100 md:opacity-100;
+}
+/* Dropdown Items */
+#dropdown-content > a {
+	/* Layout */
+	@apply relative flex items-center overflow-hidden h-auto w-full px-4 py-2.5 text-text-muted text-sm font-medium rounded-xl transition-all duration-(--duration-fast) ease-out-customexpo;
+}
+/* Left-accent indicator bar */
+#dropdown-content > a::before {
+	@apply absolute left-0 top-0 h-full rounded-r-full content-[''] bg-accent w-0.5 opacity-0 scale-y-50 transition-all duration-(--duration-fast) ease-out-customexpo;
+}
+#dropdown-content > a:hover {
+	@apply bg-surface-soft text-text-main pl-5 no-underline;
+}
+#dropdown-content > a:hover::before {
+	@apply scale-y-100 opacity-100;
+}
+/* Active sub-page item */
+#dropdown-content > a.about-sub-active {
+	@apply bg-surface-soft text-accent pl-5 font-semibold;
+}
+#dropdown-content > a.about-sub-active::before {
+	@apply scale-y-100 opacity-100;
+}
+/* Mobile: always show dropdown items inline in the vertical menu */
+/* @media (max-width: 767px) {
+	#dropdown-content {
+		@apply static opacity-100 visible pointer-events-auto shadow-none min-w-0 p-0 rounded-none border-[none] transform-none backdrop-blur-none bg-transparent;
+	}
+	#dropdown-content > a {
+		@apply text-text-subtle pl-6 text-sm;
+	}
+	#dropdown-content > a:hover {
+		@apply text-text-muted bg-transparent pl-7;
+	}
+} */
+/* Active / hover state for top-level nav tabs */
+.active-tab {
+	@apply bg-surface-soft font-bold text-text-main shadow-[inset_0_-2px_0_var(--color-accent)];
+}
+.outer-nav-a:hover {
+	@apply bg-surface-soft text-text-main no-underline;
+}
+/* Profile Header */
+#main-header {
+	@apply flex w-full flex-col justify-center p-4 md:flex-row md:p-8;
+}
+#profile-pic {
+	@apply flex w-full items-center justify-around overflow-hidden md:w-[40%] md:items-center md:justify-end md:border-r md:border-border-faded md:pr-6;
+}
+#profile-pic img {
+	@apply border-border-faded rounded-2xl border object-cover size-[35vw] md:size-[25vh] lg:size-[30vh] shadow-(--shadow-card) transition-[box-shadow,transform] duration-(--duration-slow) ease-out-customexpo;
+}
+#profile-pic img:hover {
+	@apply shadow-(--shadow-card-hover) scale-[1.02];
+}
+#key-abouts {
+	@apply flex w-[90vw] flex-col justify-center overflow-hidden border-l-0 border-border-faded md:w-[60%] md:border-l md:pl-6;
+}
+.inner-key-abouts {
+	@apply text-text-main;
+}
+.inner-key-abouts > *,
+.inner-key-abouts2 > * {
+	@apply text-center md:text-left;
+}
+.inner-key-abouts h1 {
+	@apply pt-2 text-xl font-bold tracking-[-0.01em] font-(--font-display) md:p-0 md:text-2xl;
+}
+.inner-key-abouts h2 {
+	@apply text-text-muted text-sm font-medium md:text-text-main md:text-base;
+}
+.inner-key-abouts2 {
+	@apply hidden md:flex md:flex-col md:gap-1;
+}
+.inner-key-abouts2 * {
+	@apply text-sm font-normal md:text-base;
+}
+/* Social Link Pills */
+span.social-links {
+	@apply flex w-max flex-row items-center justify-between rounded-full border-border-faded m-auto mb-4 mt-1 border p-1.5 opacity-90 bg-surface-soft backdrop-blur-md shadow-(--shadow-card) md:m-0 md:mt-2;
+}
+span.social-links:hover {
+	@apply opacity-100 shadow-(--shadow-card-hover);
+}
+a.ext-link-header {
+	@apply size-7 bg-surface-raised mx-1 flex items-center justify-center rounded-full p-0.5;
+}
+a.ext-link-header:hover {
+	@apply bg-accent-hover rotate-[-4deg] shadow-[0_2px_8px_var(--color-accent-hover-glow)] scale-[1.12];
+}
+a.ext-link-header img {
+	@apply size-full rounded-full;
+}
+/* BODY CONTENT AREA */
+#body {
+	@apply z-20 min-h-[30vh] bg-surface px-6 py-2 pb-8 md:px-12 md:pb-8 lg:px-16 lg:pb-10;
+}
+/* Sub-page Navigation (prev / next) */
+.nav-sub-pane {
+	@apply grid items-center pb-3 grid-cols-[1fr_1fr];
+}
+.nav-sub-pane > a:nth-child(1) {
+	@apply col-start-1 justify-self-start;
+}
+.nav-sub-pane > a:nth-child(2) {
+	@apply col-start-2 justify-self-end;
+}
+a.nav-links {
+	@apply max-w-36 mx-0 my-2.5 flex truncate rounded-full border-border-faded bg-surface-soft border px-3 py-0.5 text-center font-bold shadow-(--shadow-card) md:max-w-44;
+}
+a.nav-links:hover {
+	@apply no-underline bg-accent-hover text-text-contrast shadow-[0_4px_16px_var(--color-accent-hover-glow)] -translate-y-px;
+}
+/* Section Headings */
+.body-sections h2 {
+	@apply mb-4 mt-3 border-b border-border-faded text-left text-lg font-semibold text-text-main tracking-[-0.01em] font-(--font-display) md:text-xl;
+}
+/* FIX: page-heading-home must explicitly declare font-(--font-display) to match every other h2 on the site. */
+h2.page-heading-home {
+	@apply my-5 text-xl font-(--font-display) md:text-2xl;
+}
+/* Card Grid List */
+.body-sections ul {
+	@apply flex flex-col items-stretch gap-3 md:gap-4 lg:grid lg:grid-cols-2 lg:gap-6;
+}
+/* Common Card Layout */
+.common-body-layout {
+	@apply mx-auto flex w-[85vw] max-w-160 flex-col rounded-2xl border border-border-faded bg-surface-soft/80 p-4 text-center shadow-(--shadow-card) md:grid-cols-[1fr_2fr] md:grid md:max-w-[85vw] md:items-start md:text-left lg:w-full lg:max-w-[50vw] transition-[background,box-shadow,transform] duration-(--duration-slow) ease-out-customexpo;
+}
+.common-body-layout:hover {
+	@apply bg-surface-raised shadow-(--shadow-card-hover) -translate-y-0.5;
+}
+/* Card Image Column */
+.li-img {
+	@apply flex h-full items-center justify-center md:justify-end md:pr-2;
+}
+.li-img img {
+	@apply aspect-square w-full max-w-30 rounded-xl border border-border-faded object-cover shadow-(--shadow-card) md:max-w-48 lg:max-w-56 md:rounded-2xl transition-[box-shadow,transform] duration-(--duration-slow) ease-out-customexpo;
+}
+.common-body-layout:hover .li-img img {
+	@apply shadow-(--shadow-card-hover) scale-[1.025];
+}
+/* Card Text Column */
+.li-text {
+	@apply flex h-full flex-col justify-center md:border-border-faded md:border-l md:pl-3;
+}
+.li-text > h3 {
+	@apply border-border-faded text-text-main mt-1.5 border-b text-base font-semibold font-(--font-display) md:mt-0 md:text-lg md:font-bold;
+}
+/* FIX: Superscripts ("ONGOING", "Current") reduced to text-xs so they render as genuine superscripts rather than sub-headings. */
+.li-text > h3 > sup {
+	@apply text-accent text-xs font-semibold;
+}
+.para-contents {
+	@apply flex w-full flex-col gap-1 pt-1;
+}
+.para-contents > p {
+	@apply pl-0.5 text-left text-sm leading-relaxed;
+}
+/* Link Button Row */
+.link-contents {
+	@apply m-auto flex flex-wrap items-center gap-2 pt-2 md:m-0 md:ml-0.5;
+}
+/* External Link Button (pill) ────────────────────────────── FIX: md:size-5 override removed from img — base size-4 is proportionally correct inside the pill and needs no override. FIX: border-color added to transition list. ─────────────────────────────────────────────────────────*/
+a.ext-link {
+	@apply inline-flex h-auto items-center justify-start overflow-hidden rounded-full border border-border-faded bg-surface p-0.5 shadow-(--shadow-card) transition-[background,box-shadow,transform,border-color] duration-(--duration-base) ease-out-customexpo;
+}
+a.ext-link:hover {
+	@apply border-transparent no-underline bg-accent-hover text-text-contrast shadow-[0_4px_14px_var(--color-accent-hover-glow)] -translate-y-px scale-[1.02];
+}
+a.ext-link img {
+	@apply size-4 mx-0.5 rounded-full;
+}
+a.ext-link h3 {
+	@apply border-border-faded border-l pl-1 pr-1.5 text-sm font-bold;
+}
+a.ext-link-inline {
+	@apply text-accent font-bold underline underline-offset-2;
+}
+a.ext-link-inline:hover {
+	@apply text-accent-hover shadow-[0_0_8px_var(--color-accent-hover-glow)];
+}
+/* Inactive / disabled link */
+a.inactive-ext-link {
+	@apply inline-flex h-auto items-center justify-center overflow-hidden rounded-full border-border-faded bg-surface border p-0.5 opacity-50;
+}
+a.inactive-ext-link:hover {
+	@apply cursor-not-allowed no-underline opacity-50;
+}
+a.inactive-ext-link img {
+	@apply size-4 mr-0.5 rounded-full;
+}
+a.inactive-ext-link h3 {
+	@apply border-border-faded text-text-muted border-l pl-1 pr-1.5 text-sm font-bold;
+}
+/* YouTube Embed */
+.yt-player {
+	@apply h-auto w-[60vw] rounded-xl shadow-(--shadow-card) transition-[box-shadow,transform] duration-(--duration-slow) ease-out-customexpo;
+}
+.yt-player:hover {
+	@apply shadow-(--shadow-card-hover) scale-[1.01];
+}
+/* FOOTER */
+footer {
+	@apply border-border-faded bg-surface-soft flex flex-col gap-1 border-t p-4 md:p-6;
+}
+footer * {
+	@apply text-sm;
+}
+ul#quick-links {
+	@apply flex flex-col items-center justify-evenly gap-2.5 p-2 md:flex-row;
+}
+ul.footer-text {
+	@apply text-text-subtle flex flex-col items-center gap-2 p-2 text-center;
+}
+ul.footer-text li {
+	@apply flex place-items-center justify-center gap-2;
+}
+img.clickable-github-repo {
+	@apply h-6 w-30 md:w-auto cursor-pointer opacity-70 transition-[opacity,filter] duration-(--duration-base) ease-out-customexpo;
+}
+img.clickable-github-repo:hover {
+	@apply opacity-100 shadow-[0_2px_6px_var(--color-accent-glow)];
+}
+button#switch-theme-btn {
+	@apply bg-surface border text-text-muted border-border-faded rounded-full p-0.5 px-1 shadow-(--shadow-card) transition-[background,box-shadow] duration-(--duration-base) ease-out-customexpo;
+}
+button#switch-theme-btn:hover {
+	@apply bg-accent-hover text-text-contrast border-accent-hover shadow-[0_2px_6px_var(--color-accent-glow)];
+}
+/* CONTACT PAGE */
+#contacts > ul {
+	@apply flex flex-row flex-wrap gap-4;
+}
+.common-contact-layout {
+	@apply mx-auto flex flex-col gap-2 rounded-2xl border-border-faded bg-surface-soft/80 shadow-(--shadow-card) border p-4 text-center lg:min-w-136 md:items-start md:text-left lg:gap-4 lg:p-6 transition-[background,box-shadow] duration-(--duration-slow) ease-out-customexpo;
+}
+.common-contact-layout:hover {
+	@apply bg-surface-raised shadow-(--shadow-card-hover);
+}
+.common-contact-layout > * {
+	@apply w-full;
+}
+.common-contact-layout > h3 {
+	@apply border-border-faded text-text-main border-b text-base font-semibold font-(--font-display) md:text-lg md:font-bold;
+}
+/* Contact Form */
+.send-message-form {
+	@apply flex flex-col gap-2 overflow-clip rounded-2xl mx-auto w-full max-w-lg p-5 font-semibold border-border-faded bg-surface-soft/80 shadow-(--shadow-card) border md:grid md:max-w-2xl md:gap-x-4 md:gap-y-3 md:p-7 grid-cols-[minmax(4.5rem_1fr)_3fr] items-start transition-[background,box-shadow] duration-(--duration-slow) ease-out-customexpo;
+}
+.send-message-form:hover {
+	@apply bg-surface-raised shadow-(--shadow-card-hover);
+}
+/* Labels */
+.send-message-form > label {
+	@apply text-text-muted flex items-start pt-1.5 text-sm font-semibold justify-start pl-1 md:justify-end md:pl-0 md:pt-2;
+}
+.send-message-form input.form-input,
+.send-message-form textarea {
+	@apply border-border-mid bg-surface text-text-muted shadow-(--shadow-card) w-full border p-2 transition-[background,box-shadow,border-color] duration-(--duration-base) ease-out-customexpo;
+}
+.send-message-form input.form-input:hover,
+.send-message-form textarea:hover,
+.send-message-form input.form-input:focus,
+.send-message-form textarea:focus {
+	@apply border-text-muted bg-surface-soft text-text-main outline-none shadow-[0_0_0_3px_var(--color-accent-glow),var(--shadow-card)];
+}
+.send-message-form input.form-input {
+	@apply rounded-full px-4 py-2;
+}
+.send-message-form textarea {
+	@apply rounded-2xl px-3 py-2;
+}
+.form-submit-btn-container {
+	@apply col-span-2 row-span-1 flex justify-end pr-1 pt-1;
+}
+.send-message-form .form-submit-btn {
+	@apply border-border-faded bg-surface text-text-muted shadow-(--shadow-card) rounded-full border px-6 py-2 font-bold transition-[background,box-shadow,color] duration-(--duration-base) ease-out-customexpo;
+}
+.send-message-form .form-submit-btn:hover {
+	@apply cursor-pointer text-text-main bg-accent-hover shadow-[0_4px_16px_var(--color-accent-hover-glow)] -translate-y-px;
+}
+.send-message-form hr {
+	@apply border-border-faded col-span-2 row-span-1 mt-2 border-t;
+}
+.send-message-form .form-footer-text {
+	@apply text-text-subtle col-span-2 row-span-1 flex w-full justify-end text-center text-xs md:w-auto md:justify-center;
+}
+.form-footer-text * {
+	@apply text-xs;
+}
+.form-footer-text p {
+	@apply flex justify-center gap-0;
+}
+/* ARTICLE / BLOG POST CARD LAYOUT */
+.article {
+	@apply grid-cols-[1fr_2fr];
+}
+.article .li-img iframe,
+.article .li-img img {
+	@apply w-full rounded-xl aspect-video object-cover;
+}
+/* BLOG LIST PAGE */
+.blog-list-section ul {
+	@apply flex flex-col gap-5 md:gap-6 lg:flex lg:flex-col;
+}
+/* Individual blog preview card */
+.blog-card {
+	@apply relative mx-auto flex w-full max-w-3xl flex-col overflow-hidden rounded-2xl border-border-faded bg-surface-soft/80 border shadow-(--shadow-card) md:flex-row transition-[background,box-shadow,transform] duration-(--duration-slow) ease-out-customexpo;
+}
+.blog-card:hover {
+	@apply bg-surface-raised shadow-(--shadow-card-hover) -translate-y-0.75;
+}
+/* Thumbnail column */
+.blog-card__thumb {
+	@apply relative overflow-hidden w-full md:w-44 lg:w-56 shrink-0;
+}
+.blog-card__thumb img {
+	@apply h-48 w-full object-cover md:h-full transition-transform duration-(--duration-slow) ease-out-customexpo;
+}
+.blog-card:hover .blog-card__thumb img {
+	@apply scale-[1.04];
+}
+/* Text column */
+.blog-card__body {
+	@apply flex flex-col justify-between gap-3 p-4 md:p-5 lg:p-6;
+}
+/* Category tag strip */
+.blog-card__tags {
+	@apply flex flex-wrap gap-1.5;
+}
+.blog-tag {
+	@apply border-border-mid inline-block rounded-full border px-2.5 py-0.5 text-text-subtle text-xs font-semibold uppercase transition-[background,color,border-color] duration-(--duration-base) ease-out-customexpo tracking-[0.07em];
+}
+.blog-tag:hover {
+	@apply bg-accent text-white border-transparent no-underline;
+}
+/* Post title in list view */
+.blog-card__title {
+	@apply text-text-main text-lg font-bold leading-snug font-(--font-display) md:text-xl;
+}
+.blog-card__title a {
+	@apply text-text-main no-underline transition-[color] duration-(--duration-base) ease-out-customexpo;
+}
+.blog-card__title a:hover {
+	@apply text-accent no-underline;
+}
+/* Excerpt */
+.blog-card__excerpt {
+	@apply text-text-muted line-clamp-3 text-sm leading-relaxed;
+}
+/* Meta row: date · read time */
+.blog-card__meta {
+	@apply text-text-subtle flex items-center gap-3 text-xs;
+}
+.blog-card__meta time {
+	@apply font-medium;
+}
+.blog-card__meta span::before {
+	@apply content-['·'] mr-3;
+}
+/* Read more CTA */
+.blog-card__cta {
+	@apply mt-1 self-start;
+}
+/* INDIVIDUAL BLOG POST PAGES */ /* Post hero / masthead */
+.post-hero {
+	@apply relative mx-auto mb-8 w-full overflow-hidden rounded-2xl border-border-faded max-w-4xl border shadow-(--shadow-card);
+}
+.post-hero__img {
+	@apply h-52 w-full object-cover md:h-80;
+}
+.post-hero__overlay {
+	@apply absolute inset-0 flex flex-col justify-end p-6 md:p-8 bg-linear-to-t from-black/65 via-black/0 to-black/0;
+}
+.post-hero__category {
+	@apply mb-2 inline-block;
+}
+.post-hero__title {
+	@apply text-2xl font-bold leading-tight text-white font-(--font-display) md:text-3xl lg:text-4xl;
+}
+.post-hero__meta {
+	@apply mt-2 flex flex-wrap items-center gap-3 text-sm text-white/80;
+}
+/* Post body wrapper — constrains readable line length */
+.post-body {
+	@apply mx-auto w-full max-w-3xl px-4 pb-12 md:px-6 lg:px-0;
+}
+/* Prose typography inside .post-body */
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4 {
+	@apply text-text-main font-(--font-display) leading-[1.3];
+}
+.post-body h2 {
+	@apply border-border-faded mb-3 mt-10 border-b pb-1 text-xl font-semibold md:text-2xl;
+}
+.post-body h3 {
+	@apply mb-2 mt-7 text-lg font-semibold md:text-xl;
+}
+.post-body h4 {
+	@apply mb-1 mt-5 text-base font-semibold;
+}
+.post-body p {
+	@apply text-text-muted mb-4 text-sm leading-loose md:text-base;
+}
+.post-body a {
+	@apply font-semibold text-accent underline underline-offset-3;
+}
+.post-body a:hover {
+	@apply text-accent-hover;
+}
+.post-body ul,
+.post-body ol {
+	@apply text-text-muted mb-4 ml-5 flex flex-col gap-1.5 text-sm md:text-base;
+}
+.post-body ul {
+	@apply list-disc;
+}
+.post-body ol {
+	@apply list-decimal;
+}
+.post-body li::marker {
+	@apply text-accent;
+}
+/* Blockquote */
+.post-body blockquote {
+	@apply relative my-6 rounded-r-xl border-l-4 py-3 pl-5 pr-4 italic border-accent bg-surface-soft text-text-muted;
+}
+.post-body blockquote p {
+	@apply mb-0;
+}
+.post-body blockquote cite {
+	@apply text-text-subtle mt-2 block text-xs not-italic;
+}
+/* Inline code */
+.post-body code {
+	@apply rounded-md px-1.5 py-0.5 text-sm font-(--font-mono) bg-surface-soft text-accent border border-border-mid border-solid;
+}
+/* Code block */
+.post-body pre {
+	@apply my-5 overflow-x-auto rounded-2xl p-4 text-sm font-(--font-mono) bg-surface-soft border border-solid border-border-mid shadow-(--shadow-card) leading-[1.65];
+}
+.post-body pre code {
+	@apply border-0 bg-transparent p-0 text-text-main;
+}
+/* Horizontal rule */
+.post-body hr {
+	@apply border-border-mid my-8 border-t;
+}
+/* Callout / Note box */
+.callout {
+	@apply border-border-mid my-6 flex gap-3 rounded-2xl border p-4 bg-surface-soft shadow-(--shadow-card);
+}
+.callout__icon {
+	@apply text-xl shrink-0;
+}
+.callout__body {
+	@apply flex flex-col gap-1;
+}
+.callout__title {
+	@apply text-text-main text-sm font-bold;
+}
+.callout__text {
+	@apply text-text-muted text-sm leading-relaxed;
+}
+/* Callout colour variants */
+.callout--info {
+	@apply border-l-4 border-solid border-accent;
+}
+.callout--warning {
+	@apply border-l-4 border-solid border-[#d4a03e];
+}
+.callout--tip {
+	@apply border-l-4 border-solid border-[#3eb87c];
+}
+/* Reading progress indicator */
+.reading-progress {
+	@apply z-200 fixed left-0 top-0 h-0.5 w-full origin-left bg-accent shadow-[0_0_8px_var(--color-accent-glow)];
+	transform: scaleX(var(--scroll-progress, 0))
+}
+/* Post navigation (prev / next within blog) */
+.post-nav {
+	@apply mx-auto grid max-w-3xl grid-cols-2 gap-4 px-4 pb-10 md:px-6 lg:px-0;
+}
+.post-nav__link {
+	@apply border-border-faded bg-surface-soft/80 flex flex-col gap-0.5 rounded-2xl border p-4 shadow-(--shadow-card) transition-[box-shadow,transform] duration-(--duration-slow) ease-out-customexpo;
+}
+.post-nav__link:hover {
+	@apply shadow-(--shadow-card-hover) -translate-y-0.5 no-underline;
+}
+.post-nav__label {
+	@apply text-text-subtle text-xs font-semibold uppercase tracking-widest;
+}
+.post-nav__title {
+	@apply text-text-main text-sm font-bold leading-snug font-(--font-display);
+}
+.post-nav__link--next {
+	@apply text-right;
+}
